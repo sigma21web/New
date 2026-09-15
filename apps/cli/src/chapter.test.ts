@@ -153,12 +153,13 @@ run('cli chapter surface (Postgres + ReplayProvider)', () => {
     const replayed = out.steps.filter((s) => s.status === 'replayed');
     expect(replayed.length).toBeGreaterThan(5);
     expect(out.steps.some((s) => s.status === 'completed')).toBe(true);
-    // Only post-failure calls were added (21 total on the fixture path).
+    // Only post-failure calls were added (25 total on the fixture path: two evaluation rounds now each
+    // include the genre and voice judges that standard.v1 gates).
     const callsAfter = await pool.query<{ n: string }>(
       'SELECT count(*)::text AS n FROM llm_calls WHERE project_id = $1',
       [pid],
     );
-    expect(Number(callsAfter.rows[0]?.n)).toBe(21);
+    expect(Number(callsAfter.rows[0]?.n)).toBe(25);
     expect(Number(callsAfter.rows[0]?.n)).toBeGreaterThan(Number(callsAtInterrupt.rows[0]?.n));
   }, 240_000);
 

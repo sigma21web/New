@@ -24,6 +24,7 @@
   "promise.schema.json": "02025c5af27cc4c8bb29030dc6942c8ba834c5ef27666c6bc7ec0f1a98d82684",
   "proposition.schema.json": "f800d23bd6b37b8efd4daa96985923c96fb8a6836ddfd7669377b0b8f82bf2d8",
   "register-profile.schema.json": "527a02f6a52a8c17f877d3af32b01c3e25314c1901e2e19e878ba95a4cf71184",
+  "regression-report.schema.json": "e45b8822014da7e90dd07449583236a2d6bb5655fdd9fca51a30b991af1bb564",
   "relationship-state.schema.json": "7003e1a9ea68cc4d335d240199965c04829d75095560c3af87dc04fd5a429b2c",
   "scene-draft.schema.json": "b7a08eaf9705da481bbd044ea83388c010eb8fc84d5953c7b34fbaf313e4706a",
   "scene-plan.schema.json": "1a50a10fd3bb1e51889e3df73dc8b429dac4b76e2b8c63f9f015bdf9f68d9ae3",

@@ -65,7 +65,7 @@ Legend: ✅ in tier · ◐ partial (noted) · ⏩ later tier · — not planned
 | Prose Judge, Structure Judge, Genre Judge, Voice Judge with evidence spans (separate dimensions) | ✅ | | | |
 | Passage-level repair | ✅ | | | |
 | Project exemplar bank (from accepted chapters + user-owned) | ✅ | | | |
-| Contrast set (5 classes: KWN-English, Western-English, translation-like, over-literary, weak-serial) | ◐ 4 starter contrast sets in the repo today; ≥ 40 required before the calibration round (B-6-3) | ✅ 200+ | ✅ | |
+| Contrast set (5 classes: KWN-English, Western-English, translation-like, over-literary, weak-serial) | ✅ 40 contrast sets in the repo (5 genres × 8 narrative functions), the ≥ 40 required before the calibration round (B-6-3) | ✅ 200+ | ✅ | |
 | Character voice profiles & voice-drift detection | ✅ | | | |
 | Threshold calibration tooling (per-project tuning from contrast sets and reviewer overrides) | ◐ manual | ✅ semi-automatic | ✅ | |
 | User prose preference learning from edits | — | ◐ | ✅ | |

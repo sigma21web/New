@@ -452,23 +452,65 @@ export async function evaluateVersion(
         issues.push(toIssue(ctx, v.id, 'judge:structure_judge', 'structure', r, i)),
       );
 
+      // Dimensions C and D. `standard.v1` gates genre and voice, so their evidence is required: without
+      // them the per-dimension gates and the ADR-0014 regression check have nothing to read and must fail
+      // closed. Each is its own immutable family with its own identity variant and its own gate — fluent
+      // English, webnovel structure, genre fit and voice/register are never folded into one score
+      // (EVAL-SEPARATION-001). The full evaluator build-out (richer evidence, calibration) is B-6-5.
+      const genre = await modelCall<JudgeOutput>(ctx, {
+        step: 'evaluate',
+        family: 'genre_judge',
+        activityId: act('genre_judge'),
+        variables: {
+          chapter_text: chapterText,
+          terminology_report: `allowlisted names ${input.allowlist.length}; primary genre ${input.spec.items.find((i) => i.category === 'genre')?.text ?? '(unspecified)'}.`,
+        },
+        block: compileFor(ctx, 'judge_rubric_genre'),
+      });
+      evaluatorCalls.push(genre.llmCallId);
+      (genre.output.issues ?? []).forEach((r, i) =>
+        issues.push(toIssue(ctx, v.id, 'judge:genre_judge', 'genre', r, i)),
+      );
+      const voice = await modelCall<JudgeOutput>(ctx, {
+        step: 'evaluate',
+        family: 'voice_judge',
+        activityId: act('voice_judge'),
+        variables: {
+          utterances: chapterText,
+          register_digests: checker.stored.variables.register_digests ?? '(none)',
+          register_check_report: `dialogue register digests supplied: ${checker.stored.variables.register_digests ? 'yes' : 'no'}.`,
+        },
+        block: compileFor(ctx, 'judge_rubric_prose'),
+      });
+      evaluatorCalls.push(voice.llmCallId);
+      (voice.output.issues ?? []).forEach((r, i) =>
+        issues.push(toIssue(ctx, v.id, 'judge:voice_judge', 'voice', r, i)),
+      );
+
       const gates = ctx.policy.gates;
       const proseScore = clamp(prose.output.judge_score ?? 0);
       const structureScore = clamp(structure.output.judge_score ?? 0);
+      const genreScore = clamp(genre.output.judge_score ?? 0);
+      const voiceScore = clamp(voice.output.judge_score ?? 0);
+      // Every gated dimension of the pinned policy gets its own result, from the policy's own thresholds.
+      // A dimension the policy does not gate contributes no result — and therefore no silent pass.
+      const gateFor = (name: 'prose' | 'structure' | 'genre' | 'voice') =>
+        gates.dimensions[name]?.min_score;
+      const dimensionResult = (
+        dimension: 'prose' | 'structure' | 'genre' | 'voice',
+        score: number,
+      ) => {
+        const threshold = gateFor(dimension);
+        return threshold === undefined
+          ? undefined
+          : { dimension, score, threshold, passed: score >= threshold };
+      };
       const dimensionResults = [
-        {
-          dimension: 'prose' as const,
-          score: proseScore,
-          threshold: gates.dimensions.prose.min_score,
-          passed: proseScore >= gates.dimensions.prose.min_score,
-        },
-        {
-          dimension: 'structure' as const,
-          score: structureScore,
-          threshold: gates.dimensions.structure.min_score,
-          passed: structureScore >= gates.dimensions.structure.min_score,
-        },
-      ];
+        dimensionResult('prose', proseScore),
+        dimensionResult('structure', structureScore),
+        dimensionResult('genre', genreScore),
+        dimensionResult('voice', voiceScore),
+      ].filter((d): d is NonNullable<typeof d> => d !== undefined);
       const count = (s: Severity) => issues.filter((i) => i.severity === s).length;
       const blockingCount = count('blocking');
       const majorCount = count('major');
@@ -477,6 +519,10 @@ export async function evaluateVersion(
         blockingCount <= gates.blocking_max &&
         majorCount <= gates.major_max &&
         dimensionResults.every((d) => d.passed);
+      // Look the gate result up by name: the list only carries dimensions the policy actually gates, so
+      // positional access would silently mis-attribute a pass when a gate is absent.
+      const dimensionPassed = (name: string) =>
+        dimensionResults.find((d) => d.dimension === name)?.passed ?? false;
       const section = (
         dim: Issue['dimension'],
         score: number,
@@ -501,13 +547,13 @@ export async function evaluateVersion(
           note_count: count('note'),
         },
         sections: {
-          prose: section('prose', proseScore, dimensionResults[0]?.passed ?? false, {
+          prose: section('prose', proseScore, dimensionPassed('prose'), {
             judge_score: proseScore,
             drift_flags: prose.output.drift_flags ?? [],
             dimension_scores: prose.output.dimension_scores ?? {},
             evaluator_call_id: prose.llmCallId,
           }),
-          structure: section('structure', structureScore, dimensionResults[1]?.passed ?? false, {
+          structure: section('structure', structureScore, dimensionPassed('structure'), {
             judge_score: structureScore,
             drift_flags: structure.output.drift_flags ?? [],
             dimension_scores: structure.output.dimension_scores ?? {},
@@ -521,6 +567,18 @@ export async function evaluateVersion(
               ? { ending_type_detected: structure.output.ending_type_detected }
               : {}),
             evaluator_call_id: structure.llmCallId,
+          }),
+          genre: section('genre', genreScore, dimensionPassed('genre'), {
+            judge_score: genreScore,
+            drift_flags: genre.output.drift_flags ?? [],
+            dimension_scores: genre.output.dimension_scores ?? {},
+            evaluator_call_id: genre.llmCallId,
+          }),
+          voice: section('voice', voiceScore, dimensionPassed('voice'), {
+            judge_score: voiceScore,
+            drift_flags: voice.output.drift_flags ?? [],
+            dimension_scores: voice.output.dimension_scores ?? {},
+            evaluator_call_id: voice.llmCallId,
           }),
           output_language: section(
             'output_language',

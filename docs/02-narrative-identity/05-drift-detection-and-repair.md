@@ -108,7 +108,7 @@ Requirements: the `kwn_english` version must score **highest on A and B jointly*
 Prose Judge must rank `translation_like` lowest on A in ≥ 90%; the Structure Judge must rank `western_english`
 and `weak_serial` below `kwn_english` on B in ≥ 95%; Prose Lint must produce a higher translation-marker rate on
 `translation_like` than on `kwn_english` in ≥ 90%; Structure Lint must flag `western_english` late hook/weak
-ending in ≥ 80%. Today the repository holds **4 starter contrast sets in the repo** (`examples/fixture/contrast-sets.seed.json`, one per MVP genre plus one status-window set); the calibration round requires ≥ 40 (backlog B-6-3) and Beta ≥ 200. Filler sets are not added to reach a number (ADR-0043).
+ending in ≥ 80%. Today the repository holds **40 contrast sets in the repo** (`examples/fixture/contrast-sets.seed.json`: the four Checkpoint 0 starter sets plus 36 authored in Checkpoint 6, covering five genres × eight narrative functions — hook, emotional beat, banter, status window, reveal, ending, exposition, action); this meets the ≥ 40 the calibration round requires (backlog B-6-3) and Beta requires ≥ 200. Filler sets are not added to reach a number (ADR-0043).
 
 **Reviewer panel:** bilingual reviewers able to judge native-quality English *and* Korean webnovel
 conventions rate 30 sampled chapters monthly on two scales; Spearman ≥ 0.8 between each judge and its

@@ -49,7 +49,7 @@ describe('cli commands', () => {
     expect(out.text).toContain('## Output-Language Contract');
     const p = run(['prompts:list']);
     expect(p.ok).toBe(true);
-    expect((p.output as { versions: unknown[] }).versions).toHaveLength(24);
+    expect((p.output as { versions: unknown[] }).versions).toHaveLength(25);
   });
 
   it('compiles the Active Constraint Set for a chapter and fails on overflow', () => {

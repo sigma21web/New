@@ -61,8 +61,14 @@ import {
   type StoryIntake,
   type StorySpec,
 } from './planning.js';
+import { patchRegression, regressionArtifact, regressionReportId } from './comparison.js';
 import { pickRevisionDimension, reviseVersion } from './revision.js';
-import { type StepTrace, type WorkflowContext, type WorkflowPins } from './runtime.js';
+import {
+  saveArtifact,
+  type StepTrace,
+  type WorkflowContext,
+  type WorkflowPins,
+} from './runtime.js';
 
 export interface ChapterProductionInput {
   readonly projectId: string;
@@ -133,7 +139,19 @@ export interface ChapterProductionResult {
     structure: number;
   }[];
   readonly revision:
-    | { rounds: number; dimension?: string | undefined; patch_artifact_id?: string | undefined }
+    | {
+        rounds: number;
+        dimension?: string | undefined;
+        patch_artifact_id?: string | undefined;
+        regression?:
+          | {
+              artifact_id: string;
+              passed: boolean;
+              failures: readonly string[];
+              targeted_resolved: boolean;
+            }
+          | undefined;
+      }
     | undefined;
   readonly accepted:
     | {
@@ -161,7 +179,13 @@ export function workflowIdFor(projectId: string, chapterNo: number): string {
 export const ROUTING_FAMILY_NOTE =
   'Routing for the slice is supplied by the caller (ReplayProvider in tests and the CLI); no live provider is configured.';
 
-async function makeContext(
+/**
+ * Build (or rejoin) the checkpointed workflow context for one chapter: pins, policy, identity, job row and
+ * the project-scoped replay bindings. Exported so callers that drive a single stage — the comparison and
+ * regression suites of Checkpoint 6 — run against the same pinned context the full loop uses, rather than a
+ * hand-built stub that could drift from it.
+ */
+export async function makeContext(
   deps: ChapterProductionDeps,
   projectId: string,
   chapterNo: number,
@@ -424,6 +448,8 @@ export async function produceChapter(
       const dimension = pickRevisionDimension(targets);
       if (!dimension) break;
       round++;
+      const beforeScorecard = evaluation.scorecard;
+      const targetedIssueIds = targets.filter((i) => i.dimension === dimension).map((i) => i.id);
       const revised = await reviseVersion(ctx, {
         version: current,
         chapterId: contract.chapterId,
@@ -446,6 +472,61 @@ export async function produceChapter(
         round,
       });
       scorecards.push(summarizeScorecard(evaluation.scorecard, evaluation.scorecardArtifactId));
+
+      // ---- ADR-0014 patch regression: the patch must earn its place before it can reach approval.
+      // The report is persisted whether it passes or fails, so the decision is auditable either way.
+      const report = patchRegression(ctx.policy, {
+        before: beforeScorecard,
+        after: evaluation.scorecard,
+        dimension,
+        targetedIssueIds,
+      });
+      const regressionRef = await saveArtifact(ctx, {
+        step: 'revise',
+        kind: 'regression_report',
+        key: `${current.id}:r${round}`,
+        schema: 'regression-report.schema.json',
+        payload: regressionArtifact(report, {
+          id: regressionReportId(ctx.workflowId, current.id, round),
+          manuscriptVersionId: current.id,
+          parentVersionId: revised.patch.from_version_id,
+          patchId: revised.patch.id,
+          round,
+          productionPolicyVersion: ctx.pins.productionPolicyVersion,
+        }),
+      });
+      revision = {
+        rounds: round,
+        dimension,
+        patch_artifact_id: revised.patchArtifactId,
+        regression: {
+          artifact_id: regressionRef.artifact_id,
+          passed: report.passed,
+          failures: report.failures,
+          targeted_resolved: report.targeted.resolved,
+        },
+      };
+      // A failed regression stops the run before the approval lock, so it can never reach canon acceptance.
+      if (!report.passed)
+        throw new WorkflowError(
+          'PATCH_REGRESSED',
+          `the round-${round} ${dimension} patch failed the regression check: ${report.failures.join(', ')}`,
+          {
+            step: 'revise',
+            data: {
+              targeted_dimension: dimension,
+              failures: report.failures,
+              regressions: report.regressions,
+              targeted: report.targeted,
+              failed_protections: report.protections
+                .filter((p) => p.applicable && !p.passed)
+                .map((p) => p.protection),
+              new_issue_kinds: report.newIssueKinds,
+              regression_artifact_id: regressionRef.artifact_id,
+            },
+            recommendedActions: ['regenerate', 'edit_manually'],
+          },
+        );
       // Only the single representative revision path belongs to this checkpoint: one patch per run.
       break;
     }
@@ -555,8 +636,11 @@ export async function produceChapter(
             cause: err,
           });
     if (!(err instanceof WorkflowError) || !ctx.trace.some((t) => t.status === 'failed')) {
+      // A quality gate — a blocked approval or a patch that failed its regression check — is an attention
+      // state for a human, not an engineering failure.
+      const qualityGate = wf.code === 'APPROVAL_BLOCKED' || wf.code === 'PATCH_REGRESSED';
       await updateJob(ctx.pool, ctx.job.id, {
-        status: wf.code === 'APPROVAL_BLOCKED' ? 'needs_attention' : 'failed',
+        status: qualityGate ? 'needs_attention' : 'failed',
         error: wf.toJSON(),
       });
     }

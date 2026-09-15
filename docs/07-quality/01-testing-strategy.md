@@ -139,7 +139,7 @@ Runner records model versions, cost, latency; promotion gate per prompt architec
 
 ## 6. Narrative-identity tests (English prose + Korean-webnovel structure)
 
-- **Five-class contrast set** (seed 40 → 200): per `docs/02-narrative-identity/05` §7 — `kwn_english`
+- **Five-class contrast set** (40 in the repo → 200 at Beta): per `docs/02-narrative-identity/05` §7 — `kwn_english`
   must rank highest jointly on A and B in ≥ 95% of sets; lint separations as specified; after repair of a
   `translation_like` variant, its prose metrics must improve ≥ 60% on marker rate and its structure score
   must not regress (dimension-targeted repair does not break the other dimension).
@@ -191,7 +191,7 @@ concurrent chapter jobs per workspace; Temporal task latency; DB connection pool
 
 - `examples/fixture/` (this repo): intake, register profile, ch.12 contract, ch.9 canon delta with evidence
   offsets into `examples/fixture/manuscripts/ch09.accepted.txt` (and the T16 rejected draft
-  `ch09.rejected-draft.txt`), knowledge ledger, the 4 starter contrast sets in the repo (target ≥ 40, B-6-3),
+  `ch09.rejected-draft.txt`), knowledge ledger, the 40 contrast sets in the repo (the ≥ 40 target of B-6-3 met),
   register cases, the possession micro-fixture `source-story.micro.json` (ADR-0039);
   `examples/narrative-profiles/`: language, tradition, four MVP genre profiles and the composed identity;
   `examples/production-policies/`: economy / standard / premium policy versions (ADR-0041).

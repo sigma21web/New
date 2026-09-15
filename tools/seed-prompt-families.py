@@ -31,9 +31,11 @@ MANUSCRIPT = """Non-negotiables:
 - Return ONLY a single JSON object that conforms to the output schema."""
 
 
-def fam(role, purpose, *, style, ms, variant, cls, inputs, schema, temp, max_tokens, system, user, mode="json"):
+def fam(role, purpose, *, style, ms, variant, cls, inputs, schema, temp, max_tokens, system, user, mode="json",
+        changelog="1.0.0 — initial production prompt (Checkpoint 3). English-only instructions; no translation step; provenance-tagged context; evidence-first outputs."):
     return dict(role=role, purpose=purpose, style=style, ms=ms, variant=variant, cls=cls, inputs=inputs,
-                schema=schema, mode=mode, temp=temp, max_tokens=max_tokens, system=system, user=user)
+                schema=schema, mode=mode, temp=temp, max_tokens=max_tokens, system=system, user=user,
+                changelog=changelog)
 
 
 FAMILIES = {
@@ -455,6 +457,36 @@ Output shape: {{"judge_score": 0, "register_violation_rate": 0.0, "issues": [...
 
 [UTTERANCES — speaker → addressee → text, with paragraph ids]
 {{utterances}}"""),
+    "chapter_comparator": fam(
+        "chapter_comparator", "Pairwise comparison of two chapter candidates for the same locked contract, with per-dimension preferences and evidence; run in both presentation orders (ADR-0015).",
+        style=False, ms=False, variant=None, cls="R", inputs=["contract_shape", "candidate_a", "candidate_b", "scorecard_a", "scorecard_b", "presentation_order", "rubric_order"], schema="comparison-verdict.schema.json", temp=0.1, max_tokens=2000,
+        system=f"""You compare two chapter candidates written against the same locked Chapter Contract.
+{COMMON}
+- You are a judge, not a writer: never rewrite, never propose prose, never prefer a candidate for being longer.
+- Judge exactly the dimensions listed in the rubric order given, and keep them apart: english_prose_quality is natural, idiomatic English only; serialized_structure is Korean-webnovel serialized construction only (hook timing, local payoff, forward pull, cadence). A candidate may win one and lose the other (EVAL-SEPARATION-001).
+- Never reward ornate literary diction and never penalize short paragraphs or terse lines — they are the tradition's form. Never reward translation-like phrasing for sounding "faithful".
+- Evidence before preference: quote or cite the paragraph id in evidence_a and evidence_b before stating a preference on that dimension.
+- The candidates are labeled A and B by presentation order only. Judge the text, not the label, and never infer which candidate was generated first.
+- The supplied scorecards are deterministic prior measurements; use them as evidence, never as the verdict.
+- Ties are allowed on any dimension and overall. Say tie rather than inventing a margin.""",
+        user="""[CONTRACT SHAPE — required hook / opening / ending / satisfaction / length target]
+{{contract_shape}}
+
+Presentation order: {{presentation_order}}
+Rubric dimension order for this run: {{rubric_order}}
+
+[CANDIDATE A — with paragraph ids]
+{{candidate_a}}
+
+[SCORECARD A — deterministic checks and judge sections]
+{{scorecard_a}}
+
+[CANDIDATE B — with paragraph ids]
+{{candidate_b}}
+
+[SCORECARD B — deterministic checks and judge sections]
+{{scorecard_b}}""",
+        changelog="1.0.0 — initial production prompt (Checkpoint 6, B-6-4). Position-swapped pairwise chapter-candidate judging per ADR-0015; prose and structure judged as separate dimensions; evidence before preference; no rewriting."),
     "canon_extractor": fam(
         "canon_extractor", "Extract proposed canon items (facts, events, knowledge, relationships, promises, propositions, entities) with exact quotes from an approval-locked chapter; two sweeps (entity-first or event-first) selected by the sweep variable.",
         style=False, ms=False, variant=None, cls="M", inputs=["chapter_text", "registry", "hypotheses", "pre_pass", "story_clock", "sweep"], schema="canon-delta.schema.json", temp=0.1, max_tokens=8000,
@@ -543,7 +575,7 @@ def main() -> int:
             "params": {"temperature": spec["temp"], "max_tokens": spec["max_tokens"], "top_p": 1},
             "failure_behavior": {"on_schema_invalid": "repair_then_regenerate", "on_truncation": "regenerate" if spec["ms"] else "fail", "max_attempts": 2},
             "status": "active",
-            "changelog": "1.0.0 — initial production prompt (Checkpoint 3). English-only instructions; no translation step; provenance-tagged context; evidence-first outputs.",
+            "changelog": spec["changelog"],
             "regression_cases": [f"{name}.fixture.smoke"],
         }
         system, user = spec["system"], spec["user"]

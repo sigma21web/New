@@ -59,7 +59,7 @@ SQL.
 
 - `packages/narrative`: profile model (8 layers), composition, `lang/en` + `tradition/kr-webnovel` + 4 genre
   profiles as data, Narrative Identity Block compiler with role variants and IDENTITY_TAIL, structure lint
-  (ST-*), calibration records; the 4 starter contrast sets in the repo in tests (growing to ≥ 40 before calibration, B-6-3).
+  (ST-*), calibration records; the 40 contrast sets in the repo in tests (the ≥ 40 pre-calibration target of B-6-3, met in Checkpoint 6).
 - `packages/prose`: English Prose Lint (all EP-* in the spec), translation-marker set, register check (RG-*)
   against register digests, naming/terminology registry rules, thresholds from profiles.
 - `packages/canon`: extraction pre-pass (registry NER, status-window numbers, speaker/register

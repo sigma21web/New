@@ -1,0 +1,27 @@
+{
+  "name": "@yeonjae/eval",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic contrast regression: replays the five-class contrast corpus through the real judge boundary and reports agreement, coverage and replay integrity without credentials (B-6-3).",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "recordings"
+  ],
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@yeonjae/domain": "workspace:*",
+    "@yeonjae/gateway": "workspace:*",
+    "@yeonjae/narrative": "workspace:*",
+    "@yeonjae/prompts": "workspace:*",
+    "@yeonjae/prose": "workspace:*"
+  }
+}

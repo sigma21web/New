@@ -15,144 +15,28 @@ from __future__ import annotations
 
 import json
 import os
-import unicodedata
+import sys
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from fixture_common import (  # noqa: E402
+    IDS,
+    ROOT,
+    clock,
+    evidence,
+    find_span,
+    kind_of,
+    nfc,
+    paragraph_of,
+    paragraphs,
+    read_scene,
+    rec,
+    scene_draft,
+)
+
 FX = os.path.join(ROOT, "examples", "fixture", "ch01")
 
-IDS = {
-    "project": "0191b2a0-0000-7000-8000-0000000000c1",
-    "workspace": "0191b2a0-0000-7000-8000-0000000000c0",
-    "identity_version": "0191b2a0-0000-7000-8000-000000060001",
-    "doyoon": "0191b2a0-0000-7000-8000-0000000c0001",
-    "seoha": "0191b2a0-0000-7000-8000-0000000c0002",
-    "mujin": "0191b2a0-0000-7000-8000-0000000c0003",
-    "hyunseok": "0191b2a0-0000-7000-8000-0000000c0004",
-    "yoon": "0191b2a0-0000-7000-8000-0000000c0007",
-    "minjae": "0191b2a0-0000-7000-8000-0000000c0008",
-    "hall": "0191b2a0-0000-7000-8000-000000010001",
-    "gangnam_gate": "0191b2a0-0000-7000-8000-000000010004",
-    "mapo_gate3": "0191b2a0-0000-7000-8000-000000010006",
-    "association": "0191b2a0-0000-7000-8000-000000011001",
-    "rank_scale": "0191b2a0-0000-7000-8000-000000012001",
-    "promise_compass": "0191b2a0-0000-7000-8000-0000000d0001",
-    "promise_gate_run": "0191b2a0-0000-7000-8000-0000000d0011",
-    "promise_watcher": "0191b2a0-0000-7000-8000-0000000d0003",
-    "arc1": "0191b2a0-0000-7000-8000-0000000e0001",
-    "season1": "0191b2a0-0000-7000-8000-0000000f0001",
-    "contract1": "0191b2a0-0000-7000-8000-000000070001",
-    "contract2": "0191b2a0-0000-7000-8000-000000070002",
-}
-
-
-def nfc(s: str) -> str:
-    return unicodedata.normalize("NFC", s)
-
-
-def read_scene(n: int) -> str:
-    with open(os.path.join(FX, "manuscripts", f"ch01.scene{n}.txt"), encoding="utf-8") as f:
-        return nfc(f.read())
-
-
-def paragraphs(text: str) -> list[tuple[str, int, int, str]]:
-    """Mirror @yeonjae/prose segmentParagraphs: blank-line separated, code-point offsets, ids p1.."""
-    import re
-
-    out = []
-    cps = list(text)
-    # work on utf-16-free python str: python indices are code points already
-    start = 0
-    for m in re.finditer(r"\n[ \t]*\n+", text):
-        end = m.start()
-        while end > start and text[end - 1] == "\n":
-            end -= 1
-        if end > start:
-            out.append((f"p{len(out)+1}", start, end, text[start:end]))
-        start = m.end()
-    end = len(text)
-    while end > start and text[end - 1] == "\n":
-        end -= 1
-    if end > start:
-        out.append((f"p{len(out)+1}", start, end, text[start:end]))
-    assert len(cps) == len(text)
-    return out
-
-
-def kind_of(p: str) -> str:
-    if p.startswith("“") and p.endswith("”") and "\n" not in p:
-        return "dialogue"
-    if p.startswith("*") and p.endswith("*"):
-        return "monologue"
-    if p.startswith("[") and p.endswith("]"):
-        return "system_block"
-    if "“" in p:
-        return "mixed"
-    return "narration"
-
-
-def scene_draft(n: int, text: str, speakers: dict[str, str], claims: list[tuple[str, str, list[str]]]):
-    paras = paragraphs(text)
-    ann = []
-    for pid, s, e, body in paras:
-        if body.startswith("“"):
-            # single utterance paragraphs: first quoted run
-            q_end = body.find("”")
-            if q_end > 0:
-                spk = speakers.get(pid)
-                if spk:
-                    ann.append({"utterance_start": s, "utterance_end": s + q_end + 1, "speaker_id": spk})
-    return {
-        "scene_no": n,
-        "language": "en",
-        "text": text.rstrip("\n"),
-        "paragraphs": [{"id": pid, "start": s, "end": e, "kind": kind_of(body)} for pid, s, e, body in paras],
-        "speaker_annotations": ann,
-        "claims": [
-            {"statement": st, "paragraph_id": pid, "entity_ids": ents, "frame": "canonical"}
-            for st, pid, ents in claims
-        ],
-    }
-
-
-def find_span(text: str, quote: str, start_hint: int = 0) -> tuple[int, int]:
-    quote = nfc(quote)
-    i = text.find(quote, start_hint)
-    if i < 0:
-        raise SystemExit(f"quote not found: {quote!r}")
-    if text.find(quote, i + 1) >= 0:
-        raise SystemExit(f"quote is not unique: {quote!r}")
-    return i, i + len(quote)
-
-
-def paragraph_of(paras, start: int) -> str:
-    for pid, s, e, _ in paras:
-        if s <= start < e:
-            return pid
-    raise SystemExit(f"no paragraph at {start}")
-
-
-def evidence(text: str, paras, quote: str, version_key: str, chapter_no: int = 1):
-    s, e = find_span(text, quote)
-    return {
-        "manuscript_version_id": "{{" + version_key + "}}",
-        "chapter_no": chapter_no,
-        "paragraph_id": paragraph_of(paras, s),
-        "start": s,
-        "end": e,
-        "quote": nfc(quote),
-    }
-
-
-def clock(ch: int, ordinal: int, world: str | None = None):
-    c = {"chapter_no": ch, "ordinal": ordinal, "precision": "exact"}
-    if world:
-        c["calendar"] = "relative_days"
-        c["world_date"] = world
-    return c
-
-
 def main() -> None:
-    s1, s2, s3 = read_scene(1), read_scene(2), read_scene(3)
+    s1, s2, s3 = read_scene(1, 1), read_scene(1, 2), read_scene(1, 3)
     # The assembler joins trimmed scenes with a blank line, then NFC-normalizes.
     assembled = nfc("\n\n".join(t.strip() for t in (s1, s2, s3)))
     paras = paragraphs(assembled)
@@ -581,17 +465,51 @@ def main() -> None:
         "hypothesis_results": [],
         "summary_l1": "x",
     }
-    # ---- Planned-frame variant: a future plan smuggled as canon.
+    # ---- Planned-frame variant (T11): plans never become realized canon. Two separate smuggling attempts
+    # in one delta — a plan-framed event, and a canonical fact dated after this chapter's story time — so
+    # the test proves the frame rule and the future-validity rule independently (ADR-0039, FR-7.6).
+    plan_evidence = ev("Red letters. The same red letters as ten years ago.")
     plan_delta = {
         **envelope,
-        "items": [dict(delta_items[1], local_id="f-plan", frame="plan", payload=dict(delta_items[1]["payload"], value="E", value_text="E-rank (planned for ch.8)", valid_from=clock(8, 0, "D+7")))],
+        "items": [
+            {"local_id": "f-plan", "type": "event", "op": "assert", "frame": "plan", "confidence": 1, "importance": "core", "story_clock": clock(1, 2, "D+0"),
+             "payload": {"type": "revelation", "summary": "Do-yoon plans to reach E-rank by ch.8 (a plan, not yet happened).", "location_id": IDS["hall"],
+                         "participants": [{"entity_id": IDS["doyoon"], "role": "agent"}], "importance": "core"},
+             "evidence": plan_evidence},
+            {"local_id": "f-future", "type": "fact", "op": "assert", "frame": "canonical", "confidence": 1, "importance": "core", "story_clock": clock(1, 2, "D+0"),
+             "payload": {"entity_id": IDS["doyoon"], "attribute": "power.rank", "value": "E", "value_text": "E-rank (dated after this chapter's story time)",
+                         "valid_from": clock(1, 100, "D+0"), "valid_to": None},
+             "evidence": plan_evidence},
+        ],
         "unresolved_questions": [],
         "hypothesis_results": [],
         "summary_l1": "x",
     }
 
-    def rec(json_obj):
-        return {"json": json_obj, "modelId": "replay-model", "usage": {"input": 1000, "output": 500, "cached": 0}}
+    def verdict(a_id: str, b_id: str, order: str, overall: str) -> dict:
+        """A comparison-verdict.schema.json instance: evidence first, then a per-dimension preference.
+
+        `overall` is 'a', 'b' or 'tie' in the CURRENT presentation order, which is what the judge returns
+        and what the workflow maps back to candidate ids. english_prose_quality and serialized_structure
+        deliberately disagree so the fixture also exercises EVAL-SEPARATION-001: one candidate can win the
+        English prose dimension while losing the serialized-structure dimension.
+        """
+        pro = "a" if overall == "a" else ("b" if overall == "b" else "tie")
+        anti = "b" if pro == "a" else ("a" if pro == "b" else "tie")
+        return {
+            "candidate_a_id": a_id,
+            "candidate_b_id": b_id,
+            "presentation_order": order,
+            "dimensions": [
+                {"dimension": "contract_fit", "evidence_a": "[p1] opens on the F reading, as the contract requires.", "evidence_b": "[p1] opens on the same beat.", "preference": "tie"},
+                {"dimension": "hook", "evidence_a": "[p1] first line is the device screaming.", "evidence_b": "[p2] the hook arrives a paragraph later.", "preference": pro, "margin": "clear"},
+                {"dimension": "english_prose_quality", "evidence_a": "[p12] 'It felt exactly the way it had ten years ago.' reads as natural English.", "evidence_b": "[p12] the same sentence keeps a transfer-grammar shape.", "preference": pro, "margin": "clear"},
+                {"dimension": "serialized_structure", "evidence_a": "[p20] ending turns outward but softly.", "evidence_b": "[p20] ending lands the forward pull harder.", "preference": anti, "margin": "slight"},
+            ],
+            "overall_preference": overall,
+            "confidence": 0.8,
+            "rationale": "Hook timing and English prose decide it; the structure dimension goes the other way and is reported as such.",
+        }
 
     A = "activity:"
     recordings = {
@@ -617,7 +535,23 @@ def main() -> None:
         A + "extract:1": rec(extraction),
         A + "summarize:1": rec(summary),
         A + "chapter_contract:2": rec(contract2),
+        # ---- B-6-4 candidate comparison (ADR-0015). Slots 1 and 2 of chapter 1; the comparator sees the
+        # candidates as A/B by presentation order only, so each order has its own recording. The ids are
+        # bound at replay time from the run's manuscript version ids.
+        A + "compare:1:s1s2:ab": rec(verdict("{{candidate.1}}", "{{candidate.2}}", "ab", "a")),
+        A + "compare:1:s1s2:ba": rec(verdict("{{candidate.2}}", "{{candidate.1}}", "ba", "b")),
         # test-only variants (selected by tests through ReplayProvider.override)
+        # Position bias: both orders prefer whichever text is shown first. The shuffled-rubric third run
+        # decides; here it picks candidate 1.
+        "variant:compare:1:s1s2:ab:biased": rec(verdict("{{candidate.1}}", "{{candidate.2}}", "ab", "a")),
+        "variant:compare:1:s1s2:ba:biased": rec(verdict("{{candidate.2}}", "{{candidate.1}}", "ba", "a")),
+        "variant:compare:1:s1s2:shuffled:decides_1": rec(verdict("{{candidate.1}}", "{{candidate.2}}", "ab", "a")),
+        "variant:compare:1:s1s2:shuffled:tie": rec(verdict("{{candidate.1}}", "{{candidate.2}}", "ab", "tie")),
+        # Both orders tie: no position bias, straight to the deterministic ladder.
+        "variant:compare:1:s1s2:ab:tie": rec(verdict("{{candidate.1}}", "{{candidate.2}}", "ab", "tie")),
+        "variant:compare:1:s1s2:ba:tie": rec(verdict("{{candidate.2}}", "{{candidate.1}}", "ba", "tie")),
+        # A judge that renames the pair must fail closed rather than have its verdict accepted.
+        "variant:compare:1:s1s2:ab:wrong_ids": rec(verdict(IDS["doyoon"], "{{candidate.2}}", "ab", "a")),
         "variant:extract:1:unsupported": rec(bad_delta),
         "variant:extract:1:planned": rec(plan_delta),
         "variant:prose_judge:1:r1:still_failing": rec(prose_r0),

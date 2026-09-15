@@ -82,6 +82,10 @@ META_EXAMPLES = {
     "examples/fixture/ch01/replay.ch01.json",
     "examples/fixture/ch01/expected.ch01.json",
     "examples/fixture/ch01/ids.ch01.json",
+    # Checkpoint 6 chapter-2 continuity fixture (tools/build-ch02-fixture.py; validated end to end by the
+    # workflows continuity suite, which runs the recordings through the real validators and canon commit)
+    "examples/fixture/ch02/replay.ch02.json",
+    "examples/fixture/ch02/expected.ch02.json",
 }
 FIXTURE_MANUSCRIPTS = {
     # manuscript_version_id → path (NFC text; offsets are code points)
@@ -181,6 +185,10 @@ FIXTURE_ENGLISH_ONLY = (
     "examples/fixture/contrast-sets.seed.json", "examples/fixture/story-intake.json",
     "examples/fixture/source-story.micro.json", "examples/fixture/manuscripts/ch09.accepted.txt",
     "examples/fixture/manuscripts/ch09.rejected-draft.txt",
+    "examples/fixture/ch01/manuscripts/ch01.scene1.txt", "examples/fixture/ch01/manuscripts/ch01.scene2.txt",
+    "examples/fixture/ch01/manuscripts/ch01.scene3.txt",
+    "examples/fixture/ch02/manuscripts/ch02.scene1.txt", "examples/fixture/ch02/manuscripts/ch02.scene2.txt",
+    "examples/fixture/ch02/expected.ch02.json",
 )
 
 failures: list[str] = []

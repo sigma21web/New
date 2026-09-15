@@ -21,8 +21,10 @@
     "gen:types": "tsx tools/gen-types.ts",
     "check:types-fresh": "tsx tools/gen-types.ts --check",
     "validate:planning": "python3 tools/validate-planning-package.py --quiet",
+    "validate:contrast": "tsx packages/eval/src/main.ts",
+    "generate:contrast-recordings": "tsx packages/eval/src/generate.ts",
     "cli": "tsx apps/cli/src/main.ts",
-    "check": "pnpm run check:types-fresh && pnpm run typecheck && pnpm run lint && pnpm run format:check && pnpm run test && pnpm run validate:planning"
+    "check": "pnpm run check:types-fresh && pnpm run typecheck && pnpm run lint && pnpm run format:check && pnpm run test && pnpm run validate:planning && pnpm run validate:contrast"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

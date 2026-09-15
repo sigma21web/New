@@ -128,6 +128,24 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1(ajv@8.20.0)
 
+  packages/eval:
+    dependencies:
+      '@yeonjae/domain':
+        specifier: workspace:*
+        version: link:../domain
+      '@yeonjae/gateway':
+        specifier: workspace:*
+        version: link:../gateway
+      '@yeonjae/narrative':
+        specifier: workspace:*
+        version: link:../narrative
+      '@yeonjae/prompts':
+        specifier: workspace:*
+        version: link:../prompts
+      '@yeonjae/prose':
+        specifier: workspace:*
+        version: link:../prose
+
   packages/gateway:
     dependencies:
       '@yeonjae/domain':

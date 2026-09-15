@@ -31,7 +31,7 @@ script for the phase runs end to end on staging.
   `structure_score` ≥ 78 (separately, each against `policy.gates.dimensions.<d>.min_score` of `standard.v1`; no averaging); cost per accepted chapter within tier envelope; every
   accepted fact traceable to evidence.
 - Contrast-set regression green for the pinned prompt set: `kwn_english` ranks highest jointly on prose and
-  structure in ≥ 95% of the contrast sets, with ≥ 40 sets present (B-6-3; 4 starter sets exist today).
+  structure in ≥ 95% of the contrast sets, with ≥ 40 sets present (B-6-3; 40 sets exist today).
 - Chaos suite green; RLS suite green; prompt regression green for the pinned prompt set.
 - A user can complete UW-1…UW-17 (MVP variants) in the UI without operator help.
 - Runbooks: deploy, restore, rotate secrets, raise budgets, handle `needs_attention`.

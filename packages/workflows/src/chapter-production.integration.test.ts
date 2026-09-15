@@ -174,7 +174,7 @@ run('chapter production vertical slice (Postgres + ReplayProvider)', () => {
       expect(c.output_language_check).toMatchObject({ performed: true, passed: true });
   });
 
-  it('T4 prose and structure are separate evaluation dimensions with separate gates', async () => {
+  it('T4 prose, structure, genre and voice are separate evaluation dimensions with separate gates', async () => {
     const first = result.scorecards[0];
     const second = result.scorecards[1];
     expect(first).toMatchObject({ prose: 74, structure: 88, auto_approvable: false, major: 1 });
@@ -191,17 +191,31 @@ run('chapter production vertical slice (Postgres + ReplayProvider)', () => {
     expect(sc?.sections.prose.passed).toBe(false);
     expect(sc?.sections.structure.passed).toBe(true);
     expect(sc?.sections.prose.evaluator_call_id).not.toBe(sc?.sections.structure.evaluator_call_id);
+    // Every gated dimension of the pinned policy has its own score, threshold and outcome — fluent
+    // English, webnovel structure, genre fit and voice are never folded together (EVAL-SEPARATION-001).
     expect(sc?.acceptance.dimension_results).toEqual([
       { dimension: 'prose', score: 74, threshold: 78, passed: false },
       { dimension: 'structure', score: 88, threshold: 78, passed: true },
+      { dimension: 'genre', score: 84, threshold: 72, passed: true },
+      { dimension: 'voice', score: 82, threshold: 76, passed: true },
     ]);
-    // Two judges, two identity variants.
+    // Four separate evaluator calls, each with its own call id.
+    const callIds = (['prose', 'structure', 'genre', 'voice'] as const).map(
+      (d) => sc?.sections[d]?.evaluator_call_id,
+    );
+    expect(new Set(callIds).size).toBe(4);
+
+    // Four judges; the prose and structure rubrics are distinct identity variants.
     const judges = await pool.query<{ role: string; narrative_block_hash: string }>(
-      `SELECT role, narrative_block_hash FROM llm_calls WHERE project_id = $1 AND role IN ('prose_judge','structure_judge') ORDER BY role`,
+      `SELECT role, narrative_block_hash FROM llm_calls WHERE project_id = $1 AND role IN ('prose_judge','structure_judge','genre_judge','voice_judge') ORDER BY role`,
       [h.projectId],
+    );
+    expect(new Set(judges.rows.map((r) => r.role))).toEqual(
+      new Set(['prose_judge', 'structure_judge', 'genre_judge', 'voice_judge']),
     );
     const hashes = new Map(judges.rows.map((r) => [r.role, r.narrative_block_hash]));
     expect(hashes.get('prose_judge')).not.toBe(hashes.get('structure_judge'));
+    expect(hashes.get('genre_judge')).not.toBe(hashes.get('structure_judge'));
   });
 
   it('T6 the targeted revision created a new immutable version with the parent link and the exact code-point patch', async () => {
@@ -613,25 +627,53 @@ run('chapter production — failure paths (each on a fresh project)', () => {
   });
 
   it('T5 blocking evaluation issues prevent approval and leave the version working', async () => {
-    h.provider.alias('activity:prose_judge:1:r1', 'variant:prose_judge:1:r1:still_failing');
+    // The prose judge scores below the pinned gate with no repairable issue, so there is nothing to revise
+    // and the run fails closed at the approval lock. (The "patch repaired nothing" variant now fails one
+    // step earlier, at the ADR-0014 regression check — proved in recovery.integration.test.ts.)
+    h.provider.alias('activity:prose_judge:1:r0', 'variant:prose_judge:1:r0:low_score_no_issues');
     const err = await expectWorkflowError(
       produceChapter({ pool, gateway: h.gateway(), bindings: h.bindings }, h.input(1)),
       'APPROVAL_BLOCKED',
     );
     expect(err.options.step).toBe('approve');
-    expect(err.options.data).toMatchObject({
-      issues: [{ kind: 'translation_like_english', severity: 'major', dimension: 'prose' }],
-    });
     expect(err.options.recommendedActions).toContain('regenerate');
+    const versions = await pool.query<{ status: string }>(
+      'SELECT status FROM manuscript_versions WHERE project_id = $1',
+      [h.projectId],
+    );
+    // No revision round ran (no issue to target), so the assembled version is the only one.
+    expect(versions.rows.map((v) => v.status)).toEqual(['working']);
+    expect((await listCommits(pool, h.projectId)).map((c) => c.source)).toEqual(['bible', 'bible']);
+    const status = await workflowStatus(pool, workflowIdFor(h.projectId, 1));
+    expect(status.status).toBe('needs_attention');
+    expect(status.error).toMatchObject({ code: 'APPROVAL_BLOCKED' });
+  });
+
+  it('T5b a patch that repairs nothing is refused by the regression check, before approval', async () => {
+    // ADR-0014 integrated into the real path: the judge reports the same major prose issue after the patch,
+    // so the patch did not repair its targeted dimension and cannot proceed to approval or canon.
+    h.provider.alias('activity:prose_judge:1:r1', 'variant:prose_judge:1:r1:still_failing');
+    const err = await expectWorkflowError(
+      produceChapter({ pool, gateway: h.gateway(), bindings: h.bindings }, h.input(1)),
+      'PATCH_REGRESSED',
+    );
+    expect(err.options.step).toBe('revise');
+    expect(err.options.data).toMatchObject({ targeted_dimension: 'prose' });
+    expect(err.options.data?.failures).toContain('targeted_not_improved');
+    // Both versions stay working: nothing was approved and nothing was accepted.
     const versions = await pool.query<{ status: string }>(
       'SELECT status FROM manuscript_versions WHERE project_id = $1',
       [h.projectId],
     );
     expect(versions.rows.map((v) => v.status)).toEqual(['working', 'working']);
     expect((await listCommits(pool, h.projectId)).map((c) => c.source)).toEqual(['bible', 'bible']);
-    const status = await workflowStatus(pool, workflowIdFor(h.projectId, 1));
-    expect(status.status).toBe('needs_attention');
-    expect(status.error).toMatchObject({ code: 'APPROVAL_BLOCKED' });
+    const report = await pool.query<{ payload: { passed: boolean; targeted: unknown } }>(
+      `SELECT payload FROM workflow_artifacts WHERE project_id = $1 AND kind = 'regression_report'`,
+      [h.projectId],
+    );
+    expect(report.rows).toHaveLength(1);
+    expect(report.rows[0]?.payload.passed).toBe(false);
+    expect(report.rows[0]?.payload.targeted).toMatchObject({ resolved: false, worsened: false });
   });
 
   it('T7 extraction rejects a working manuscript at every layer', async () => {
@@ -833,8 +875,9 @@ run('chapter production — failure paths (each on a fresh project)', () => {
         )
       ).rows[0]?.n,
     );
-    // Only the post-failure calls were added: reviser + 5 evaluators of round 1 + extractor + summarizer.
-    expect(calls2 - calls1).toBe(8);
+    // Only the post-failure calls were added: reviser + 7 evaluators of round 1 + extractor + summarizer.
+    // The 7 evaluators are contract, continuity, knowledge-leak, prose, structure, genre and voice.
+    expect(calls2 - calls1).toBe(10);
     const versions2 = Number(
       (
         await pool.query<{ n: string }>(

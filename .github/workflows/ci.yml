@@ -52,6 +52,8 @@ jobs:
           CI: 'true'
       - name: Integration tests actually ran (DATABASE_URL present)
         run: test -n "$DATABASE_URL"
+      - name: Deterministic contrast regression (no credentials, no provider calls)
+        run: pnpm validate:contrast
       - name: CLI smoke against the migrated database
         run: |
           pnpm --silent cli db:migrate

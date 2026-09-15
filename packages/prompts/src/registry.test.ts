@@ -6,6 +6,7 @@ const REQUIRED_FAMILIES = [
   'assumption_explainer',
   'concept_generator',
   'concept_comparator',
+  'chapter_comparator',
   'character_designer',
   'world_builder',
   'power_system_designer',
@@ -31,7 +32,7 @@ const REQUIRED_FAMILIES = [
 describe('prompt registry (ADR-0016)', () => {
   const reg = PromptRegistry.fromDirectory();
 
-  it('loads all 24 production families at v1.0.0 with verified content hashes', () => {
+  it('loads all 25 production families at v1.0.0 with verified content hashes', () => {
     expect(reg.families()).toEqual([...REQUIRED_FAMILIES].sort());
     for (const v of reg.list()) {
       expect(v.version).toBe('1.0.0');
@@ -140,7 +141,7 @@ describe('prompt registry (ADR-0016)', () => {
 
   it('builds a pinned prompt set from the active versions', () => {
     const set = reg.activeSet();
-    expect(Object.keys(set.mapping)).toHaveLength(24);
+    expect(Object.keys(set.mapping)).toHaveLength(25);
     expect(set.mapping.scene_writer).toBe('scene_writer@1.0.0');
     expect(set.id).toMatch(/^set:[0-9a-f]{16}$/);
   });

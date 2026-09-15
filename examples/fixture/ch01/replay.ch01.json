@@ -2333,6 +2333,411 @@
    "cached": 0
   }
  },
+ "activity:compare:1:s1s2:ab": {
+  "json": {
+   "candidate_a_id": "{{candidate.1}}",
+   "candidate_b_id": "{{candidate.2}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "contract_fit",
+     "evidence_a": "[p1] opens on the F reading, as the contract requires.",
+     "evidence_b": "[p1] opens on the same beat.",
+     "preference": "tie"
+    },
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] first line is the device screaming.",
+     "evidence_b": "[p2] the hook arrives a paragraph later.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] 'It felt exactly the way it had ten years ago.' reads as natural English.",
+     "evidence_b": "[p12] the same sentence keeps a transfer-grammar shape.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "serialized_structure",
+     "evidence_a": "[p20] ending turns outward but softly.",
+     "evidence_b": "[p20] ending lands the forward pull harder.",
+     "preference": "b",
+     "margin": "slight"
+    }
+   ],
+   "overall_preference": "a",
+   "confidence": 0.8,
+   "rationale": "Hook timing and English prose decide it; the structure dimension goes the other way and is reported as such."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:compare:1:s1s2:ba": {
+  "json": {
+   "candidate_a_id": "{{candidate.2}}",
+   "candidate_b_id": "{{candidate.1}}",
+   "presentation_order": "ba",
+   "dimensions": [
+    {
+     "dimension": "contract_fit",
+     "evidence_a": "[p1] opens on the F reading, as the contract requires.",
+     "evidence_b": "[p1] opens on the same beat.",
+     "preference": "tie"
+    },
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] first line is the device screaming.",
+     "evidence_b": "[p2] the hook arrives a paragraph later.",
+     "preference": "b",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] 'It felt exactly the way it had ten years ago.' reads as natural English.",
+     "evidence_b": "[p12] the same sentence keeps a transfer-grammar shape.",
+     "preference": "b",
+     "margin": "clear"
+    },
+    {
+     "dimension": "serialized_structure",
+     "evidence_a": "[p20] ending turns outward but softly.",
+     "evidence_b": "[p20] ending lands the forward pull harder.",
+     "preference": "a",
+     "margin": "slight"
+    }
+   ],
+   "overall_preference": "b",
+   "confidence": 0.8,
+   "rationale": "Hook timing and English prose decide it; the structure dimension goes the other way and is reported as such."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s2:ab:biased": {
+  "json": {
+   "candidate_a_id": "{{candidate.1}}",
+   "candidate_b_id": "{{candidate.2}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "contract_fit",
+     "evidence_a": "[p1] opens on the F reading, as the contract requires.",
+     "evidence_b": "[p1] opens on the same beat.",
+     "preference": "tie"
+    },
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] first line is the device screaming.",
+     "evidence_b": "[p2] the hook arrives a paragraph later.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] 'It felt exactly the way it had ten years ago.' reads as natural English.",
+     "evidence_b": "[p12] the same sentence keeps a transfer-grammar shape.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "serialized_structure",
+     "evidence_a": "[p20] ending turns outward but softly.",
+     "evidence_b": "[p20] ending lands the forward pull harder.",
+     "preference": "b",
+     "margin": "slight"
+    }
+   ],
+   "overall_preference": "a",
+   "confidence": 0.8,
+   "rationale": "Hook timing and English prose decide it; the structure dimension goes the other way and is reported as such."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s2:ba:biased": {
+  "json": {
+   "candidate_a_id": "{{candidate.2}}",
+   "candidate_b_id": "{{candidate.1}}",
+   "presentation_order": "ba",
+   "dimensions": [
+    {
+     "dimension": "contract_fit",
+     "evidence_a": "[p1] opens on the F reading, as the contract requires.",
+     "evidence_b": "[p1] opens on the same beat.",
+     "preference": "tie"
+    },
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] first line is the device screaming.",
+     "evidence_b": "[p2] the hook arrives a paragraph later.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] 'It felt exactly the way it had ten years ago.' reads as natural English.",
+     "evidence_b": "[p12] the same sentence keeps a transfer-grammar shape.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "serialized_structure",
+     "evidence_a": "[p20] ending turns outward but softly.",
+     "evidence_b": "[p20] ending lands the forward pull harder.",
+     "preference": "b",
+     "margin": "slight"
+    }
+   ],
+   "overall_preference": "a",
+   "confidence": 0.8,
+   "rationale": "Hook timing and English prose decide it; the structure dimension goes the other way and is reported as such."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s2:shuffled:decides_1": {
+  "json": {
+   "candidate_a_id": "{{candidate.1}}",
+   "candidate_b_id": "{{candidate.2}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "contract_fit",
+     "evidence_a": "[p1] opens on the F reading, as the contract requires.",
+     "evidence_b": "[p1] opens on the same beat.",
+     "preference": "tie"
+    },
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] first line is the device screaming.",
+     "evidence_b": "[p2] the hook arrives a paragraph later.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] 'It felt exactly the way it had ten years ago.' reads as natural English.",
+     "evidence_b": "[p12] the same sentence keeps a transfer-grammar shape.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "serialized_structure",
+     "evidence_a": "[p20] ending turns outward but softly.",
+     "evidence_b": "[p20] ending lands the forward pull harder.",
+     "preference": "b",
+     "margin": "slight"
+    }
+   ],
+   "overall_preference": "a",
+   "confidence": 0.8,
+   "rationale": "Hook timing and English prose decide it; the structure dimension goes the other way and is reported as such."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s2:shuffled:tie": {
+  "json": {
+   "candidate_a_id": "{{candidate.1}}",
+   "candidate_b_id": "{{candidate.2}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "contract_fit",
+     "evidence_a": "[p1] opens on the F reading, as the contract requires.",
+     "evidence_b": "[p1] opens on the same beat.",
+     "preference": "tie"
+    },
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] first line is the device screaming.",
+     "evidence_b": "[p2] the hook arrives a paragraph later.",
+     "preference": "tie",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] 'It felt exactly the way it had ten years ago.' reads as natural English.",
+     "evidence_b": "[p12] the same sentence keeps a transfer-grammar shape.",
+     "preference": "tie",
+     "margin": "clear"
+    },
+    {
+     "dimension": "serialized_structure",
+     "evidence_a": "[p20] ending turns outward but softly.",
+     "evidence_b": "[p20] ending lands the forward pull harder.",
+     "preference": "tie",
+     "margin": "slight"
+    }
+   ],
+   "overall_preference": "tie",
+   "confidence": 0.8,
+   "rationale": "Hook timing and English prose decide it; the structure dimension goes the other way and is reported as such."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s2:ab:tie": {
+  "json": {
+   "candidate_a_id": "{{candidate.1}}",
+   "candidate_b_id": "{{candidate.2}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "contract_fit",
+     "evidence_a": "[p1] opens on the F reading, as the contract requires.",
+     "evidence_b": "[p1] opens on the same beat.",
+     "preference": "tie"
+    },
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] first line is the device screaming.",
+     "evidence_b": "[p2] the hook arrives a paragraph later.",
+     "preference": "tie",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] 'It felt exactly the way it had ten years ago.' reads as natural English.",
+     "evidence_b": "[p12] the same sentence keeps a transfer-grammar shape.",
+     "preference": "tie",
+     "margin": "clear"
+    },
+    {
+     "dimension": "serialized_structure",
+     "evidence_a": "[p20] ending turns outward but softly.",
+     "evidence_b": "[p20] ending lands the forward pull harder.",
+     "preference": "tie",
+     "margin": "slight"
+    }
+   ],
+   "overall_preference": "tie",
+   "confidence": 0.8,
+   "rationale": "Hook timing and English prose decide it; the structure dimension goes the other way and is reported as such."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s2:ba:tie": {
+  "json": {
+   "candidate_a_id": "{{candidate.2}}",
+   "candidate_b_id": "{{candidate.1}}",
+   "presentation_order": "ba",
+   "dimensions": [
+    {
+     "dimension": "contract_fit",
+     "evidence_a": "[p1] opens on the F reading, as the contract requires.",
+     "evidence_b": "[p1] opens on the same beat.",
+     "preference": "tie"
+    },
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] first line is the device screaming.",
+     "evidence_b": "[p2] the hook arrives a paragraph later.",
+     "preference": "tie",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] 'It felt exactly the way it had ten years ago.' reads as natural English.",
+     "evidence_b": "[p12] the same sentence keeps a transfer-grammar shape.",
+     "preference": "tie",
+     "margin": "clear"
+    },
+    {
+     "dimension": "serialized_structure",
+     "evidence_a": "[p20] ending turns outward but softly.",
+     "evidence_b": "[p20] ending lands the forward pull harder.",
+     "preference": "tie",
+     "margin": "slight"
+    }
+   ],
+   "overall_preference": "tie",
+   "confidence": 0.8,
+   "rationale": "Hook timing and English prose decide it; the structure dimension goes the other way and is reported as such."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s2:ab:wrong_ids": {
+  "json": {
+   "candidate_a_id": "0191b2a0-0000-7000-8000-0000000c0001",
+   "candidate_b_id": "{{candidate.2}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "contract_fit",
+     "evidence_a": "[p1] opens on the F reading, as the contract requires.",
+     "evidence_b": "[p1] opens on the same beat.",
+     "preference": "tie"
+    },
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] first line is the device screaming.",
+     "evidence_b": "[p2] the hook arrives a paragraph later.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] 'It felt exactly the way it had ten years ago.' reads as natural English.",
+     "evidence_b": "[p12] the same sentence keeps a transfer-grammar shape.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "serialized_structure",
+     "evidence_a": "[p20] ending turns outward but softly.",
+     "evidence_b": "[p20] ending lands the forward pull harder.",
+     "preference": "b",
+     "margin": "slight"
+    }
+   ],
+   "overall_preference": "a",
+   "confidence": 0.8,
+   "rationale": "Hook timing and English prose decide it; the structure dimension goes the other way and is reported as such."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
  "variant:extract:1:unsupported": {
   "json": {
    "project_id": "{{project}}",
@@ -2662,6 +3067,557 @@
      "frame": "canonical"
     }
    ]
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:prose_judge:1:r0:low_score_no_issues": {
+  "json": {
+   "dimension_scores": {
+    "idiomatic_english": 3,
+    "readability": 4,
+    "register_fidelity": 4,
+    "translation_markers": 3
+   },
+   "judge_score": 74,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:genre_judge:1:r0": {
+  "json": {
+   "dimension_scores": {
+      "reader_fantasy": 5,
+      "device_correctness": 4,
+      "vocabulary_register": 4,
+      "taboo_restraint": 5
+   },
+   "judge_score": 84,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:voice_judge:1:r0": {
+  "json": {
+   "dimension_scores": {
+      "distinguishability": 4,
+      "verbal_habits": 4,
+      "register_naturalness": 5,
+      "register_consistency": 5
+   },
+   "judge_score": 82,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:genre_judge:1:r1": {
+  "json": {
+   "dimension_scores": {
+      "reader_fantasy": 5,
+      "device_correctness": 4,
+      "vocabulary_register": 4,
+      "taboo_restraint": 5
+   },
+   "judge_score": 84,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:voice_judge:1:r1": {
+  "json": {
+   "dimension_scores": {
+      "distinguishability": 4,
+      "verbal_habits": 4,
+      "register_naturalness": 5,
+      "register_consistency": 5
+   },
+   "judge_score": 82,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:genre_judge:1:r0:below_gate": {
+  "json": {
+   "dimension_scores": {
+      "reader_fantasy": 2,
+      "device_correctness": 4,
+      "vocabulary_register": 4,
+      "taboo_restraint": 5
+   },
+   "judge_score": 60,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:voice_judge:1:r0:below_gate": {
+  "json": {
+   "dimension_scores": {
+      "distinguishability": 4,
+      "verbal_habits": 4,
+      "register_naturalness": 5,
+      "register_consistency": 2
+   },
+   "judge_score": 64,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:voice_judge:1:r1:register_violation": {
+  "json": {
+   "dimension_scores": {
+      "distinguishability": 4,
+      "verbal_habits": 4,
+      "register_naturalness": 5,
+      "register_consistency": 5
+   },
+   "judge_score": 70,
+   "drift_flags": [],
+   "issues": [
+    {
+     "kind": "register_error",
+     "severity": "major",
+     "confidence": 0.88,
+     "claim": "Do-yoon addresses the officer with a deference level the register digest reserves for superiors.",
+     "chapter_span": {
+      "paragraph_ids": [
+       "p42"
+      ],
+      "start": 3212,
+      "end": 3259,
+      "quote": "It was exactly same feeling with ten years ago."
+     },
+     "repair": {
+      "scope": "sentence",
+      "suggestion": "Restore the neutral-polite register the digest specifies for a stranger in authority.",
+      "must_preserve_fact_ids": []
+     }
+    }
+   ]
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:genre_judge:1:r1:below_gate": {
+  "json": {
+   "dimension_scores": {
+      "reader_fantasy": 2,
+      "device_correctness": 4,
+      "vocabulary_register": 4,
+      "taboo_restraint": 5
+   },
+   "judge_score": 60,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:voice_judge:1:r1:below_gate": {
+  "json": {
+   "dimension_scores": {
+      "distinguishability": 4,
+      "verbal_habits": 4,
+      "register_naturalness": 5,
+      "register_consistency": 2
+   },
+   "judge_score": 64,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:compare:1:s1s3:ab": {
+  "json": {
+   "candidate_a_id": "{{candidate.1}}",
+   "candidate_b_id": "{{candidate.3}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] hook placement for slot 1.",
+     "evidence_b": "[p1] hook placement for slot 3.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] prose quality for slot 1.",
+     "evidence_b": "[p12] prose quality for slot 3.",
+     "preference": "a"
+    }
+   ],
+   "overall_preference": "a",
+   "confidence": 0.8,
+   "rationale": "Slot 1 leads on hook and prose."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:compare:1:s1s3:ba": {
+  "json": {
+   "candidate_a_id": "{{candidate.3}}",
+   "candidate_b_id": "{{candidate.1}}",
+   "presentation_order": "ba",
+   "dimensions": [
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] hook placement for slot 3.",
+     "evidence_b": "[p1] hook placement for slot 1.",
+     "preference": "b",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] prose quality for slot 3.",
+     "evidence_b": "[p12] prose quality for slot 1.",
+     "preference": "b"
+    }
+   ],
+   "overall_preference": "b",
+   "confidence": 0.8,
+   "rationale": "Slot 1 leads again with the order swapped: a consistent winner."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:compare:1:s2s3:ab": {
+  "json": {
+   "candidate_a_id": "{{candidate.2}}",
+   "candidate_b_id": "{{candidate.3}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] hook placement for slot 2.",
+     "evidence_b": "[p1] hook placement for slot 3.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] prose quality for slot 2.",
+     "evidence_b": "[p12] prose quality for slot 3.",
+     "preference": "a"
+    }
+   ],
+   "overall_preference": "a",
+   "confidence": 0.8,
+   "rationale": "Slot 2 leads on hook and prose."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:compare:1:s2s3:ba": {
+  "json": {
+   "candidate_a_id": "{{candidate.3}}",
+   "candidate_b_id": "{{candidate.2}}",
+   "presentation_order": "ba",
+   "dimensions": [
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] hook placement for slot 3.",
+     "evidence_b": "[p1] hook placement for slot 2.",
+     "preference": "b",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] prose quality for slot 3.",
+     "evidence_b": "[p12] prose quality for slot 2.",
+     "preference": "b"
+    }
+   ],
+   "overall_preference": "b",
+   "confidence": 0.8,
+   "rationale": "Slot 2 leads again with the order swapped."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s3:ab:biased": {
+  "json": {
+   "candidate_a_id": "{{candidate.1}}",
+   "candidate_b_id": "{{candidate.3}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] hook placement for slot 1.",
+     "evidence_b": "[p1] hook placement for slot 3.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] prose quality for slot 1.",
+     "evidence_b": "[p12] prose quality for slot 3.",
+     "preference": "a"
+    }
+   ],
+   "overall_preference": "a",
+   "confidence": 0.8,
+   "rationale": "Prefers position A."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s3:ba:biased": {
+  "json": {
+   "candidate_a_id": "{{candidate.3}}",
+   "candidate_b_id": "{{candidate.1}}",
+   "presentation_order": "ba",
+   "dimensions": [
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] hook placement for slot 3.",
+     "evidence_b": "[p1] hook placement for slot 1.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] prose quality for slot 3.",
+     "evidence_b": "[p12] prose quality for slot 1.",
+     "preference": "a"
+    }
+   ],
+   "overall_preference": "a",
+   "confidence": 0.8,
+   "rationale": "Prefers position A again — the orders disagree, so this is position bias."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s3:shuffled:decides_1": {
+  "json": {
+   "candidate_a_id": "{{candidate.1}}",
+   "candidate_b_id": "{{candidate.3}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] hook placement for slot 1.",
+     "evidence_b": "[p1] hook placement for slot 3.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] prose quality for slot 1.",
+     "evidence_b": "[p12] prose quality for slot 3.",
+     "preference": "a"
+    }
+   ],
+   "overall_preference": "a",
+   "confidence": 0.8,
+   "rationale": "Shuffled rubric decides for slot 1."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s3:ab:tie": {
+  "json": {
+   "candidate_a_id": "{{candidate.1}}",
+   "candidate_b_id": "{{candidate.3}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] hook placement for slot 1.",
+     "evidence_b": "[p1] hook placement for slot 3.",
+     "preference": "tie",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] prose quality for slot 1.",
+     "evidence_b": "[p12] prose quality for slot 3.",
+     "preference": "tie"
+    }
+   ],
+   "overall_preference": "tie",
+   "confidence": 0.8,
+   "rationale": "Neither separates."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s3:ba:tie": {
+  "json": {
+   "candidate_a_id": "{{candidate.3}}",
+   "candidate_b_id": "{{candidate.1}}",
+   "presentation_order": "ba",
+   "dimensions": [
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] hook placement for slot 3.",
+     "evidence_b": "[p1] hook placement for slot 1.",
+     "preference": "tie",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] prose quality for slot 3.",
+     "evidence_b": "[p12] prose quality for slot 1.",
+     "preference": "tie"
+    }
+   ],
+   "overall_preference": "tie",
+   "confidence": 0.8,
+   "rationale": "Neither separates with the order swapped."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s3:shuffled:tie": {
+  "json": {
+   "candidate_a_id": "{{candidate.1}}",
+   "candidate_b_id": "{{candidate.3}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] hook placement for slot 1.",
+     "evidence_b": "[p1] hook placement for slot 3.",
+     "preference": "tie",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] prose quality for slot 1.",
+     "evidence_b": "[p12] prose quality for slot 3.",
+     "preference": "tie"
+    }
+   ],
+   "overall_preference": "tie",
+   "confidence": 0.8,
+   "rationale": "Still a tie after the shuffled-rubric run."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "variant:compare:1:s1s3:ab:wrong_ids": {
+  "json": {
+   "candidate_a_id": "{{candidate.2}}",
+   "candidate_b_id": "{{candidate.3}}",
+   "presentation_order": "ab",
+   "dimensions": [
+    {
+     "dimension": "hook",
+     "evidence_a": "[p1] hook placement for slot 2.",
+     "evidence_b": "[p1] hook placement for slot 3.",
+     "preference": "a",
+     "margin": "clear"
+    },
+    {
+     "dimension": "english_prose_quality",
+     "evidence_a": "[p12] prose quality for slot 2.",
+     "evidence_b": "[p12] prose quality for slot 3.",
+     "preference": "a"
+    }
+   ],
+   "overall_preference": "a",
+   "confidence": 0.8,
+   "rationale": "Names candidate 2 where candidate 1 was sent."
   },
   "modelId": "replay-model",
   "usage": {

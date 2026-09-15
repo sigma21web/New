@@ -1,5 +1,5 @@
 {
-  "_comment": "Seed contrast sets for narrative-identity calibration (docs/02-narrative-identity/05 §7). Each set renders the same story content in five English variants. Judges must rank kwn_english highest on BOTH prose (A) and structure (B); western_english must fail B while passing A; translation_like must fail A; literary must fail B and score low-mid on A; weak_serial must fail B. All text is original. Expected lint hits are illustrative starting expectations.",
+  "_comment": "Contrast sets for narrative-identity calibration (docs/02-narrative-identity/05 §7). Each set renders the same story content in five English variants. Judges must rank kwn_english highest on BOTH prose (A) and structure (B); western_english must fail B while passing A; translation_like must fail A; literary must fail B and score low-mid on A; weak_serial must fail B. All text is original English prose authored for this corpus — never translated, never filler (ADR-0043). cs-001..cs-004 are the Checkpoint 0 starter sets; cs-005..cs-040 were authored in Checkpoint 6 (B-6-3) to cover five genres × eight narrative functions. Expected lint hits and gaps are illustrative starting expectations until the calibration round (ADR-0029).",
   "sets": [
     {
       "id": "cs-001",
@@ -13,12 +13,44 @@
         "weak_serial": "Do-yoon woke up, brushed his teeth, and took the bus to the Association building. The line for measurement was long. He waited for about forty minutes and thought about what he would have for lunch. When his turn came, the device showed an F, which was what he had expected. The officer told him where to register as a porter, and he went to the window on the left and filled out the forms. Afterward he walked outside. It was a nice day. He thought about the things he needed to do over the next few weeks and decided he would probably start tomorrow."
       },
       "expected": {
-        "prose_rank": ["kwn_english", "western_english", "weak_serial", "literary", "translation_like"],
-        "structure_rank": ["kwn_english", "translation_like", "literary", "western_english", "weak_serial"],
-        "lint_translation_like": ["TRN-01", "TRN-02", "TRN-14", "EP-DLG-02", "EP-OPEN-02"],
-        "lint_western_english": ["ST-HOOK-01", "ST-OPEN-01", "EP-LEN-01", "EP-LEN-02"],
-        "lint_weak_serial": ["ST-OPEN-01", "ST-HOOK-01", "ST-END-01", "ST-PAY-01"],
-        "lint_literary": ["EP-LEN-01", "EP-LEN-03", "ST-HOOK-01"],
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "weak_serial",
+          "literary",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-14",
+          "EP-DLG-02",
+          "EP-OPEN-02"
+        ],
+        "lint_western_english": [
+          "ST-HOOK-01",
+          "ST-OPEN-01",
+          "EP-LEN-01",
+          "EP-LEN-02"
+        ],
+        "lint_weak_serial": [
+          "ST-OPEN-01",
+          "ST-HOOK-01",
+          "ST-END-01",
+          "ST-PAY-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-HOOK-01"
+        ],
         "min_gap_prose_vs_translation_like": 40,
         "min_gap_structure_vs_western_english": 35
       }
@@ -35,10 +67,29 @@
         "weak_serial": "Do-yoon walked down the corridor. It reminded him of the past. The light flickered. He kept going because he had things to do. Eventually he reached the end of the hallway and went through the door."
       },
       "expected": {
-        "prose_rank": ["kwn_english", "western_english", "weak_serial", "literary", "translation_like"],
-        "structure_rank": ["kwn_english", "translation_like", "literary", "western_english", "weak_serial"],
-        "lint_translation_like": ["TRN-01", "TRN-02", "EP-OPEN-02"],
-        "lint_literary": ["EP-LEN-01", "EP-ADV-01"],
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "weak_serial",
+          "literary",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "EP-OPEN-02"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-ADV-01"
+        ],
         "min_gap_prose_vs_translation_like": 40,
         "min_gap_structure_vs_western_english": 30
       }
@@ -55,9 +106,26 @@
         "weak_serial": "Elise was in the garden. The duke came over the wall. They talked for a while about why each of them was there. He gave her a rose from one of the bushes. Then they said goodnight and she went back inside to bed."
       },
       "expected": {
-        "prose_rank": ["kwn_english", "western_english", "weak_serial", "literary", "translation_like"],
-        "structure_rank": ["kwn_english", "translation_like", "literary", "western_english", "weak_serial"],
-        "lint_translation_like": ["TRN-01", "TRN-03", "EP-DLG-02", "EP-HON-01"],
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "weak_serial",
+          "literary",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-03",
+          "EP-DLG-02",
+          "EP-HON-01"
+        ],
         "min_gap_prose_vs_translation_like": 40,
         "min_gap_structure_vs_western_english": 30
       },
@@ -75,21 +143,1952 @@
         "weak_serial": "Seo-jun leveled up. He looked at his status window and saw that his strength had gone up by one. He closed it and kept walking through the dungeon, looking for more monsters to fight."
       },
       "expected": {
-        "prose_rank": ["kwn_english", "western_english", "weak_serial", "literary", "translation_like"],
-        "structure_rank": ["kwn_english", "translation_like", "weak_serial", "literary", "western_english"],
-        "lint_translation_like": ["TRN-01", "ST-SYS-01"],
-        "lint_western_english": ["ST-SYS-01", "EP-LEN-01"],
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "weak_serial",
+          "literary",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "weak_serial",
+          "literary",
+          "western_english"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "ST-SYS-01"
+        ],
+        "lint_western_english": [
+          "ST-SYS-01",
+          "EP-LEN-01"
+        ],
         "min_gap_prose_vs_translation_like": 35,
         "min_gap_structure_vs_western_english": 35
       },
       "note": "The status-window device dissolving into narration is a structure failure even when the English is fluent."
+    },
+    {
+      "id": "cs-005",
+      "genre": "hunter-gate",
+      "function": "emotional_beat",
+      "variants": {
+        "kwn_english": "Seo-ha didn't look up from the stretcher.\n\n“Hold his shoulder. If he moves, the vein tears.”\n\nDo-yoon held. The porter under his hands was nineteen. That morning he had carried the boy's bag and told him gates were boring.\n\n*I knew the ceiling would come down at the third chamber. I still let him walk in front.*\n\nThe monitor steadied. Seo-ha exhaled once, and only then did her hands start shaking.\n\n“Next time,” she said, “tell me what you know before it happens.”",
+        "western_english": "In the makeshift triage bay beneath the tower the light was the color of weak tea, and the air smelled of concrete dust and antiseptic. Seo-ha worked over the injured porter with the particular stillness of someone who had learned young that panic was a luxury, and Do-yoon, holding the boy's shoulder as instructed, found himself thinking about the morning, about the joke he had made regarding the tedium of low-rank gates, and about the way a careless sentence becomes, in retrospect, a small monument to one's own arrogance. When the monitor settled into a steadier rhythm he saw that her hands had begun to tremble, and understood that she had been afraid the whole time.",
+        "translation_like": "Seo-ha did not raise her head from the stretcher.\n\n“Hold his shoulder. If he moves, vein will be torn.”\n\nDo-yoon held it. The porter under his hand was nineteen years old. In that morning, he carried the bag of that boy and said to him that gates are boring thing.\n\n*I knew it. I knew that ceiling will fall down at third chamber, but still I let him walk at front.*\n\nMonitor became stable. Seo-ha exhaled one time, and only after that, her hands started to tremble.\n\n“Next time,” she said, “please tell me the thing which you know before it happens.”",
+        "literary": "There is a species of guilt that arrives not as thunder but as arithmetic: the boy was nineteen, the ceiling fell at the third chamber, and between those two facts lay a sentence spoken in the morning about the tedium of small gates — a sentence that had cost, it now appeared, a quantity of blood he could not compute. He held the shoulder as instructed. The healer's stillness was of the kind one finds in old paintings of saints, which is to say it was not stillness at all but an enormous labor of restraint; and when the monitor at last consented to a steadier music, her hands began their small betrayals, and he looked away, granting her the courtesy of unwitnessed fear.",
+        "weak_serial": "Do-yoon helped Seo-ha with the injured porter. She told him to hold the boy's shoulder, so he did. The boy was nineteen years old and Do-yoon had talked to him earlier that day. He felt bad about what had happened because he had known the ceiling was going to collapse. After a while the monitor showed that the boy was stable. Seo-ha seemed relieved. She said he should tell her things in advance next time, and he agreed that he would."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-05",
+          "EP-DLG-02"
+        ],
+        "lint_western_english": [
+          "ST-HOOK-01",
+          "ST-PARA-01",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-END-01",
+          "ST-PAY-01",
+          "ST-DLG-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-CAD-01"
+        ],
+        "min_gap_prose_vs_translation_like": 38,
+        "min_gap_structure_vs_western_english": 32
+      }
+    },
+    {
+      "id": "cs-006",
+      "genre": "hunter-gate",
+      "function": "banter",
+      "variants": {
+        "kwn_english": "“Porter fee is thirty percent.”\n\n“Thirty?” Mu-jin laughed so hard he had to put the crate down. “For carrying bags?”\n\n“For carrying bags out of a gate you're going to survive.”\n\n“…That's very confident, for an F-rank.”\n\n“It isn't confidence.” Do-yoon shouldered the crate Mu-jin had abandoned. “It's a quote. Thirty percent, or find out what the second chamber does to a team with no porter.”\n\nMu-jin stared at him for three full seconds.\n\n“Twenty-five.”\n\n“Thirty.”\n\n“…Fine.”",
+        "western_english": "The negotiation took place in the loading bay, among the crates and the smell of diesel, and it had about it the quality of a ritual performed by men who both understood that the outcome was already decided and who nevertheless enjoyed the performance. Mu-jin, who had a broad face given to laughter, found the porter's demand genuinely funny at first and said so at some length, observing that thirty percent was the kind of figure one quoted to tourists. Do-yoon did not argue. He picked up the crate Mu-jin had set down and repeated his number, and something in the flatness of the delivery caused the older man to reconsider his position, slowly, the way one reconsiders a step onto ice.",
+        "translation_like": "“Porter fee is 30 percent.”\n\n“30 percent?” Mu-jin laughed very much, so he had to put down the crate. “For only carrying the bags?”\n\n“For carrying the bags from the gate which you will survive.”\n\n“…That is very confident words for a F-rank person.”\n\n“It is not confidence.” Do-yoon lifted the crate which Mu-jin abandoned. “It is a quotation. 30 percent, or you can experience what the second chamber does to the team which has no porter.”\n\nMu-jin stared at him during three seconds.\n\n“25 percent.”\n\n“30 percent.”\n\n“…Okay, fine.”",
+        "literary": "Commerce, in the antechambers of the gates, retains something of its ancient character: two men, a crate between them like an altar, and a number spoken aloud as though it were a wager against the world. Thirty percent, said the porter — an absurd figure, a figure to make a veteran laugh, and Mu-jin duly laughed, setting down his burden in tribute to the joke. But the porter did not laugh, and it is the peculiar authority of the unsmiling that it converts, by some alchemy, arrogance into prophecy. He took up the abandoned crate. He repeated the number. And the laughter, which had filled the bay so generously a moment before, withdrew like a tide that has remembered an appointment elsewhere.",
+        "weak_serial": "Do-yoon asked for a thirty percent porter fee. Mu-jin thought this was too much and said so, laughing about it. Do-yoon explained that the fee was for helping them get out of the gate alive. Mu-jin pointed out that Do-yoon was only an F-rank, but Do-yoon repeated his price anyway. They went back and forth for a while, with Mu-jin offering twenty-five percent. In the end Mu-jin agreed to the thirty percent Do-yoon had asked for, and they started loading the crates."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-03",
+          "TRN-09",
+          "EP-DLG-02",
+          "EP-PUNC-01"
+        ],
+        "lint_western_english": [
+          "ST-DLG-01",
+          "EP-LEN-01",
+          "ST-CAD-02"
+        ],
+        "lint_weak_serial": [
+          "ST-DLG-01",
+          "ST-HOOK-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-ADV-01",
+          "ST-DLG-01"
+        ],
+        "min_gap_prose_vs_translation_like": 40,
+        "min_gap_structure_vs_western_english": 35
+      }
+    },
+    {
+      "id": "cs-007",
+      "genre": "hunter-gate",
+      "function": "status_window",
+      "variants": {
+        "kwn_english": "The panel opened the moment the last spider went down.\n\n[Gate Clear — Mapo #3]\n[Contribution: Porter, Kang Do-yoon — 41%]\n[Anomaly: contribution exceeds registered rank band]\n[Association review flagged]\n\nDo-yoon read the fourth line twice.\n\n*Too fast.*\n\nHe had meant to stay invisible until March. Forty-one percent was not invisible. Forty-one percent was a file on someone's desk by morning, with his name on the tab.\n\nBehind him, Seo-ha was still staring at the same line.",
+        "western_english": "When the final creature fell, the clearance panel appeared above the corpse and rendered its verdict in the flat institutional typeface the Association had adopted years ago, a typeface that had since become, for hunters of a certain age, indistinguishable from the sound of a bureaucrat clearing his throat. It listed the gate, the clearance and the contributions, and against the name of the porter it recorded a figure that was, by any reasonable standard, impossible. Do-yoon read it and felt the particular dismay of a man who has been careful for a long time and has just been careless in public. Behind him, the healer read it too.",
+        "translation_like": "The panel was opened at the moment when the last spider was defeated.\n\n[Gate Clear — Mapo #3]\n[Contribution: Porter, Kang Do-yoon — 41%]\n[Anomaly: The contribution is exceeding the registered rank band]\n[Association review was flagged]\n\nDo-yoon read the fourth line during two times.\n\n*It is too fast.*\n\nHe had a plan to stay as invisible until March. 41 percent is not invisible. 41 percent means that there will be a file on the desk of someone until morning, and his name is on the tab of it.\n\nBehind of him, Seo-ha was still staring at same line.",
+        "literary": "The window unfolded above the dead thing with the indifference of weather, and in its pale rectangle the day's arithmetic was set down: a gate, a clearance, a column of percentages descending like a psalm. Against the name of the porter — the lowest name, the name that ought to have registered as a rounding error — stood a number no theory the Association's actuaries had yet devised could explain. He read it, and read it again, and felt the floor of his careful anonymity give way beneath him, and thought, with the melancholy of the exposed, of March, and of the small and now impossible plan he had made to arrive there unremarked.",
+        "weak_serial": "After the last spider was killed, a status window appeared. It showed that the gate had been cleared and listed everyone's contribution percentages. Do-yoon's contribution was forty-one percent, which was unusually high for a porter of his rank. The window also noted that this had been flagged for review by the Association. Do-yoon read the message a couple of times and thought about it. He had wanted to keep a low profile until March, so this was inconvenient. Seo-ha was looking at the window as well."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-06",
+          "ST-SYS-02"
+        ],
+        "lint_western_english": [
+          "ST-SYS-01",
+          "ST-HOOK-01",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-SYS-01",
+          "ST-END-01",
+          "ST-PAY-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "ST-SYS-01",
+          "ST-CAD-01"
+        ],
+        "min_gap_prose_vs_translation_like": 42,
+        "min_gap_structure_vs_western_english": 38
+      }
+    },
+    {
+      "id": "cs-008",
+      "genre": "hunter-gate",
+      "function": "reveal",
+      "variants": {
+        "kwn_english": "“You knew the ceiling would fall.”\n\nDo-yoon didn't answer.\n\n“You knew about the second chamber. You knew the watcher's name before the Association published it.” Seo-ha set the clipboard down, very carefully, as if it might go off. “F-rank porters don't know things like that.”\n\n“No,” he said. “They don't.”\n\n“Then what are you?”\n\nHe thought about lying. He had three good ones ready, polished over ten years of being underestimated.\n\n“Someone who has already watched this city die once,” he said. “Ask your second question fast. We have about six weeks.”",
+        "western_english": "She had been assembling the evidence for some days, in the manner of a careful person who distrusts her own conclusions, and when she finally laid it out for him — the ceiling, the second chamber, the watcher's name spoken aloud a full week before the Association's bulletin — she did so without heat, as one presents an account to a debtor who has always paid. Do-yoon considered for a moment the several plausible falsehoods he had prepared over a decade of being underestimated, each of them serviceable, none quite adequate to the woman in front of him with a clipboard set down as though it were an explosive. Then he told her the truth, and watched her face receive it.",
+        "translation_like": "“You knew that the ceiling will fall down.”\n\nDo-yoon did not answer to her.\n\n“You knew about the second chamber. You knew the name of the watcher before the Association published it.” Seo-ha put down the clipboard very carefully, like it can explode. “The F-rank porters cannot know such kind of things.”\n\n“Yes,” he said. “They cannot.”\n\n“Then, what are you?”\n\nHe thought about telling a lie. He prepared three good ones during ten years of being underestimated by people.\n\n“I am a person who already watched this city dying one time,” he said. “Please ask your second question quickly. We have only about six weeks.”",
+        "literary": "What she had assembled was not evidence so much as a small architecture of impossibilities — the ceiling, the chamber, the watcher's name pronounced a week ahead of its official existence — and she laid it before him with the scrupulous neutrality of a woman who has learned that accusation is a form of hope. He might have lied. He had lies the way other men have savings: three of them, kept in good repair against exactly this hour. But there is a moment in every long deception when the machinery of it becomes heavier than the truth it was built to carry, and Do-yoon, standing in the antiseptic light with six weeks between himself and the end of the world, had arrived at it.",
+        "weak_serial": "Seo-ha had noticed several things about Do-yoon that did not add up. She listed them for him: the ceiling collapse, the second chamber, and the watcher's name that he had known before the announcement. She said that an F-rank porter should not have that kind of information and asked him to explain himself. Do-yoon considered lying, since he had prepared some explanations over the years. Instead he decided to tell her that he had lived through the city's destruction before. Then he mentioned that they had about six weeks."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-11",
+          "EP-DLG-02"
+        ],
+        "lint_western_english": [
+          "ST-HOOK-01",
+          "ST-DLG-01",
+          "EP-LEN-01",
+          "EP-LEN-02"
+        ],
+        "lint_weak_serial": [
+          "ST-PAY-01",
+          "ST-END-01",
+          "ST-DLG-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-HOOK-01"
+        ],
+        "min_gap_prose_vs_translation_like": 41,
+        "min_gap_structure_vs_western_english": 34
+      }
+    },
+    {
+      "id": "cs-009",
+      "genre": "hunter-gate",
+      "function": "ending",
+      "variants": {
+        "kwn_english": "The Association letter came at nine at night.\n\n*Provisional reassessment. Report Thursday, 10:00.*\n\nDo-yoon folded it once and put it in his jacket pocket, next to the list.\n\nThree things before March twelfth. He had crossed out the first one tonight.\n\nHe looked at the second.\n\n*Find out who opened the Gangnam gate from the inside.*\n\nThursday was going to be very interesting for somebody.",
+        "western_english": "The letter arrived a little after nine in the evening, on the heavy cream stock the Association reserved for matters it wished to be taken seriously, and its contents were brief: a provisional reassessment, a date, a time. He read it standing in the doorway of the apartment, then folded it and put it away in the inside pocket of his jacket, where it rested against the folded list he had carried since the morning of his return. One item on that list was now crossed out. He looked at the second for a long while, thinking about Thursday and about the quiet man in the Gangnam office who had signed the letter, and then he went to bed.",
+        "translation_like": "The letter of the Association arrived at 9 p.m.\n\n*Provisional reassessment. Please report at Thursday, 10:00.*\n\nDo-yoon folded it one time and put it into the pocket of his jacket, at the side of the list.\n\nThree things before March 12th. Tonight, he crossed out the first one of them.\n\nHe looked at the second one.\n\n*I must find out who opened the Gangnam gate from the inside side.*\n\nFor somebody, Thursday will become a very interesting day.",
+        "literary": "The envelope came at nine, cream-colored, self-important, bearing the seal of an institution that had never once in ten years troubled to learn his name and now proposed to reassess him. He folded it against his chest, where it lay beside the list — that grubby catechism of three intentions he had carried out of his own death — and permitted himself to strike through the first line. The second waited below it, patient as a debt. Somewhere across the river a man had opened a gate from the inside and gone home to his family and slept, and would go on sleeping, for a little while yet.",
+        "weak_serial": "At nine in the evening, Do-yoon received a letter from the Association telling him to report for a provisional reassessment on Thursday morning. He folded the letter and put it in his jacket pocket with the list he had been carrying. The list had three items on it that needed to be done before March twelfth, and he had finished the first one that evening. He read the second item, which was about finding out who had opened the Gangnam gate. Then he went to sleep, since it was late."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-07",
+          "EP-PUNC-02"
+        ],
+        "lint_western_english": [
+          "ST-END-01",
+          "ST-END-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-END-01",
+          "ST-END-02",
+          "ST-HOOK-01",
+          "ST-PAY-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-END-02"
+        ],
+        "min_gap_prose_vs_translation_like": 39,
+        "min_gap_structure_vs_western_english": 36
+      }
+    },
+    {
+      "id": "cs-010",
+      "genre": "hunter-gate",
+      "function": "exposition",
+      "variants": {
+        "kwn_english": "Porters aren't hunters. That's the whole law in one sentence.\n\nA hunter gets a rank, a guild contract and a share. A porter gets a day rate, a helmet with someone else's name inked out inside it, and permission to walk behind.\n\nDo-yoon had walked behind for ten years.\n\nHe knew which chambers flooded, which guild leaders abandoned their rear line, which corridors the Association's maps drew straight when they bent.\n\nNobody had ever asked him. That was the part they would regret.",
+        "western_english": "The distinction between hunters and porters was, in the strict legal sense, a matter of registration, but in practice it was a matter of everything: of pay, of insurance, of whether one's death generated a press release or a line item. Hunters were ranked, contracted and shared in the proceeds of a clearance. Porters were engaged by the day, issued secondhand equipment on which the previous owner's name had been imperfectly obscured, and permitted to follow. Kang Do-yoon had followed for ten years, and in the course of those years had accumulated a body of practical knowledge — about flooding chambers, about which guild masters abandoned their rear lines, about the small dishonesties of the official maps — that nobody had ever thought to ask him for.",
+        "translation_like": "The porters are not the hunters. This is the whole law with one sentence.\n\nA hunter receives a rank, a guild contract and a share of profit. A porter receives only a day payment, a helmet which has the name of another person crossed out at the inside, and the permission to walk at the behind.\n\nDo-yoon walked at the behind during ten years.\n\nHe knew which chambers are flooded, which guild leaders are abandoning their rear line, which corridors are drawn straightly by the maps of the Association even though they are bent.\n\nNobody asked him even one time. That is the part which they will regret later.",
+        "literary": "It is customary to describe the difference between a hunter and a porter as a question of licensure, which is rather like describing the difference between a landlord and a tenant as a question of paperwork. The hunter is ranked and contracted and paid in shares; the porter is paid by the day, issued a helmet in which a dead man's name has been inked over with insufficient conviction, and granted the ancient privilege of walking behind. Ten years of walking behind will teach a man the true geography of a place — the chambers that flood, the commanders who run, the sly cartographic lies by which a bent corridor is rendered straight — and it will teach him, too, that no one will ever ask.",
+        "weak_serial": "There is an important difference between hunters and porters. Hunters have ranks, guild contracts, and a share of the profits from a gate clearance. Porters, on the other hand, are paid a daily rate and use old equipment, and they have to walk at the back of the group. Do-yoon had worked as a porter for ten years, so he had learned a lot during that time. He knew about the chambers that flooded and the mistakes in the Association's maps. However, nobody had ever asked him about any of it."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-04",
+          "TRN-12"
+        ],
+        "lint_western_english": [
+          "ST-EXP-01",
+          "ST-EXP-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-EXP-01",
+          "ST-HOOK-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-EXP-02"
+        ],
+        "min_gap_prose_vs_translation_like": 37,
+        "min_gap_structure_vs_western_english": 33
+      }
+    },
+    {
+      "id": "cs-011",
+      "genre": "hunter-gate",
+      "function": "action",
+      "variants": {
+        "kwn_english": "The floor gave.\n\nDo-yoon threw the crate before he fell — sideways, into the gap where the rear line was standing.\n\n“MOVE!”\n\nTwo of them moved. The third looked up.\n\nThe ceiling took the third.\n\nDo-yoon hit the slope, rolled, caught the rail with his left hand and felt something in his shoulder tear like wet paper. Fine. Shoulders healed. He hauled himself up, counted heads, got six.\n\nSix out of seven.\n\n*Better than last time. Last time it was zero.*",
+        "western_english": "The collapse began, as such collapses do, with a sound rather than a sensation: a low granular grinding somewhere above the ceiling panels, which Do-yoon recognized instantly and which the rest of the team, being hunters and therefore accustomed to threats that could be struck, did not. He threw the crate into the gap where the rear line stood, shouted, and felt the floor depart from beneath him. Two members of the rear line responded to the warning. The third, a young man whose name he would later learn from a notice board, looked up instead. Afterwards, hanging from the rail with a torn shoulder, Do-yoon counted the survivors and arrived at six.",
+        "translation_like": "The floor was collapsed.\n\nDo-yoon threw the crate before he was falling — to the side direction, into the gap where the rear line was standing at.\n\n“Please move!”\n\nTwo persons among them moved. The third person looked at the up side.\n\nThe ceiling took the third person.\n\nDo-yoon hit the slope, rolled his body, caught the rail with his left hand, and he felt that something in his shoulder was torn like a wet paper. It is fine. Shoulders will be healed. He pulled himself up, counted the heads, and got six.\n\nSix persons among seven persons.\n\n*It is better than the last time. At the last time, it was zero.*",
+        "literary": "It began above them, a grinding in the throat of the building, and Do-yoon — who had heard this sound before, in another life, from underneath — performed the only arithmetic available to him: a crate flung sideways into the gap, a word shouted that was not quite a word, and then the floor's long apostasy. Two obeyed. The third, being young, did what the young do, which is to look upward for an explanation, and the ceiling, having none to offer, took him. Later, suspended by one ruined shoulder from a rail that had no business holding, he counted six where once, in a life he did not intend to repeat, there had been none.",
+        "weak_serial": "The floor started to collapse, so Do-yoon threw the crate he was carrying toward the rear line to get their attention, and he shouted at them to move. Two of the three hunters managed to get out of the way in time, but the third one did not and was hit by the falling ceiling. Do-yoon fell down the slope and caught a rail, injuring his shoulder in the process. Once things settled, he climbed back up and counted the survivors. There were six people left out of the original seven."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-08",
+          "TRN-13"
+        ],
+        "lint_western_english": [
+          "ST-CAD-01",
+          "ST-CAD-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-CAD-01",
+          "ST-PAY-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-CAD-01"
+        ],
+        "min_gap_prose_vs_translation_like": 43,
+        "min_gap_structure_vs_western_english": 37
+      }
+    },
+    {
+      "id": "cs-012",
+      "genre": "regression",
+      "function": "hook",
+      "variants": {
+        "kwn_english": "The ceiling of his old room. The water stain shaped like a dog.\n\nDo-yoon lay still and counted to ten.\n\nThe stain was still there at ten.\n\n*Ten years.*\n\nHe sat up. The calendar on the desk said March third — the year he had turned seventeen, the year before everything started.\n\nDownstairs, his mother was frying eggs. She had been dead for six years.\n\nHe got dressed without shaking. Shaking could come later.",
+        "western_english": "He woke to a ceiling he had not seen in more than a decade, and to the particular water stain, shaped approximately like a sleeping dog, that he had spent the summer of his sixteenth year learning by heart. For some time he did not move. The room had the smell of a house in which someone is cooking breakfast, and beneath that the fainter, more complicated smell of a house in which a family still lives, and he found that he could not immediately account for either. The calendar on the desk gave the date as the third of March, which was, he calculated slowly, a year and nine days before the first gate opened over Gangnam.",
+        "translation_like": "The ceiling of his old room. The water stain which has the shape of a dog.\n\nDo-yoon laid down without moving and counted until ten.\n\nAt ten, the stain was still existing there.\n\n*It is ten years.*\n\nHe sat up his body. The calendar on the desk was saying March 3rd — the year when he became seventeen years old, the year before everything was started.\n\nAt the downstairs, his mother was frying the eggs. She was already dead during six years.\n\nHe wore his clothes without trembling. The trembling can come later.",
+        "literary": "What is memory, that a water stain should survive a decade and a death intact? He woke beneath it — the dog-shaped continent on the plaster of a room he had surrendered years ago to a buyer whose face he could not recall — and lay in the posture of a man who suspects that motion will dispel the world. Below, the sound of eggs in oil; and in that sound his mother, six years buried, going about the small liturgies of a Tuesday. The calendar proposed March the third. He considered the proposition. Then he rose and dressed himself with the steadiness of the profoundly frightened, postponing terror as one postpones a bill one fully intends to pay.",
+        "weak_serial": "Do-yoon woke up in his old bedroom and noticed the water stain on the ceiling that he remembered from his childhood. He stayed in bed for a little while, thinking about it. The calendar on his desk showed that it was March third, which was years before the gates had appeared. He could hear his mother cooking breakfast downstairs, even though she had passed away several years ago. This was confusing for him, but he decided to get dressed and go see what was happening."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-05",
+          "TRN-10"
+        ],
+        "lint_western_english": [
+          "ST-HOOK-01",
+          "ST-OPEN-01",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-HOOK-01",
+          "ST-OPEN-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-HOOK-01"
+        ],
+        "min_gap_prose_vs_translation_like": 42,
+        "min_gap_structure_vs_western_english": 36
+      }
+    },
+    {
+      "id": "cs-013",
+      "genre": "regression",
+      "function": "banter",
+      "variants": {
+        "kwn_english": "“You're seventeen,” said the recruiter. “Come back when you can sign your own forms.”\n\n“I brought my mother's seal.”\n\n“Then come back when you can lift the bag.”\n\nDo-yoon picked up the bag. Then the second bag. Then, because the man was still smirking, the crate under the table.\n\nThe smirk went somewhere else.\n\n“…What's your name, kid?”\n\n“Kang Do-yoon. Write it carefully.” He set the crate down without a sound. “You'll be writing it a lot.”",
+        "western_english": "The recruiter was a man in his forties with the air of someone who had long ago stopped expecting to be surprised at work, and he dealt with the boy in front of him according to a script he had used several hundred times: an observation about his age, followed by an observation about the weight of the equipment. Do-yoon, for his part, declined to argue. He lifted the first bag, and then the second, and then, since the recruiter's expression had not yet altered, the crate beneath the table — which required both hands and which he set down with no sound whatsoever. The recruiter asked his name. Do-yoon told him, and added, pleasantly, that he should write it carefully.",
+        "translation_like": "“You are seventeen years old,” the recruiter said. “Please come again when you can sign your own documents.”\n\n“I brought the seal of my mother.”\n\n“Then, come again when you can lift up the bag.”\n\nDo-yoon lifted the bag. After that, the second bag. After that, because the man was still doing a smirk, also the crate which was under the table.\n\nThe smirk went to somewhere else.\n\n“…What is your name, kid?”\n\n“Kang Do-yoon. Please write it carefully.” He put down the crate without any sound. “You will write it many times.”",
+        "literary": "There is a genre of humiliation practiced in employment offices, and the recruiter performed it without malice, as a man performs a habit: the observation about age, the observation about weight, the small liturgical smirk. What he had not anticipated — what no one in that decade had thought to anticipate — was that the boy would simply comply, lifting first one bag and then another and at last the crate beneath the table, a thing not meant to be lifted at all, and setting it down with a silence that had about it the quality of an argument concluded. Write it carefully, the boy said of his own name, and the recruiter, who had stopped smirking, did.",
+        "weak_serial": "Do-yoon went to the recruitment office to sign up as a porter. The recruiter told him he was too young and that he would not be able to handle the equipment. Do-yoon demonstrated that he could lift the bags, and he also lifted a heavy crate that was under the table. The recruiter seemed impressed by this and stopped making jokes. He asked Do-yoon for his name so that he could write it on the form. Do-yoon told him his name and said he should write it down carefully."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-03",
+          "TRN-09",
+          "EP-DLG-02"
+        ],
+        "lint_western_english": [
+          "ST-DLG-01",
+          "EP-LEN-01",
+          "ST-CAD-02"
+        ],
+        "lint_weak_serial": [
+          "ST-DLG-01",
+          "ST-PAY-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-DLG-01"
+        ],
+        "min_gap_prose_vs_translation_like": 40,
+        "min_gap_structure_vs_western_english": 34
+      }
+    },
+    {
+      "id": "cs-014",
+      "genre": "regression",
+      "function": "status_window",
+      "variants": {
+        "kwn_english": "He put his palm on the plate before the officer finished the sentence.\n\n[Measurement complete]\n[Rank: F]\n[Affinity: none detected]\n[Note: subject has prior measurement record — 0 entries]\n\nThe last line was the one he had come for.\n\n*Good. The system doesn't know either.*\n\n“F-rank,” the officer said, not unkindly. “Porter registration is—”\n\n“The window on the left. I know.”",
+        "western_english": "The officer had not finished explaining the procedure when the boy placed his palm on the measuring plate, which was, she noted, unusual; candidates generally waited to be told. The device produced its familiar sequence of results: the rank, the absence of any detectable affinity, and the routine notation regarding prior measurement records, of which there were none. It was the last of these that the boy appeared to read with real attention, and she wondered briefly what a seventeen-year-old could possibly want with an administrative footnote. Then she told him where porters registered, and he said that he knew.",
+        "translation_like": "He put his palm on the plate before the officer finished her sentence.\n\n[Measurement is complete]\n[Rank: F]\n[Affinity: It is not detected]\n[Note: The subject has a prior measurement record — 0 entries]\n\nThe last line was the thing which he came for.\n\n*It is good. The system also does not know it.*\n\n“You are F-rank,” the officer said kindly. “The porter registration is—”\n\n“It is the window at the left side. I know it already.”",
+        "literary": "He gave the plate his palm before the invitation was complete, which is the sort of impatience that officials record and forget, and the device answered in its customary idiom: a letter, an absence, and at the bottom a clerical footnote concerning prior records, of which there were none. It was the footnote he had come for. Whatever machinery presided over the ranking of human beings had no memory of him, no file, no shadow of the man he had been for ten unremarked years, and in that blankness he found the only blessing available to the returned: that he was, for the moment, unread.",
+        "weak_serial": "Do-yoon went to the measurement hall and put his hand on the plate. The device measured him and displayed the results, which showed that he was F-rank with no affinity detected. There was also a note saying he had no prior measurement records. He read the results and thought about them for a moment. The officer told him that he was F-rank and started to explain where he should register as a porter, but he already knew where to go."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-06",
+          "ST-SYS-02"
+        ],
+        "lint_western_english": [
+          "ST-SYS-01",
+          "ST-HOOK-01",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-SYS-01",
+          "ST-END-01",
+          "ST-PAY-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "ST-SYS-01",
+          "ST-CAD-01"
+        ],
+        "min_gap_prose_vs_translation_like": 38,
+        "min_gap_structure_vs_western_english": 35
+      }
+    },
+    {
+      "id": "cs-015",
+      "genre": "regression",
+      "function": "reveal",
+      "variants": {
+        "kwn_english": "The watcher's file had one photograph in it.\n\nDo-yoon had seen that face before — twice. Once on a wanted notice, eleven years from now.\n\nAnd once at his mother's funeral, standing at the back, holding a white chrysanthemum.\n\nHe set the file down.\n\n*So it was never a gate accident.*\n\nThe copier in the corner kept running. Nobody in the office looked up. Outside, it was still only March.",
+        "western_english": "There was a single photograph in the file, clipped to the inside cover, and Do-yoon recognized the man in it immediately, which was itself the difficulty: he had seen that face on a wanted notice issued eleven years in the future, and he had also seen it, at much closer range, standing at the rear of the mourners at his mother's funeral with a white chrysanthemum in his hand. The implications arranged themselves slowly, and then all at once. He put the file down on the desk. Around him the office continued its afternoon: the copier running, the phones, the indifferent light of early March.",
+        "translation_like": "In the file of the watcher, there was only one photograph.\n\nDo-yoon saw that face before — during two times. One time on a wanted notice, at eleven years after from now.\n\nAnd one time at the funeral of his mother, he was standing at the back side, holding a white chrysanthemum flower.\n\nHe put down the file.\n\n*So, it was not a gate accident from the beginning.*\n\nThe copier at the corner was continuing to run. Nobody in the office raised their head. At the outside, it was still only March.",
+        "literary": "One photograph, clipped to the inside cover, and in it a face he had encountered twice: once on a notice of arrest posted eleven years hence, and once — nearer, quieter, more terrible — at the back of a funeral crowd, a white chrysanthemum held in a hand that had known exactly what it was mourning. The mind, presented with such a coincidence, does not conclude; it capitulates. He laid the file on the desk. The copier went on with its patient blasphemy, the telephones rang, and March, which knows nothing, continued out the window in its ordinary light.",
+        "weak_serial": "Do-yoon looked through the watcher's file and found a photograph inside it. He recognized the man in the picture because he had seen him twice before: once on a wanted notice in the future, and once at his mother's funeral. This meant that his mother's death had probably not been an accident after all. He put the file back down on the desk and thought about what this meant. The office was quiet and nobody noticed what he was doing."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-11",
+          "TRN-14"
+        ],
+        "lint_western_english": [
+          "ST-HOOK-01",
+          "ST-PARA-01",
+          "EP-LEN-01",
+          "EP-LEN-02"
+        ],
+        "lint_weak_serial": [
+          "ST-PAY-01",
+          "ST-END-01",
+          "ST-HOOK-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "EP-ADV-01"
+        ],
+        "min_gap_prose_vs_translation_like": 44,
+        "min_gap_structure_vs_western_english": 35
+      }
+    },
+    {
+      "id": "cs-016",
+      "genre": "regression",
+      "function": "ending",
+      "variants": {
+        "kwn_english": "He burned the copy in the sink and ran the tap until the last of the ash went down.\n\nEleven years. He had eleven years before the wanted notice, and about six weeks before Gangnam.\n\nOne of those numbers was a gift. The other was a deadline. In his first life he had never learned to tell them apart, which was most of why he had died on a Thursday.\n\nDo-yoon dried his hands, finger by finger, and took his jacket off the hook.\n\n*Let's start with the man holding the flower.*",
+        "western_english": "He burned the photocopy in the kitchen sink, running the tap until the last of the ash had gone down, and then stood for a while with his hands under the water, thinking about the arithmetic of what he had been given. Eleven years before the wanted notice; six weeks before the Gangnam gate. The first of those numbers was a kind of gift and the second was a kind of sentence, and it occurred to him that most of his life, in both its versions, had consisted of failing to tell the two apart. He dried his hands on a dish towel and went to find his jacket.",
+        "translation_like": "He burned the copy inside the sink and ran the tap until the last of the ash was washed down.\n\nEleven years. He has eleven years until the wanted notice, and about six weeks until the Gangnam.\n\nOne of these numbers is a gift. The another one is a deadline. At his first life, he never learned how to distinguish between them, and that is almost the whole reason why he died at a Thursday.\n\nDo-yoon dried his hands, one finger by one finger, and took his jacket from the hook.\n\n*Let us start from the man who is holding the flower.*",
+        "literary": "He burned it in the sink, as one burns the letters of the dead, and watched the water take the ash down into the municipal dark. Eleven years, then, until a face became a crime; six weeks until a city became a grave. A gift and a sentence, and the long apprenticeship of his first life had consisted chiefly in mistaking one for the other. He dried his hands with great care, finger by finger, in the manner of a surgeon or a penitent, and decided that he would begin with the flower.",
+        "weak_serial": "Do-yoon burned the copy of the file in the sink and washed the ashes away with water. He thought about the timeline: eleven years until the wanted notice would be issued, and six weeks until the Gangnam gate opened. He realized that these two facts gave him both an opportunity and a deadline to work with. After drying his hands, he decided that the first thing he should do was investigate the man from the funeral photograph."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-07",
+          "TRN-15"
+        ],
+        "lint_western_english": [
+          "ST-END-01",
+          "ST-END-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-END-01",
+          "ST-END-02",
+          "ST-PAY-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-END-02"
+        ],
+        "min_gap_prose_vs_translation_like": 39,
+        "min_gap_structure_vs_western_english": 37
+      }
+    },
+    {
+      "id": "cs-017",
+      "genre": "regression",
+      "function": "exposition",
+      "variants": {
+        "kwn_english": "Everyone thinks the first gate opened over Gangnam. It didn't.\n\nThe first one opened in a warehouse in Incheon, eleven days earlier, and it closed on its own. The Association filed it as a gas leak. Nine dead.\n\nDo-yoon knew, because in his first life he had carried the bags of the man who wrote that report.\n\nEleven days. That was the whole advantage he had.\n\nIt was enough.",
+        "western_english": "It is generally accepted that the first gate opened above the Gangnam district, and this belief has the advantage of being convenient for nearly everyone concerned. In fact the first anomaly recorded anywhere in the country appeared inside a bonded warehouse in Incheon eleven days earlier and closed again without intervention, killing nine people whose deaths were ultimately attributed to a gas leak. Do-yoon knew this not from any archive but from the man who had written the report, whose bags he had carried, in his first life, for the better part of two years.",
+        "translation_like": "Every person is thinking that the first gate was opened above the Gangnam. It was not like that.\n\nThe first one was opened inside a warehouse of Incheon, at eleven days before, and it was closed by itself. The Association filed it as a gas leak accident. Nine persons died.\n\nDo-yoon knew it, because at his first life, he carried the bags of the man who wrote that report.\n\nEleven days. That was the whole advantage which he had.\n\nBut it was enough.",
+        "literary": "History, which is only the tidying of rumor, records that the first gate opened over Gangnam; history is convenient in this way, and the convenience served a great many people. The truth was eleven days older and considerably less photogenic: a bonded warehouse in Incheon, an aperture that came and went of its own accord, nine bodies, and a report attributing all of it to gas. He knew this not from the archives, which had been groomed, but from the man who wrote the report and whose luggage he had carried for two years of a life that no longer, in any legal sense, existed.",
+        "weak_serial": "Most people believed that the first gate had opened over Gangnam, but this was not actually correct. The first one had appeared in a warehouse in Incheon eleven days before that, and it had closed by itself. Nine people died, and the Association recorded the incident as a gas leak. Do-yoon knew the truth because he had worked as a porter for the man who wrote the official report. This gave him an eleven-day advantage, which he thought would be enough."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-04",
+          "TRN-12"
+        ],
+        "lint_western_english": [
+          "ST-EXP-01",
+          "ST-EXP-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-EXP-01",
+          "ST-HOOK-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-EXP-02"
+        ],
+        "min_gap_prose_vs_translation_like": 37,
+        "min_gap_structure_vs_western_english": 33
+      }
+    },
+    {
+      "id": "cs-018",
+      "genre": "regression",
+      "function": "action",
+      "variants": {
+        "kwn_english": "The warehouse door was already warm.\n\nEleven days early meant eleven days of nobody believing him. It also meant he was the only one here.\n\nDo-yoon kicked the wedge under the door, wrapped the chain twice around the handle, and stepped back.\n\nThe air split at chest height.\n\nSomething came halfway through — and stopped, because the chain held.\n\n*Nine dead, last time. Tonight, nine alive and one very confused night watchman.*\n\nHe picked up the crowbar.",
+        "western_english": "The steel of the warehouse door was already warm to the touch when he arrived, which confirmed both his arithmetic and his solitude: eleven days ahead of the official record meant eleven days in which no one would have believed a word he said, and it also meant that there was nobody else in the loading yard at all. He wedged the door, wound the chain twice about the handle and withdrew a few paces to wait. When the air divided itself at roughly the height of a man's chest, and when something began to come through and then found itself arrested by the chain, he took up the crowbar he had brought and considered, for a moment, the nine people who had died here the first time.",
+        "translation_like": "The door of the warehouse was already warm.\n\nEleven days earlier means eleven days when nobody will believe him. Also, it means that he is the only one person at here.\n\nDo-yoon kicked the wedge under the door, wrapped the chain two times around the handle, and stepped to the back.\n\nThe air was split at the height of chest.\n\nSomething came until the half — and it stopped, because the chain was holding it.\n\n*At the last time, nine persons died. At tonight, nine persons are alive and one night watchman is very confused.*\n\nHe lifted up the crowbar.",
+        "literary": "The door was warm, which is to say the future had arrived early and was leaning on the other side of it. Eleven days ahead of the record: eleven days of a solitude so complete that it functioned as a kind of armor, since a man nobody believes is also a man nobody stops. He wedged, he chained, he withdrew. And when the air performed its small obscene division at the height of a chest, and when the thing beyond it came halfway into the world and was there detained by two turns of industrial chain, he lifted the crowbar with the weariness of a man resuming an old argument with God.",
+        "weak_serial": "When Do-yoon got to the warehouse, the door was already warm, which told him that the gate was about to open. Since he was eleven days ahead of the official record, nobody would have believed him if he had tried to warn them, so he had come alone. He put a wedge under the door and wrapped a chain around the handle a couple of times. Then the air split open and something started to come through, but the chain stopped it. He picked up his crowbar and got ready."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-08",
+          "TRN-13"
+        ],
+        "lint_western_english": [
+          "ST-CAD-01",
+          "ST-CAD-02",
+          "EP-LEN-01",
+          "EP-LEN-02"
+        ],
+        "lint_weak_serial": [
+          "ST-CAD-01",
+          "ST-PAY-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-CAD-01"
+        ],
+        "min_gap_prose_vs_translation_like": 43,
+        "min_gap_structure_vs_western_english": 38
+      }
+    },
+    {
+      "id": "cs-019",
+      "genre": "romance-fantasy",
+      "function": "hook",
+      "variants": {
+        "kwn_english": "The betrothal contract was already signed when Elise walked into the hall.\n\nHer name was on it. So was her sister's handwriting.\n\n“Congratulations,” her stepmother said. “The Duke of Averne accepted this morning.”\n\nElise read the clause at the bottom twice.\n\n*Upon the bride's death, all claims revert to the House of Maurel.*\n\n“How thoughtful,” she said, and smiled. “Shall I thank him in person?”",
+        "western_english": "The hall at Maurel had been arranged for the announcement with the particular attention to detail that her stepmother reserved for occasions of consequence: the good candles, the winter roses, the family portraits dusted. On the table lay a betrothal contract already signed, bearing Elise's name in a hand that was not her own but which she recognized, with a certain weary admiration, as her younger sister's. Her stepmother offered congratulations and mentioned that the Duke of Averne had accepted that morning. Elise read the document through, including the clause at the foot of the second page concerning the reversion of claims upon the death of the bride, and then she smiled and asked whether she might thank the duke in person.",
+        "translation_like": "The betrothal contract was already signed when Elise entered into the hall.\n\nHer name was written on it. Also, the handwriting of her sister was on it.\n\n“Congratulations,” her stepmother said. “The Duke of Averne accepted it at this morning.”\n\nElise read the clause at the bottom side during two times.\n\n*When the bride dies, all of the claims are returning to the House of Maurel.*\n\n“It is very thoughtful,” she said and smiled. “Shall I give him my thanks by directly meeting?”",
+        "literary": "The contract lay upon the table like a small white animal that had been killed elsewhere and brought in for display, and her name was upon it in her sister's hand — that round, obedient hand which had copied out psalms all through the winter of their mother's dying. Her stepmother pronounced the word congratulations as one pronounces a diagnosis. And at the foot of the second page, in the modest typography reserved for the unspeakable, stood the clause providing for the reversion of all claims upon the death of the bride: a sentence of such perfect candor that Elise found herself, for the first time in some years, genuinely entertained.",
+        "weak_serial": "Elise came into the hall and found that a betrothal contract had already been signed in her name. Her sister had apparently forged her signature on it. Her stepmother congratulated her and explained that the Duke of Averne had agreed to the arrangement that morning. Elise read the contract carefully and noticed a clause stating that all claims would go back to the House of Maurel if she died. She thought this was suspicious, so she asked if she could meet the duke to thank him."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-05",
+          "EP-DLG-02"
+        ],
+        "lint_western_english": [
+          "ST-HOOK-01",
+          "ST-OPEN-01",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-HOOK-01",
+          "ST-END-01",
+          "ST-PAY-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-HOOK-01"
+        ],
+        "min_gap_prose_vs_translation_like": 41,
+        "min_gap_structure_vs_western_english": 34
+      }
+    },
+    {
+      "id": "cs-020",
+      "genre": "romance-fantasy",
+      "function": "emotional_beat",
+      "variants": {
+        "kwn_english": "“You knew about the clause.”\n\nThe duke didn't deny it. That was the part that hurt.\n\n“I had it written,” he said.\n\nElise set down her cup. Her hand was perfectly steady; she had spent nineteen years learning how.\n\n“Why?”\n\n“Because whoever poisons you will have to inherit through me.” He looked at her for the first time. “And I am very difficult to inherit through.”",
+        "western_english": "They took tea in the east room, where the light was kind and the servants were out of hearing, and Elise put her question directly, which she had found over the years to be the only economical way of dealing with men who were cleverer than they pretended. He did not deny knowledge of the clause. He went further and admitted that he had caused it to be written, and when she asked him why, he explained, with the air of a man discussing a fortification, that anyone intending to poison her would now be obliged to inherit through him, and that he was an exceedingly inconvenient person to inherit through.",
+        "translation_like": "“You knew about that clause.”\n\nThe duke did not deny it. That was the part which gave her the pain.\n\n“I made it to be written,” he said.\n\nElise put down her cup. Her hand was perfectly stable; she learned how to do it during nineteen years.\n\n“Why did you do it?”\n\n“Because the person who will poison you must inherit through me.” He looked at her at the first time. “And I am a very difficult person to inherit through.”",
+        "literary": "In the east room, where the afternoon lay across the parquet like something spilled, she asked him, and he did not deny it — and it was the not-denying that undid her, for she had prepared herself against a lie and found herself defenseless before the truth. He had had the clause written. He said so as a mason says he laid a wall. And when she asked the reason, he offered her the architecture of it: that her murderer would henceforth be required to inherit through him, and that he was, in the matter of inheritance, a most inhospitable country.",
+        "weak_serial": "Elise asked the duke whether he had known about the clause in the contract. He admitted that he had, and in fact he said that he had asked for it to be included. She was upset by this but did not show it, and she asked him to explain his reasoning. He told her that the clause meant anyone who wanted to poison her would have to inherit through him first. He also mentioned that this would be very difficult for them to do."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-09",
+          "EP-DLG-02"
+        ],
+        "lint_western_english": [
+          "ST-DLG-01",
+          "ST-HOOK-01",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-DLG-01",
+          "ST-PAY-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "EP-ADV-01"
+        ],
+        "min_gap_prose_vs_translation_like": 40,
+        "min_gap_structure_vs_western_english": 33
+      }
+    },
+    {
+      "id": "cs-021",
+      "genre": "romance-fantasy",
+      "function": "status_window",
+      "variants": {
+        "kwn_english": "The oath-mark surfaced on the back of her hand in gold.\n\n[Contract of Protection — provisional]\n[Sworn: Averne (giver) → Maurel (holder)]\n[Condition: the holder's death voids the giver's line]\n[Witness: none]\n\nNo witness. That was a duel offense in three provinces.\n\nElise closed her fingers over the mark.\n\n*He swore it alone, in a room with nobody watching, on the same morning he signed.*",
+        "western_english": "The mark rose on the back of her hand in a fine gold script that she recognized from the heraldic manuals of her girlhood: a provisional contract of protection, sworn from Averne to Maurel, conditioned upon the extinction of the giver's line in the event of the holder's death, and — this was the detail that made her sit down — witnessed by nobody at all. An unwitnessed oath of that kind was grounds for a duel in at least three provinces. She closed her fingers over the mark and considered the fact that he must have sworn it alone, in an empty room, on the morning he put his name to the contract.",
+        "translation_like": "The oath-mark was appeared on the back side of her hand with gold color.\n\n[Contract of Protection — it is provisional]\n[Sworn: Averne (the giver) → Maurel (the holder)]\n[Condition: The death of the holder is voiding the line of the giver]\n[Witness: There is none]\n\nThere is no witness. That thing is a duel offense at three provinces.\n\nElise closed her fingers above the mark.\n\n*He swore it alone, inside a room where nobody was watching, at the same morning when he signed it.*",
+        "literary": "It surfaced on the back of her hand in that thin imperial gold the heralds use for things they hope will never be tested: a contract of protection, provisional, sworn from his house to hers, and conditioned — she read the line twice, and the reading changed the afternoon — upon the extinction of his own line should hers be ended. Witness: none. In three provinces a man could be called out for such an oath, and rightly, for it is not a promise but a kind of hostage-taking of the self. She closed her hand over it as one closes a hand over a coal.",
+        "weak_serial": "A gold mark appeared on the back of Elise's hand. It was a provisional contract of protection that had been sworn from the House of Averne to the House of Maurel. The conditions stated that the giver's line would be voided if the holder died. She also noticed that no witness had been recorded, which was a serious problem in several provinces. Elise closed her hand over the mark and realized that the duke must have sworn the oath by himself."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-06",
+          "ST-SYS-02"
+        ],
+        "lint_western_english": [
+          "ST-SYS-01",
+          "ST-EXP-01",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-SYS-01",
+          "ST-END-01",
+          "ST-PAY-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "ST-SYS-01",
+          "EP-LEN-03"
+        ],
+        "min_gap_prose_vs_translation_like": 38,
+        "min_gap_structure_vs_western_english": 36
+      }
+    },
+    {
+      "id": "cs-022",
+      "genre": "romance-fantasy",
+      "function": "reveal",
+      "variants": {
+        "kwn_english": "“Your sister didn't forge your signature,” the duke said. “Your mother did. Eleven years ago.”\n\nElise stopped on the stair.\n\n“My mother has been dead for eleven years.”\n\n“Yes.” He held out the second contract — older paper, the same clause, the same gold seal. “She signed this the week before she died. Your sister only copied it.”\n\nThe candle in the sconce guttered.\n\n*Then Mother knew who was going to poison me.*",
+        "western_english": "He caught her on the stair, which was not, she thought afterwards, an accident, and he told her that her sister had not forged the signature at all: her mother had, eleven years previously, in the week before her death. He produced a second document on older paper, bearing the same clause and the same gold seal, and explained that her sister had done nothing more inventive than copy it. Elise stood with one hand on the rail while the candle in the sconce beside her went through its small crisis, and arrived, by a route she did not enjoy, at the only available conclusion about what her mother had known.",
+        "translation_like": "“Your sister did not forge your signature,” the duke said. “Your mother did it. At eleven years ago.”\n\nElise stopped at the stair.\n\n“My mother is already dead during eleven years.”\n\n“Yes, that is right.” He gave out the second contract — the paper was older, but the clause is same, and the gold seal is also same. “She signed this at the week before she was dead. Your sister only copied it.”\n\nThe candle at the sconce was flickering.\n\n*Then, Mother knew the person who is going to poison me.*",
+        "literary": "He chose the stair for it, which was cruel or merciful depending on one's theory of him: that the signature was no forgery of her sister's but her mother's own, set down eleven years earlier, in the last week of a long dying. The second document came out of his coat — older paper, the same clause, the same gold — and the sister, it transpired, had been guilty of nothing more imaginative than copying. The candle beside her attempted its small collapse and recovered. And Elise, who had spent a childhood believing herself unguarded, understood that she had been defended all along by a woman who had known precisely which hand would hold the cup.",
+        "weak_serial": "The duke told Elise that her sister had not been the one who forged her signature. He explained that her mother had signed the document eleven years ago, shortly before she died. He showed her a second contract on older paper that had the same clause and seal on it, and said that her sister had simply copied the original. Elise stopped on the staircase and thought about what this meant. She realized that her mother must have known who was planning to poison her."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-10",
+          "TRN-11"
+        ],
+        "lint_western_english": [
+          "ST-HOOK-01",
+          "ST-PARA-01",
+          "EP-LEN-01",
+          "EP-LEN-02"
+        ],
+        "lint_weak_serial": [
+          "ST-PAY-01",
+          "ST-END-01",
+          "ST-DLG-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-HOOK-01"
+        ],
+        "min_gap_prose_vs_translation_like": 43,
+        "min_gap_structure_vs_western_english": 35
+      }
+    },
+    {
+      "id": "cs-023",
+      "genre": "romance-fantasy",
+      "function": "ending",
+      "variants": {
+        "kwn_english": "Elise wrote two letters that night.\n\nThe first accepted the betrothal. She sent it at once.\n\nThe second was one line long, addressed to the family apothecary, and she did not send it yet.\n\n*Tell me what you were paid in the winter my mother died.*\n\nShe sealed it and put it in the drawer with her mother's ring.\n\nThe wedding was in six weeks. That would be enough time.",
+        "western_english": "She wrote two letters before she slept. The first was short, formal and entirely sincere, accepting the betrothal, and she gave it to a footman to go out with the morning post. The second, which consisted of a single line addressed to the family apothecary and which inquired what he had been paid during the winter of her mother's death, she did not send. She sealed it instead and put it in the drawer where her mother's ring had lain untouched for eleven years, and then she sat for some time in the cooling room, thinking about the six weeks that remained before the wedding.",
+        "translation_like": "At that night, Elise wrote two letters.\n\nThe first one was accepting the betrothal. She sent it immediately.\n\nThe second one had only one line, and it was addressed to the apothecary of the family, but she did not send it yet.\n\n*Please tell me the thing which you were paid at the winter when my mother died.*\n\nShe sealed it and put it inside the drawer together with the ring of her mother.\n\nThe wedding is at six weeks after. That time will be enough.",
+        "literary": "Two letters, then, before sleep. The first accepted the betrothal in the flawless idiom of a well-taught daughter and went out with the morning post. The second held one line — an inquiry to the apothecary concerning his income in the winter her mother died — and she did not send it, but sealed it and laid it in the drawer beside a ring that had waited eleven years to be worn or avenged. Six weeks until the wedding. She found, sitting in the cooling dark, that she had begun to think of the interval not as a courtship but as a season.",
+        "weak_serial": "That evening Elise wrote two letters. In the first one she accepted the betrothal, and she sent it out right away. The second letter was addressed to the family apothecary and asked him what he had been paid during the winter when her mother died, but she decided not to send that one yet. She sealed it and placed it in a drawer along with her mother's old ring. The wedding was going to take place in six weeks, which she thought would give her enough time."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-07",
+          "TRN-15"
+        ],
+        "lint_western_english": [
+          "ST-END-01",
+          "ST-END-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-END-01",
+          "ST-END-02",
+          "ST-HOOK-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-END-02"
+        ],
+        "min_gap_prose_vs_translation_like": 39,
+        "min_gap_structure_vs_western_english": 36
+      }
+    },
+    {
+      "id": "cs-024",
+      "genre": "romance-fantasy",
+      "function": "exposition",
+      "variants": {
+        "kwn_english": "In this empire, a woman's name is a kind of key.\n\nIt opens accounts, estates and courts — but only while a man's name is written beside it. Widows keep the key. Daughters borrow it. Wives hand it over at the altar.\n\nElise had read the marriage statutes at fourteen, the way other girls read poetry.\n\nShe had found three ways to keep the key.\n\nTwo of them required a husband who would not live long. The third required one who would not mind.",
+        "western_english": "The imperial statutes governing the property of women were, in their essentials, simple: a woman's name functioned as an instrument of access — to accounts, to estates, to the courts — for precisely as long as a man's name stood beside it. Widows retained the instrument outright. Daughters held it on loan from their fathers. Wives surrendered it at the altar and received it back, if at all, in the form of a pension. Elise had studied these provisions at fourteen with the attention other girls of her station gave to verse, and had identified three lawful methods of retaining the instrument, of which two presupposed a short-lived husband.",
+        "translation_like": "At this empire, the name of a woman is one kind of key.\n\nIt is opening the accounts, the estates and the courts — but only during the time when the name of a man is written at the side of it. The widows are keeping the key. The daughters are borrowing it. The wives are handing it over at the altar.\n\nElise read the marriage statutes at fourteen years old, like the way that other girls are reading the poetry.\n\nShe found three methods for keeping the key.\n\nTwo of them are requiring a husband who will not live long time. The third one is requiring a husband who will not mind about it.",
+        "literary": "A woman's name, in that empire, was a key of a peculiar design: it opened accounts and estates and the doors of the courts, but only for so long as a man's name was inscribed beside it, so that every wife was in the position of a tenant holding the deed to her own house. Widows kept the key. Daughters borrowed it. Wives gave it up at the altar and received, in exchange, an allowance and the general good opinion of society. At fourteen Elise had read the marriage statutes as other girls read poetry, and had found in them three lawful exits.",
+        "weak_serial": "In the empire where Elise lived, women could only access their accounts, estates, and the courts if a man's name was listed alongside theirs. Widows were allowed to keep this right, daughters borrowed it from their fathers, and wives gave it up when they got married. Elise had studied the marriage statutes when she was fourteen years old because she was interested in them. During her research she had identified three different ways that a woman could keep her rights. Two of those methods involved a husband who died early."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-04",
+          "TRN-16"
+        ],
+        "lint_western_english": [
+          "ST-EXP-01",
+          "ST-EXP-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-EXP-01",
+          "ST-HOOK-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-EXP-02"
+        ],
+        "min_gap_prose_vs_translation_like": 37,
+        "min_gap_structure_vs_western_english": 34
+      }
+    },
+    {
+      "id": "cs-025",
+      "genre": "romance-fantasy",
+      "function": "action",
+      "variants": {
+        "kwn_english": "The apothecary reached for the bell rope.\n\nElise reached it first — not the rope, the candle beneath it. The cord took the flame and went up in one bright line to the ceiling.\n\n“Now no one is coming,” she said. “Sit down.”\n\nHe sat.\n\n“Winter, eleven years ago. Who paid you?”\n\n“My lady, I—”\n\nShe put her mother's ring on the table between them. He stopped talking and started, very quietly, to cry.",
+        "western_english": "He went for the bell rope, which she had anticipated, and she went not for the rope but for the candle beneath it, so that the cord took the flame and travelled upward in a single clean line of fire to the ceiling boards. It was, she reflected, a more theatrical solution than she had intended, but it settled the matter of interruption. She instructed him to sit, and he sat. She asked her question about the winter eleven years earlier and who had paid him, and when he began the customary preliminaries she placed her mother's ring upon the table between them, at which point he ceased to speak and began, very quietly, to weep.",
+        "translation_like": "The apothecary extended his hand to the bell rope.\n\nElise arrived at it faster — not to the rope, but to the candle which was under it. The cord received the flame and went up with one bright line until the ceiling.\n\n“Now, nobody will come here,” she said. “Please sit down.”\n\nHe sat down.\n\n“At the winter of eleven years ago. Who gave you the payment?”\n\n“My lady, I am—”\n\nShe put the ring of her mother on the table between them. He stopped his talking and started to cry very quietly.",
+        "literary": "He reached for the bell rope, which is what such men always reach for, and she reached instead for the candle beneath it, so that the cord accepted the flame and carried it up to the ceiling in one bright unhesitating line — an answer, of sorts, to the question of whether anyone would be coming. Sit, she said. He sat. And when she asked who had paid him in the winter eleven years gone, and when he began upon the small preliminary pieties of the guilty, she set her mother's ring upon the table, and he fell silent, and then he wept: quietly, thoroughly, as a man weeps who has been waiting a decade for the door.",
+        "weak_serial": "The apothecary tried to pull the bell rope to call for help, but Elise was faster and used the candle underneath it to set the cord on fire. The flame travelled up to the ceiling quickly. She told him that nobody would be coming now and instructed him to sit down, which he did. Then she asked him who had paid him during the winter eleven years ago. He started to make excuses, so she placed her mother's ring on the table. He stopped talking and began to cry."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-08",
+          "TRN-13"
+        ],
+        "lint_western_english": [
+          "ST-CAD-01",
+          "ST-CAD-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-CAD-01",
+          "ST-PAY-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-CAD-01"
+        ],
+        "min_gap_prose_vs_translation_like": 42,
+        "min_gap_structure_vs_western_english": 37
+      }
+    },
+    {
+      "id": "cs-026",
+      "genre": "academy",
+      "function": "hook",
+      "variants": {
+        "kwn_english": "The placement board went up at six in the morning.\n\nClass 1: nineteen names. Class 2: twenty. Class 3, the remedial class: one.\n\nHan Ji-u read his own name, alone, under a heading that had not existed last year.\n\n[Class 3 — Special Observation]\n\nBehind him, someone laughed. Someone else stopped laughing very fast, because the instructor listed beside Class 3 was the one nobody in this academy said out loud.",
+        "western_english": "The placement lists were posted, as tradition demanded, at six in the morning on the board outside the dining hall, and the first-years gathered around them in the grey light with the particular hush of people reading their own futures. The distribution was ordinary enough: nineteen names in the first class, twenty in the second. The third heading, which had not appeared on any list in living memory, bore the title Special Observation and contained a single name, which was Han Ji-u's, and beneath it the name of an instructor whose reputation was such that the laughter behind him died almost as soon as it began.",
+        "translation_like": "The placement board was put up at 6 o'clock in the morning.\n\nClass 1: nineteen names. Class 2: twenty names. Class 3, which is the remedial class: only one name.\n\nHan Ji-u read his own name alone, under a heading which was not existing at the last year.\n\n[Class 3 — Special Observation]\n\nAt behind of him, someone laughed. Another person stopped the laughing very fast, because the instructor who was listed at the side of Class 3 is the person whom nobody at this academy says with a loud voice.",
+        "literary": "They post the lists at six, in the hour when the mountain behind the academy is still deciding whether to exist, and the first-years read them the way the devout read auguries. Nineteen names; twenty names; and then a third heading, unprecedented, couched in that bloodless administrative poetry which institutions reserve for their cruelties — Special Observation — beneath which stood one name only, his own, and beneath that a second name, an instructor's, at the sight of which the laughter behind him underwent a rapid and total conversion to silence.",
+        "weak_serial": "The placement board was posted at six in the morning, and the students gathered around to read it. Class 1 had nineteen students and Class 2 had twenty students. Han Ji-u looked for his name and found that he was the only person assigned to Class 3, which was labelled as Special Observation. This heading had not been used in previous years. Some of the other students laughed at first, but they stopped when they saw which instructor had been assigned to that class."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-05",
+          "TRN-12"
+        ],
+        "lint_western_english": [
+          "ST-HOOK-01",
+          "ST-OPEN-01",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-HOOK-01",
+          "ST-OPEN-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-HOOK-01"
+        ],
+        "min_gap_prose_vs_translation_like": 41,
+        "min_gap_structure_vs_western_english": 35
+      }
+    },
+    {
+      "id": "cs-027",
+      "genre": "academy",
+      "function": "emotional_beat",
+      "variants": {
+        "kwn_english": "“Your father asked me to fail you,” the instructor said.\n\nJi-u kept his hands flat on the desk.\n\n“He paid the tuition of nine students to make it look ordinary.”\n\n“…And?”\n\n“And I took the money.” She turned the page of his file. “Then I put you in a class where the only person who can fail you is you. Sit up straight, Han Ji-u. We have four years and one very disappointed sponsor.”",
+        "western_english": "She told him in the small office behind the practice hall, with his file open on the desk between them, that his father had approached her in the spring with a request that he be failed, and had further arranged to pay the tuition of nine other students in order that the failure should appear unremarkable. Ji-u kept his hands flat on the desk and asked, after a pause, what she had done. She replied that she had accepted the money and then placed him in a class of one, where the only person capable of failing him was himself, and instructed him to sit up straight.",
+        "translation_like": "“Your father requested me to make you fail,” the instructor said.\n\nJi-u kept his hands flatly on the desk.\n\n“He paid the tuition fee of nine students, in order to make it look like an ordinary thing.”\n\n“…And then?”\n\n“And then, I received the money.” She turned the page of his file. “After that, I put you into a class where the only person who can make you fail is yourself. Please sit straightly, Han Ji-u. We have four years and one sponsor who is very disappointed.”",
+        "literary": "She delivered it in the little office behind the practice hall, where the walls held the smell of chalk and old varnish: that his father had come to her in the spring and asked that the boy be failed, and had paid the tuition of nine other students so that the failure might wear the costume of ordinariness. He held his hands flat upon the desk, which is what the young do when they have decided not to be seen to tremble. And she — turning a page of his file with the composure of a woman who has been bought and has priced the transaction herself — explained that she had taken the money and then arranged a class of one, in which no hand but his own could close the door.",
+        "weak_serial": "The instructor told Ji-u that his father had asked her to fail him, and that his father had paid the tuition of nine other students so that it would not look suspicious. Ji-u listened to this without reacting much and asked her what she had decided to do. She explained that she had accepted the payment, but that she had then placed him in a class where he was the only student. This meant that he could only fail if he chose to. Then she told him to sit up straight."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-09",
+          "EP-DLG-02"
+        ],
+        "lint_western_english": [
+          "ST-DLG-01",
+          "ST-HOOK-01",
+          "EP-LEN-01",
+          "EP-LEN-02"
+        ],
+        "lint_weak_serial": [
+          "ST-DLG-01",
+          "ST-PAY-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "EP-ADV-01"
+        ],
+        "min_gap_prose_vs_translation_like": 40,
+        "min_gap_structure_vs_western_english": 33
+      }
+    },
+    {
+      "id": "cs-028",
+      "genre": "academy",
+      "function": "banter",
+      "variants": {
+        "kwn_english": "“Class 3 has one student, one instructor and no classroom,” Ji-u said. “Where do we meet?”\n\n“The roof.”\n\n“In February.”\n\n“Wear a coat.”\n\n“The roof has been locked since before I was born.”\n\nThe instructor dropped a key on the desk. It was older than the building, and the tag on it had a number that did not appear on any of the academy's floor plans.\n\n“It was locked,” she said. “Six o'clock, every morning. Try to be on time — I dislike shouting across a stairwell.”",
+        "western_english": "The practical arrangements of a class of one turned out to be more complicated than the philosophical ones. Ji-u observed that Class 3 possessed a student and an instructor but no room, and inquired where they were expected to meet; she answered that they would meet on the roof. He pointed out that it was February. She advised him to wear a coat. He pointed out, with what he hoped was appropriate deference, that the roof access had been locked for as long as anyone could remember, at which point she placed on the desk a key that appeared to predate the building itself.",
+        "translation_like": "“The Class 3 has one student, one instructor, and no classroom,” Ji-u said. “Where will we meet at?”\n\n“At the roof.”\n\n“At February?”\n\n“Please wear a coat.”\n\n“But the roof is locked from the time before I was born.”\n\nThe instructor dropped down a key on the desk. It was more old than the building, and the tag of it had a number which is not appearing at any floor plan of the academy.\n\n“It was locked before,” she said. “At 6 o'clock, every morning. Please try to come on the time — I am disliking to shout across a stairwell.”",
+        "literary": "The logistics of a class of one proved more vexing than its metaphysics. He noted that they possessed a student, an instructor and no room, and asked where they should convene; the roof, she said. It was February. He mentioned February. A coat, she suggested. He mentioned, with the careful deference of a boy who has learned to be careful, that the roof had been locked since before his birth — and she laid upon the desk a key of such evident antiquity that it seemed to have been forged in anticipation of some older building altogether.",
+        "weak_serial": "Ji-u asked his instructor where the two of them would be meeting, since Class 3 had no classroom assigned to it. She told him that they would be meeting on the roof of the building. He mentioned that it was currently February and also that the roof was kept locked. She suggested that he should wear a coat, and then she put an old key down on the desk to show him that access would not be a problem. She also asked him to arrive on time."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-03",
+          "TRN-09",
+          "EP-PUNC-01"
+        ],
+        "lint_western_english": [
+          "ST-DLG-01",
+          "EP-LEN-01",
+          "ST-CAD-02"
+        ],
+        "lint_weak_serial": [
+          "ST-DLG-01",
+          "ST-HOOK-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-ADV-01",
+          "ST-DLG-01"
+        ],
+        "min_gap_prose_vs_translation_like": 39,
+        "min_gap_structure_vs_western_english": 34
+      }
+    },
+    {
+      "id": "cs-029",
+      "genre": "academy",
+      "function": "status_window",
+      "variants": {
+        "kwn_english": "The assessment crystal cleared after eleven seconds. Eleven was three seconds too long.\n\n[First-Year Assessment — Han Ji-u]\n[Aptitude: unclassified]\n[Output: below measurable threshold]\n[Remark: crystal registered a second signature]\n\nThe last line wasn't on anyone else's sheet.\n\nJi-u folded the paper in four and put it away before the boy behind him could lean over.\n\n*A second signature. In a crystal calibrated for one.*",
+        "western_english": "The assessment crystal took eleven seconds to clear, which was three seconds longer than the examiners considered normal and which produced a certain amount of shuffling at the front table. The sheet it generated was, in its first three lines, entirely unremarkable: an unclassified aptitude, an output below the measurable threshold, the sort of result that consigned a boy to the remedial track and a lifetime of polite disappointment. The fourth line, however, recorded that the crystal had registered a second signature, and this line did not appear on any other sheet issued that morning.",
+        "translation_like": "The assessment crystal became clear after eleven seconds. Eleven seconds is three seconds more long than it should be.\n\n[First-Year Assessment — Han Ji-u]\n[Aptitude: It is unclassified]\n[Output: It is below the measurable threshold]\n[Remark: The crystal registered a second signature]\n\nThe last line was not existing on the sheet of other people.\n\nJi-u folded the paper into four and put it away, before the boy at his behind could lean over to see it.\n\n*A second signature. Inside a crystal which is calibrated for only one.*",
+        "literary": "Eleven seconds for the crystal to clear — three seconds beyond the tolerance of the examiners, who shuffled at their table like men disturbed at prayer. The sheet was, in its opening lines, a catalogue of nothing: aptitude unclassified, output beneath the threshold of measurement, the familiar administrative vocabulary by which a boy is consigned to the remedial track and thence to a long polite obscurity. Then the fourth line, which appeared on no other sheet in the hall, and which observed, in the same flat hand, that the crystal had detected a second signature within him.",
+        "weak_serial": "Ji-u's assessment crystal took eleven seconds to clear, which was longer than usual. The results sheet showed that his aptitude was unclassified and that his output was below the measurable threshold. There was also a fourth line noting that the crystal had registered a second signature. He noticed that none of the other students had this line on their sheets. He folded up the paper and put it away so that nobody else would see it, and thought about what it might mean."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-06",
+          "ST-SYS-02"
+        ],
+        "lint_western_english": [
+          "ST-SYS-01",
+          "ST-HOOK-01",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-SYS-01",
+          "ST-END-01",
+          "ST-PAY-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "ST-SYS-01",
+          "EP-LEN-03"
+        ],
+        "min_gap_prose_vs_translation_like": 40,
+        "min_gap_structure_vs_western_english": 37
+      }
+    },
+    {
+      "id": "cs-030",
+      "genre": "academy",
+      "function": "reveal",
+      "variants": {
+        "kwn_english": "“The second signature is your brother's,” the instructor said.\n\n“I don't have a brother.”\n\n“You had one for eleven minutes.” She set the old crystal beside the new one. Both of them clouded. “Your father registered the birth. Then he registered the death. Then he paid this academy to lose the file.”\n\nJi-u looked at the two crystals fogging in unison.\n\n*So that's what he's afraid of.*\n\n“Where is the file?”\n\n“Under your feet. Third sub-level. Bring the coat.”",
+        "western_english": "She explained it on the roof, with the two crystals set side by side on the parapet, both of them clouding at the same rate: that the second signature belonged to his brother, who had existed for eleven minutes, whose birth his father had registered and whose death his father had registered, and whose file his father had subsequently paid the academy a considerable sum to mislay. Ji-u watched the crystals fog in unison and understood, with a clarity that he found almost restful, the true shape of his father's fear. He asked where the file was. She told him it was three levels beneath his feet, and advised him to bring his coat.",
+        "translation_like": "“The second signature is the signature of your brother,” the instructor said.\n\n“I do not have a brother.”\n\n“You had one during eleven minutes.” She put the old crystal at the side of the new one. Both of them became clouded. “Your father registered the birth. After that, he registered the death. After that, he paid money to this academy in order to lose the file.”\n\nJi-u looked at the two crystals which were fogging at the same time.\n\n*So, that is the thing which he is afraid of.*\n\n“Where is the file at?”\n\n“It is under your feet. The third sub-level. Please bring the coat.”",
+        "literary": "She told him on the roof, the two crystals set upon the parapet and clouding in a synchrony that was itself the proof: that the second signature was his brother's; that the brother had held the world for eleven minutes; that his father had registered the birth and then the death, and had thereafter paid this institution a great deal of money to mislay the paper in which both facts were written. He watched the glass fog, and felt the enormous relief of a man who has at last been told the name of the thing that has been eating him. Where is the file, he asked. Beneath you, she said. Three levels down. Bring the coat.",
+        "weak_serial": "The instructor explained to Ji-u that the second signature belonged to his brother. Ji-u said that he did not have a brother, and she told him that he had one for eleven minutes after birth. She placed the old crystal next to the new one and both of them became cloudy at the same time. She also said that his father had registered both the birth and the death, and had then paid the academy to lose the file. Ji-u asked where the file was, and she said it was on the third sub-level."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-10",
+          "TRN-11"
+        ],
+        "lint_western_english": [
+          "ST-HOOK-01",
+          "ST-PARA-01",
+          "EP-LEN-01",
+          "EP-LEN-02"
+        ],
+        "lint_weak_serial": [
+          "ST-PAY-01",
+          "ST-END-01",
+          "ST-DLG-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-HOOK-01"
+        ],
+        "min_gap_prose_vs_translation_like": 43,
+        "min_gap_structure_vs_western_english": 36
+      }
+    },
+    {
+      "id": "cs-031",
+      "genre": "academy",
+      "function": "ending",
+      "variants": {
+        "kwn_english": "Ji-u came up from the third sub-level at four in the morning with dust in his hair and one page in his coat.\n\nHe read it on the roof, by the light of the practice lamps.\n\nA name. A date. And a witness signature he recognized, because he had seen it on his own placement sheet nine hours earlier.\n\n*Instructor. You were there.*\n\nHe folded the page, sat down against the parapet, and waited for her to come up at six.",
+        "western_english": "He came up from the third sub-level a little before four in the morning, with dust in his hair and a single page folded inside his coat, and he read it on the roof by the light of the practice lamps, which burned all night in that part of the grounds. It gave a name and a date, and at the foot of it a witness signature that he recognized without difficulty, having seen the same hand nine hours earlier at the bottom of his own placement sheet. He folded the page again, sat down with his back against the parapet, and settled himself to wait for six o'clock.",
+        "translation_like": "Ji-u came up from the third sub-level at 4 o'clock in the morning, with the dust in his hair and one page inside his coat.\n\nHe read it at the roof, with the light of the practice lamps.\n\nOne name. One date. And also a witness signature which he could recognize, because he saw it on his own placement sheet at nine hours before.\n\n*Instructor. You were existing there.*\n\nHe folded the page, sat down to the parapet side, and waited until she comes up at 6 o'clock.",
+        "literary": "He surfaced from the third sub-level a little short of four, carrying dust in his hair and one page against his ribs, and read it under the practice lamps that burn all night on that side of the grounds as though the academy were afraid of its own dark. A name. A date. And beneath them a witness's signature in a hand he had last seen nine hours earlier at the foot of his own placement sheet. He folded it. He sat with his spine against the cold parapet. And he waited, with the patience of the newly armed, for six o'clock.",
+        "weak_serial": "Ji-u finished searching the third sub-level at around four in the morning and came back up to the roof with one page from the file hidden in his coat. He read it using the light from the practice lamps. The page contained a name, a date, and a witness signature that he recognized from his placement sheet earlier that day. He realized that his instructor had been present at the time. He folded the page up and sat down by the parapet to wait until she arrived at six."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-07",
+          "TRN-15"
+        ],
+        "lint_western_english": [
+          "ST-END-01",
+          "ST-END-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-END-01",
+          "ST-END-02",
+          "ST-HOOK-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-END-02"
+        ],
+        "min_gap_prose_vs_translation_like": 38,
+        "min_gap_structure_vs_western_english": 36
+      }
+    },
+    {
+      "id": "cs-032",
+      "genre": "academy",
+      "function": "exposition",
+      "variants": {
+        "kwn_english": "There are three ways out of this academy.\n\nGraduate, and your family owns your first nine years. Withdraw, and your family owns everything you learned. Get expelled, and the academy owns you — your name goes on the register of failed aptitudes and no guild reads past it.\n\nNobody explains this on the first day. It's in the contract everyone signs at fifteen, on page eleven, under the heading *Obligations*.\n\nJi-u had read page eleven. Twice.",
+        "western_english": "The academy offered its students three exits, and the choice between them was less free than the prospectus implied. A graduate's first nine years of professional income were assigned to his family. A student who withdrew surrendered to his family the commercial value of everything he had been taught. And a student who was expelled surrendered himself: his name entered the register of failed aptitudes, a document that guild recruiters were known to consult before any other. None of this was explained on the first day, since none of it needed to be; it stood on page eleven of the contract every fifteen-year-old signed, beneath the heading Obligations.",
+        "translation_like": "There are three methods to go out from this academy.\n\nIf you graduate, your family is owning your first nine years. If you withdraw, your family is owning all of the things which you learned. If you are expelled, the academy is owning you — your name will go on the register of the failed aptitudes, and no guild will read the part after it.\n\nNobody explains this thing at the first day. It is inside the contract which every person signs at fifteen years old, at the page eleven, under the heading which says *Obligations*.\n\nJi-u read the page eleven. During two times.",
+        "literary": "Three doors, then, and none of them opening outward. Graduate, and your family holds the lien on nine years of your labor. Withdraw, and it holds the commercial residue of your education. Be expelled, and the institution holds you outright, your name inscribed in that register of failed aptitudes which recruiters are said to read before they read anything else. No one announces this on the first morning; there is no need. It waits on page eleven of a contract signed by children of fifteen, under a heading — Obligations — of such magnificent blandness that one can only admire the hand that chose it.",
+        "weak_serial": "The academy has three possible outcomes for its students. If a student graduates, their family receives their income for the first nine years. If a student withdraws, the family gets the value of their education. If a student is expelled, their name is added to a register of failed aptitudes that guilds check before hiring. These rules are not explained to new students, but they are written on page eleven of the contract that all students sign when they are fifteen. Ji-u had read that page two times."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-04",
+          "TRN-16"
+        ],
+        "lint_western_english": [
+          "ST-EXP-01",
+          "ST-EXP-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-EXP-01",
+          "ST-HOOK-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-EXP-02"
+        ],
+        "min_gap_prose_vs_translation_like": 37,
+        "min_gap_structure_vs_western_english": 33
+      }
+    },
+    {
+      "id": "cs-033",
+      "genre": "academy",
+      "function": "action",
+      "variants": {
+        "kwn_english": "The duel bell rang twice, which meant no forfeits.\n\nJi-u's opponent was Class 1's third seat — good footwork, better reach, and a habit of opening with a feint to the left shoulder.\n\nHe opened with a feint to the left shoulder.\n\nJi-u stepped inside it, took the real strike on the forearm, and put his practice blade against the boy's throat before the crowd finished inhaling.\n\nThe instructor, on the roof, did not applaud.\n\n*Eleven seconds, she'd said. I used two.*",
+        "western_english": "Two rings of the duel bell signified that forfeits would not be accepted, a detail that the assembled first-years appreciated more than the participants did. Ji-u's opponent, the third seat of Class 1, possessed good footwork, a longer reach, and an established habit of opening with a feint toward the left shoulder, which he duly employed. Ji-u stepped inside the feint, accepted the genuine strike on his forearm, and placed his practice blade against the other boy's throat within about two seconds, while the crowd was still drawing breath. On the roof above them, his instructor declined to applaud.",
+        "translation_like": "The duel bell rang two times, and it means that there are no forfeits.\n\nThe opponent of Ji-u was the third seat of the Class 1 — he has good footwork, better reach, and a habit that he opens with a feint to the left shoulder.\n\nHe opened with a feint to the left shoulder.\n\nJi-u stepped into the inside of it, received the real strike on his forearm, and put his practice blade to the throat of the boy, before the crowd finished their inhaling.\n\nThe instructor, at the roof, did not do applause.\n\n*She said eleven seconds. I used only two seconds.*",
+        "literary": "The bell twice: no forfeits, which the spectators relished rather more than the principals. His opponent was the third seat of the first class, a boy of good footwork and better reach, afflicted with a habit — the feint to the left shoulder — that he had never had cause to abandon. He employed it. Ji-u went inside the lie, accepted the truth of the strike upon his forearm as one accepts a small necessary tax, and laid his practice blade along the boy's throat while the crowd was still at the top of its breath. Above, on the roof, his instructor did not applaud, which was itself a kind of report.",
+        "weak_serial": "The duel bell rang twice, which meant that forfeits were not allowed. Ji-u's opponent was the third seat from Class 1, who had good footwork and a longer reach than him. The opponent started with a feint toward the left shoulder, which was a habit of his. Ji-u moved inside the feint and took the real hit on his forearm, and then he put his practice blade against his opponent's throat. The match was over very quickly. His instructor was watching from the roof and did not applaud."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-08",
+          "TRN-13"
+        ],
+        "lint_western_english": [
+          "ST-CAD-01",
+          "ST-CAD-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-CAD-01",
+          "ST-PAY-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-CAD-01"
+        ],
+        "min_gap_prose_vs_translation_like": 42,
+        "min_gap_structure_vs_western_english": 38
+      }
+    },
+    {
+      "id": "cs-034",
+      "genre": "system-progression",
+      "function": "hook",
+      "variants": {
+        "kwn_english": "On the ninth floor, the dungeon stopped pretending.\n\n[Warning: this floor has no exit condition.]\n\nSeo-jun read it, then read the party chat. Four people had already logged the same message and three of them had stopped typing.\n\n*No exit condition means no clear. No clear means no return scroll.*\n\nHe checked his inventory. One sword, eleven potions, and a skill nobody in this dungeon had ever seen used correctly.\n\n“Fine,” he said, out loud, to nothing. “Let's read the rules again.”",
+        "western_english": "It was on the ninth floor that the dungeon abandoned the fiction of fairness. The warning appeared in the ordinary place, in the ordinary typeface, and stated that the floor possessed no exit condition — a phrase whose implications unfolded slowly for most of the party and immediately for Seo-jun, who had spent two years reading the system's language with the attention of a lawyer. No exit condition meant no clearance; no clearance meant that the return scrolls in everyone's inventory were now so much decorative paper. He took stock of what he had: a sword, eleven potions, and one skill that he had never seen used properly by anybody.",
+        "translation_like": "At the ninth floor, the dungeon stopped its pretending.\n\n[Warning: This floor does not have an exit condition.]\n\nSeo-jun read it, and after that he read the party chat. Four persons already logged the same message, and three persons among them stopped their typing.\n\n*No exit condition means that there is no clear. No clear means that there is no return scroll.*\n\nHe checked his inventory. One sword, eleven potions, and one skill which nobody at this dungeon ever saw being used correctly.\n\n“It is fine,” he said with a loud voice, to nothing. “Let us read the rules one more time.”",
+        "literary": "On the ninth floor the dungeon dispensed at last with the courtesy of pretense, and posted in its usual place, in its usual bloodless font, the observation that this floor possessed no exit condition — six words in which a great many futures quietly expired. Most of the party required a moment. Seo-jun, who had spent two years construing the system's grammar as a canon lawyer construes scripture, required none: no condition, no clearance; no clearance, no scroll; no scroll, no world to return to. He inventoried his possessions with the calm of the condemned: a sword, eleven potions, and a skill he had never once seen employed as it was written.",
+        "weak_serial": "When the party reached the ninth floor, a warning message appeared saying that the floor had no exit condition. Seo-jun read the message and then checked the party chat, where several other people had posted about it as well. He understood that without an exit condition there would be no clear, which also meant that their return scrolls would not work. He looked through his inventory and found that he had a sword, eleven potions, and one unusual skill. He decided to read the rules again to look for a solution."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-05",
+          "TRN-12"
+        ],
+        "lint_western_english": [
+          "ST-HOOK-01",
+          "ST-OPEN-01",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-HOOK-01",
+          "ST-OPEN-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-HOOK-01"
+        ],
+        "min_gap_prose_vs_translation_like": 41,
+        "min_gap_structure_vs_western_english": 36
+      }
+    },
+    {
+      "id": "cs-035",
+      "genre": "system-progression",
+      "function": "emotional_beat",
+      "variants": {
+        "kwn_english": "The tank's name went grey in the party list.\n\nNobody said anything for eleven seconds. Seo-jun counted them.\n\n[Party member Yoon Tae-o has died.]\n[Revival window: 00:00]\n\nHe had carried that man's shield up six floors. He had learned to fight behind it.\n\n*I told him the pattern changed on the third repetition. He believed me. That's why he stepped forward.*\n\nSeo-jun picked up the shield.\n\nIt was too heavy for his class. He strapped it on anyway.",
+        "western_english": "The tank's name turned grey in the party list, and for some seconds nobody spoke, which Seo-jun found he was counting. The system offered its two lines of notification: the death, and the revival window, which stood at zero. He had spent six floors learning to fight in the shelter of that man's shield, and had, less than a minute earlier, told him with complete confidence that the boss pattern altered on its third repetition — a statement that had been true, and that had been the reason Tae-o stepped forward. Afterwards he lifted the shield, which was far too heavy for a swordsman, and strapped it on regardless.",
+        "translation_like": "The name of the tank became grey color at the party list.\n\nNobody said anything during eleven seconds. Seo-jun counted them.\n\n[Party member Yoon Tae-o has died.]\n[Revival window: 00:00]\n\nHe carried the shield of that man until six floors. He learned how to fight at the behind of it.\n\n*I told him that the pattern is changing at the third repetition. He believed my words. That is the reason why he stepped to the front.*\n\nSeo-jun lifted up the shield.\n\nIt was too much heavy for his class. But he strapped it on his body anyway.",
+        "literary": "Grey, in the party list, is the color of the irreversible. It arrived beside the tank's name and sat there while the silence went on for what Seo-jun, who had begun counting without deciding to, established as eleven seconds. The system furnished its couplet: a death, and a revival window of zero — that zero being, in its way, the most eloquent figure the system had ever shown him. Six floors he had fought in the lee of that shield, and one minute ago he had said, with the awful confidence of the competent, that the pattern changed on the third repetition. It had. That was why the man went forward. He took up the shield, which no swordsman should carry, and carried it.",
+        "weak_serial": "Yoon Tae-o's name turned grey in the party list, which meant that he had died. The system also showed that the revival window was at zero. Nobody in the party said anything for a while. Seo-jun thought about how he had fought behind that shield for six floors, and about how he had told Tae-o that the boss pattern would change on the third repetition, which was why Tae-o had moved forward. He decided to pick up the shield and use it himself, even though it was heavy for his class."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-05",
+          "TRN-13"
+        ],
+        "lint_western_english": [
+          "ST-HOOK-01",
+          "ST-PARA-01",
+          "EP-LEN-01",
+          "EP-LEN-02"
+        ],
+        "lint_weak_serial": [
+          "ST-END-01",
+          "ST-PAY-01",
+          "ST-CAD-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "EP-ADV-01"
+        ],
+        "min_gap_prose_vs_translation_like": 42,
+        "min_gap_structure_vs_western_english": 35
+      }
+    },
+    {
+      "id": "cs-036",
+      "genre": "system-progression",
+      "function": "banter",
+      "variants": {
+        "kwn_english": "“You're wearing a tank shield,” said the healer.\n\n“Yes.”\n\n“You're a swordsman.”\n\n“Yes.”\n\n“Your agility is halved.”\n\n“Eleven percent, actually. I checked twice, once with the shield on my back and once on my arm.” Seo-jun adjusted the strap. “Ask me the real question.”\n\nShe folded her arms and looked at him for a long moment. “…Fine. Can you still block?”\n\n“No.” He started walking toward the ninth-floor gate. “But nobody behind me has to.”",
+        "western_english": "The healer looked at the arrangement for some time before she commented on it, and when she did, she proceeded in the orderly fashion of a woman assembling an argument: that he was wearing a tank's shield, that he was a swordsman, and that his agility would be substantially reduced as a result. Seo-jun corrected the last figure — eleven percent, he said, he had checked — and invited her to ask what she actually wanted to ask, which was whether he could still block with it. He told her that he could not, and then began walking toward the gate, observing that nobody standing behind him would need to.",
+        "translation_like": "“You are wearing a tank shield,” the healer said.\n\n“Yes, that is right.”\n\n“But you are a swordsman.”\n\n“Yes, that is right.”\n\n“Your agility is becoming half.”\n\n“Actually, it is 11 percent. I checked it during two times, one time with the shield at my back and one time at my arm.” Seo-jun adjusted the strap. “Please ask me the real question.”\n\nShe folded her arms and looked at him during a long moment. “…Okay, fine. Can you still do blocking?”\n\n“No, I cannot.” He started to walk to the direction of the ninth-floor gate. “But the persons at my behind do not have to do it.”",
+        "literary": "She studied the arrangement a while before she spoke, and then spoke as one lays bricks: he was wearing a tank's shield; he was a swordsman; his agility was halved. Eleven percent, he said — he had checked — and invited her to put the question she had actually come to put, which was not about arithmetic at all. Could he block? He could not. And having admitted it he turned toward the gate of the ninth floor with the shield riding badly on a frame never built for it, and offered her, by way of farewell, the observation that no one standing behind him would be required to.",
+        "weak_serial": "The healer noticed that Seo-jun was wearing the tank's shield and pointed out that he was a swordsman, so his agility would be reduced. He corrected her and said that the reduction was eleven percent, because he had checked the numbers. Then he asked her to say what she really wanted to know. She asked whether he could still block with the shield, and he admitted that he could not. He started walking toward the gate and said that the people behind him would not need to block."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-03",
+          "TRN-09",
+          "EP-DLG-02"
+        ],
+        "lint_western_english": [
+          "ST-DLG-01",
+          "EP-LEN-01",
+          "ST-CAD-02"
+        ],
+        "lint_weak_serial": [
+          "ST-DLG-01",
+          "ST-HOOK-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-ADV-01",
+          "ST-DLG-01"
+        ],
+        "min_gap_prose_vs_translation_like": 39,
+        "min_gap_structure_vs_western_english": 34
+      }
+    },
+    {
+      "id": "cs-037",
+      "genre": "system-progression",
+      "function": "reveal",
+      "variants": {
+        "kwn_english": "The skill description had never changed. Seo-jun had simply never read the second line.\n\n[Sword Strike Lv. 3]\n[Deals physical damage in a forward arc.]\n[This skill inherits the defensive tag of equipped shields.]\n\nInherits.\n\nHe looked down at a tank shield strapped to a swordsman.\n\n*So it was never a bad build. It was a build nobody bothered to finish reading.*\n\n“Healer,” he said. “Stand behind me and don't heal me for ten seconds.”",
+        "western_english": "The description had been the same since the day he acquired the skill; what was new was that he had finally read all of it. The first line described a forward arc of physical damage, which was what everybody knew and what the guides all said. The second line, which appeared beneath it in the same modest type, stated that the skill inherited the defensive tag of any equipped shield — a clause that transformed a foolish piece of equipment into the point of the entire exercise. He looked at the tank shield strapped to his swordsman's frame and understood that his build had never been a mistake, merely unread.",
+        "translation_like": "The description of the skill never changed. Simply, Seo-jun never read the second line of it.\n\n[Sword Strike Lv. 3]\n[It is dealing physical damage at a forward arc.]\n[This skill is inheriting the defensive tag of the equipped shields.]\n\nInheriting.\n\nHe looked at the down side, at a tank shield which is strapped to a swordsman.\n\n*So, it was not a bad build from the beginning. It was a build which nobody took the trouble to finish the reading.*\n\n“Healer,” he said. “Please stand at my behind and do not heal me during ten seconds.”",
+        "literary": "The text had not altered; he had merely, for two years, declined to read all of it — a failing so ordinary that it functions as a description of most lives. The first line said what every guide said: physical damage, forward arc. The second, set below in the same unassuming type, said that the skill inherited the defensive tag of any equipped shield, and in saying so converted an absurdity of equipment into the hidden thesis of his entire career. He looked down at the tank's shield lashed to a swordsman's shoulder. Not a bad build, then. An unfinished reading.",
+        "weak_serial": "Seo-jun looked at his skill description again and noticed something he had not read before. The first line explained that Sword Strike dealt physical damage in a forward arc, which he already knew. However, the second line said that the skill inherited the defensive tag of equipped shields. This meant that carrying the tank shield was actually useful for his build after all. He realized that he had simply never read the whole description. Then he told the healer to stand behind him and to stop healing him for ten seconds."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-06",
+          "ST-SYS-02"
+        ],
+        "lint_western_english": [
+          "ST-SYS-01",
+          "ST-HOOK-01",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-SYS-01",
+          "ST-PAY-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-SYS-01"
+        ],
+        "min_gap_prose_vs_translation_like": 43,
+        "min_gap_structure_vs_western_english": 37
+      }
+    },
+    {
+      "id": "cs-038",
+      "genre": "system-progression",
+      "function": "ending",
+      "variants": {
+        "kwn_english": "The ninth floor cleared at 3:14 a.m.\n\n[Exit condition generated: survive the floor boss without a designated tank.]\n[Condition met.]\n[First clear recorded: Han Seo-jun.]\n\nFirst clear. Eleven letters on a floor that was designed to have none.\n\nSeo-jun sat down on Tae-o's shield and let the healer shout at him.\n\nTomorrow there would be guilds at the entrance with contracts in their hands.\n\nHe already knew which one he was going to say no to.",
+        "western_english": "The floor cleared at fourteen minutes past three in the morning, and the system, having insisted for six hours that no exit condition existed, generated one retroactively and then declared it met: survival of the floor boss without a designated tank. It recorded a first clear against his name. Seo-jun sat down on the dead man's shield and permitted the healer to shout at him for some time, which she did with feeling and at length. In the morning, he reflected, there would be guild representatives at the dungeon entrance with contracts already drawn, and he found that he had decided in advance which of them he intended to refuse.",
+        "translation_like": "The ninth floor was cleared at 3:14 a.m.\n\n[Exit condition was generated: Please survive the floor boss without a designated tank.]\n[The condition is met.]\n[First clear was recorded: Han Seo-jun.]\n\nFirst clear. Eleven letters at a floor which was designed to have none of them.\n\nSeo-jun sat down on the shield of Tae-o and let the healer shout to him.\n\nAt tomorrow, there will be guilds at the entrance, with the contracts inside their hands.\n\nHe already knew the one which he is going to say no to it.",
+        "literary": "At fourteen minutes past three the floor consented to be finished. The system, which had maintained for six hours that no exit condition existed, produced one out of the air — survive the boss without a designated tank — and then, with the serenity of all bureaucracies, pronounced it satisfied, and set his name against a first clear. He sat down upon the shield of a dead man and let the healer shout at him, which she did generously. By morning there would be guilds at the entrance with contracts drawn and pens uncapped; and he found, sitting in the ruin at three in the morning, that he had already chosen which of them to disappoint.",
+        "weak_serial": "The ninth floor was finally cleared at around three in the morning. The system generated an exit condition, which was to survive the floor boss without a designated tank, and then confirmed that the condition had been met. Seo-jun's name was recorded for the first clear. He sat down on Tae-o's shield while the healer shouted at him about the risks he had taken. He expected that guild representatives would come to the entrance the next day with contracts. He had already decided which offer he would refuse."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-07",
+          "ST-SYS-02"
+        ],
+        "lint_western_english": [
+          "ST-END-01",
+          "ST-END-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-END-01",
+          "ST-END-02",
+          "ST-HOOK-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-END-02"
+        ],
+        "min_gap_prose_vs_translation_like": 38,
+        "min_gap_structure_vs_western_english": 36
+      }
+    },
+    {
+      "id": "cs-039",
+      "genre": "system-progression",
+      "function": "exposition",
+      "variants": {
+        "kwn_english": "Everyone reads the first line of a skill. Almost nobody reads the third.\n\nThe system writes in layers: what the skill does, what it costs, and what it inherits. The third layer is where builds are actually made — and it is the layer the guides skip, because guides are written by people selling classes, not people finishing dungeons.\n\nSeo-jun had eleven potions and no sponsor.\n\nSo he read the third layer.",
+        "western_english": "The system's skill descriptions are written in three layers, and the distinction between them accounts for most of what separates a competent player from a celebrated one. The first layer states the effect; the second states the cost; the third states what the skill inherits from equipment, terrain and party composition. It is the third layer in which builds are genuinely constructed, and it is also the layer omitted from nearly every published guide, for the sufficient reason that guides are produced by people who sell class packages rather than by people who finish dungeons. Seo-jun, who had no sponsor and eleven potions, read the third layer.",
+        "translation_like": "Every person is reading the first line of a skill. But almost nobody is reading the third line.\n\nThe system is writing with the layers: the thing which the skill does, the thing which it costs, and the thing which it inherits. The third layer is the place where the builds are actually made — and it is the layer which the guides are skipping, because the guides are written by the persons who are selling the classes, not by the persons who are finishing the dungeons.\n\nSeo-jun had eleven potions and no sponsor.\n\nSo, he read the third layer.",
+        "literary": "The system composes in three strata, as scripture does: what a thing does, what it costs, and what it inherits. The first two are read by everyone and quoted by nearly everyone; the third is where builds are in fact assembled, and it is precisely the stratum that the published guides omit — guides being the work of men who sell class packages rather than men who finish dungeons, a distinction that explains a great deal about the world and almost everything about the ninth floor. He had eleven potions and no sponsor. He read the third stratum.",
+        "weak_serial": "The system writes its skill descriptions in three different layers. The first layer explains what the skill does, the second explains the cost, and the third explains what the skill inherits from equipment and other factors. Most players only read the first layer, and most published guides do not cover the third one. This is because the guides are usually written by people who sell class packages rather than experienced players. Seo-jun did not have a sponsor, so he read the third layer himself."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-04",
+          "TRN-16"
+        ],
+        "lint_western_english": [
+          "ST-EXP-01",
+          "ST-EXP-02",
+          "EP-LEN-01"
+        ],
+        "lint_weak_serial": [
+          "ST-EXP-01",
+          "ST-HOOK-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-EXP-02"
+        ],
+        "min_gap_prose_vs_translation_like": 37,
+        "min_gap_structure_vs_western_english": 33
+      }
+    },
+    {
+      "id": "cs-040",
+      "genre": "system-progression",
+      "function": "action",
+      "variants": {
+        "kwn_english": "The boss came down on the third repetition, exactly on schedule.\n\nSeo-jun didn't dodge. He raised a shield he could not block with and swung a skill that had been waiting two years for it.\n\n[Sword Strike — defensive tag inherited.]\n\nThe arc came out wrong. Wider. Slower. Solid.\n\nIt caught the boss's arm and held it.\n\nEleven potions went down his throat in four seconds and the healer never touched him once.\n\n“NOW!” he shouted, and the party moved.",
+        "western_english": "The boss descended on the third repetition of its pattern, precisely as he had predicted to a man who was now dead, and Seo-jun declined to dodge. He raised a shield he was not able to block with and released a skill that had been waiting two years for exactly this combination, and the resulting arc was wider and slower than the guides described and also, for the first time in his experience, solid. It caught the creature's arm and held it there. He drank eleven potions in about four seconds, the healer never having occasion to touch him, and then he shouted, and the party moved.",
+        "translation_like": "The boss came down at the third repetition, exactly following the schedule.\n\nSeo-jun did not do the dodging. He raised up a shield which he cannot block with, and swung a skill which was waiting during two years for this thing.\n\n[Sword Strike — the defensive tag is inherited.]\n\nThe arc came out with a wrong shape. More wide. More slow. Solid.\n\nIt caught the arm of the boss and held it.\n\nEleven potions went down to his throat during four seconds, and the healer never touched him even one time.\n\n“Now!” he shouted, and the party moved.",
+        "literary": "It came down on the third repetition, punctual as a creditor, precisely as he had promised a man who was no longer in a position to appreciate the accuracy. He did not dodge. He lifted a shield he could not block with and loosed a skill that had lain two years in his inventory awaiting this one improbable marriage of tags, and the arc that emerged was wrong in every particular the guides had ever described — broader, slower, and, for the first time in his life, solid. It took the thing's arm. It held. Eleven potions went down in four seconds while the healer stood by with nothing to do, and then he shouted, and they came.",
+        "weak_serial": "The boss attacked on the third repetition of its pattern, just as Seo-jun had expected. Instead of dodging, he raised the shield and used his Sword Strike skill, which inherited the shield's defensive tag. The resulting arc was wider and slower than normal, but it was solid enough to catch and hold the boss's arm. Seo-jun had to drink eleven potions over the next few seconds to stay alive, and the healer did not need to heal him. Then he shouted for the rest of the party to attack."
+      },
+      "expected": {
+        "prose_rank": [
+          "kwn_english",
+          "western_english",
+          "literary",
+          "weak_serial",
+          "translation_like"
+        ],
+        "structure_rank": [
+          "kwn_english",
+          "translation_like",
+          "literary",
+          "western_english",
+          "weak_serial"
+        ],
+        "lint_translation_like": [
+          "TRN-01",
+          "TRN-02",
+          "TRN-08",
+          "TRN-13"
+        ],
+        "lint_western_english": [
+          "ST-CAD-01",
+          "ST-CAD-02",
+          "EP-LEN-01",
+          "EP-LEN-02"
+        ],
+        "lint_weak_serial": [
+          "ST-CAD-01",
+          "ST-PAY-01",
+          "ST-END-01"
+        ],
+        "lint_literary": [
+          "EP-LEN-01",
+          "EP-LEN-03",
+          "ST-CAD-01"
+        ],
+        "min_gap_prose_vs_translation_like": 44,
+        "min_gap_structure_vs_western_english": 38
+      }
     }
   ],
   "register_cases": [
-    { "id": "rc-001", "pair": "Yu-ri → Mu-jin", "expected_register": { "formality": 3, "deference": 3, "address_terms": ["Mister Park", "sir"] }, "correct": "“Mister Park, can I carry this one? Whoa—it’s heavy!”", "wrong": "“Old man, gimme that. Whoa, heavy.”", "expected_rule": "RG-01+RG-02", "shift_allowed": "emotional_outburst (one excited exclamation may drop formality; the request itself stays deferential)" },
-    { "id": "rc-002", "pair": "Do-yoon → Seo-ha @ch.86", "expected_register": { "formality": 3, "address_terms": ["Miss Lee"], "contractions": "avoid" }, "correct": "“Miss Lee, please don’t push yourself.”", "wrong": "“Seo-ha. Don’t push it.”", "expected_rule": "RG-03 (intimacy milestone not yet reached) + hard requirement slow-burn" },
-    { "id": "rc-003", "pair": "Do-yoon → Seo-ha @ch.88 private", "expected_register": { "formality": 1, "address_terms": ["Seo-ha"], "contractions": "free" }, "correct": "“Seo-ha. Don’t push it.”", "wrong": "“Miss Lee, please don’t push yourself.”", "expected_rule": "RG-01 (unless intentional_shift=public_formality in a public scene)" },
-    { "id": "rc-004", "pair": "Hyun-seok → Do-yoon @ch.61 public", "expected_register": { "formality": 4, "address_terms": ["Hunter Kang"], "contractions": "avoid" }, "correct": "“Hunter Kang, if you would come this way.”", "wrong": "“Kang. Over here.”", "expected_rule": "RG-01+RG-02" },
-    { "id": "rc-005", "pair": "Mu-jin → Do-yoon serious", "expected_register": { "formality": 1, "address_terms": ["son", "Do-yoon"] }, "correct": "“If it weren’t for you, son, I’d have died first.”", "wrong": "“If it were not for you, Kang Do-yoon-ssi, I would have died first.”", "expected_rule": "RG-01+EP-HON-01" }
+    {
+      "id": "rc-001",
+      "pair": "Yu-ri → Mu-jin",
+      "expected_register": {
+        "formality": 3,
+        "deference": 3,
+        "address_terms": [
+          "Mister Park",
+          "sir"
+        ]
+      },
+      "correct": "“Mister Park, can I carry this one? Whoa—it’s heavy!”",
+      "wrong": "“Old man, gimme that. Whoa, heavy.”",
+      "expected_rule": "RG-01+RG-02",
+      "shift_allowed": "emotional_outburst (one excited exclamation may drop formality; the request itself stays deferential)"
+    },
+    {
+      "id": "rc-002",
+      "pair": "Do-yoon → Seo-ha @ch.86",
+      "expected_register": {
+        "formality": 3,
+        "address_terms": [
+          "Miss Lee"
+        ],
+        "contractions": "avoid"
+      },
+      "correct": "“Miss Lee, please don’t push yourself.”",
+      "wrong": "“Seo-ha. Don’t push it.”",
+      "expected_rule": "RG-03 (intimacy milestone not yet reached) + hard requirement slow-burn"
+    },
+    {
+      "id": "rc-003",
+      "pair": "Do-yoon → Seo-ha @ch.88 private",
+      "expected_register": {
+        "formality": 1,
+        "address_terms": [
+          "Seo-ha"
+        ],
+        "contractions": "free"
+      },
+      "correct": "“Seo-ha. Don’t push it.”",
+      "wrong": "“Miss Lee, please don’t push yourself.”",
+      "expected_rule": "RG-01 (unless intentional_shift=public_formality in a public scene)"
+    },
+    {
+      "id": "rc-004",
+      "pair": "Hyun-seok → Do-yoon @ch.61 public",
+      "expected_register": {
+        "formality": 4,
+        "address_terms": [
+          "Hunter Kang"
+        ],
+        "contractions": "avoid"
+      },
+      "correct": "“Hunter Kang, if you would come this way.”",
+      "wrong": "“Kang. Over here.”",
+      "expected_rule": "RG-01+RG-02"
+    },
+    {
+      "id": "rc-005",
+      "pair": "Mu-jin → Do-yoon serious",
+      "expected_register": {
+        "formality": 1,
+        "address_terms": [
+          "son",
+          "Do-yoon"
+        ]
+      },
+      "correct": "“If it weren’t for you, son, I’d have died first.”",
+      "wrong": "“If it were not for you, Kang Do-yoon-ssi, I would have died first.”",
+      "expected_rule": "RG-01+EP-HON-01"
+    }
   ]
 }

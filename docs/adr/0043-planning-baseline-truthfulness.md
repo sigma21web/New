@@ -13,9 +13,9 @@ could not tell design intent from delivered material.
 
 ## Decision
 1. **Every quantitative claim about repository contents must be true of the repository at HEAD.** Where a
-   target differs from the current count, write both: "4 starter contrast sets in the repo; target ≥ 40
-   before threshold calibration (B-6-x)". The validator checks the contrast-set count claim against the
-   file.
+   target differs from the current count, write both: "N contrast sets in the repo; target ≥ M
+   before threshold calibration (B-6-x)", with N read from the file and M from the backlog item. The
+   validator checks the contrast-set count claim against the file.
 2. **Starter artifacts are labeled `starter`** (in file `_meta` or profile `calibration.notes`) and the
    work to grow them is a backlog item, not a description of the present.
 3. **Implementation status lives in `docs/08-delivery/09-progress.md`** (created in Checkpoint 0) — one durable document with

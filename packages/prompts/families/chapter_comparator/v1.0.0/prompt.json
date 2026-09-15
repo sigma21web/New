@@ -1,0 +1,37 @@
+{
+  "family": "chapter_comparator",
+  "version": "1.0.0",
+  "role": "chapter_comparator",
+  "purpose": "Pairwise comparison of two chapter candidates for the same locked contract, with per-dimension preferences and evidence; run in both presentation orders (ADR-0015).",
+  "style_sensitive": false,
+  "manuscript_producing": false,
+  "identity_variant": null,
+  "model_class": "R",
+  "input_variables": [
+    "contract_shape",
+    "candidate_a",
+    "candidate_b",
+    "scorecard_a",
+    "scorecard_b",
+    "presentation_order",
+    "rubric_order"
+  ],
+  "output_schema": "comparison-verdict.schema.json",
+  "output_mode": "json",
+  "params": {
+    "temperature": 0.1,
+    "max_tokens": 2000,
+    "top_p": 1
+  },
+  "failure_behavior": {
+    "on_schema_invalid": "repair_then_regenerate",
+    "on_truncation": "fail",
+    "max_attempts": 2
+  },
+  "status": "active",
+  "changelog": "1.0.0 — initial production prompt (Checkpoint 6, B-6-4). Position-swapped pairwise chapter-candidate judging per ADR-0015; prose and structure judged as separate dimensions; evidence before preference; no rewriting.",
+  "regression_cases": [
+    "chapter_comparator.fixture.smoke"
+  ],
+  "content_hash": "sha256:a26a3da173ec96fcd05d077927a198858d42dd0e1f0c575d9d4acda548c977c1"
+}

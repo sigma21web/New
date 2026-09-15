@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yeonjae.studio/schemas/regression-report.schema.json",
+  "title": "Patch regression report",
+  "description": "The auditable outcome of the ADR-0014 patch-regression check for one targeted revision. A patch may pass only when the targeted issue materially improved or resolved, the targeted dimension did not worsen, every dimension the pinned policy gates is present in BOTH the pre-patch and post-patch scorecards, no protected dimension regressed beyond the pinned tolerance, no new blocking/major issue appeared, and every applicable protection (output language, contract, continuity, knowledge, genre, voice/register, prose, structure) still passes. A failed report blocks approval and therefore canon acceptance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "manuscript_version_id",
+    "parent_version_id",
+    "targeted_dimension",
+    "round",
+    "tolerance_points",
+    "production_policy_version",
+    "deltas",
+    "regressions",
+    "protections",
+    "targeted",
+    "failures",
+    "passed"
+  ],
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/uuid" },
+    "manuscript_version_id": {
+      "$ref": "common.schema.json#/$defs/uuid",
+      "description": "The revised (post-patch) version this report judges."
+    },
+    "parent_version_id": {
+      "$ref": "common.schema.json#/$defs/uuid",
+      "description": "The pre-patch version the comparison is against."
+    },
+    "patch_id": { "$ref": "common.schema.json#/$defs/uuid" },
+    "targeted_dimension": { "$ref": "common.schema.json#/$defs/qualityDimension" },
+    "round": { "type": "integer", "minimum": 1 },
+    "tolerance_points": {
+      "type": "number",
+      "minimum": 0,
+      "description": "policy.revision.regression_tolerance_points. An absent policy value means zero, never unlimited."
+    },
+    "production_policy_version": { "type": "string" },
+    "deltas": {
+      "type": "array",
+      "description": "Per-dimension movement across every dimension the pinned policy gates and both scorecards carry.",
+      "items": { "$ref": "#/$defs/delta" }
+    },
+    "regressions": {
+      "type": "array",
+      "description": "Protected (non-targeted) dimensions that fell by more than the tolerance.",
+      "items": { "$ref": "#/$defs/delta" }
+    },
+    "missing_gated_dimensions": {
+      "type": "array",
+      "description": "Dimensions the pinned policy gates that neither scorecard carries, in sorted order. Required policy-gated evidence: a non-empty list fails the report with `gated_dimension_missing`, so an unwired judge can never read as a silent pass. Kept for auditability of which gate was unavailable.",
+      "items": { "$ref": "common.schema.json#/$defs/qualityDimension" }
+    },
+    "dropped_dimensions": {
+      "type": "array",
+      "description": "Dimensions the parent scorecard carried that the revised scorecard no longer carries. A patch may not pass by deleting its own evidence.",
+      "items": { "$ref": "common.schema.json#/$defs/qualityDimension" }
+    },
+    "targeted": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["resolved", "materially_improved", "worsened"],
+      "properties": {
+        "score_before": { "type": "number" },
+        "score_after": { "type": "number" },
+        "delta": { "type": "number" },
+        "blocking_major_before": { "type": "integer", "minimum": 0 },
+        "blocking_major_after": { "type": "integer", "minimum": 0 },
+        "resolved": {
+          "type": "boolean",
+          "description": "Every blocking/major issue the patch targeted is no longer open on the revised version."
+        },
+        "materially_improved": {
+          "type": "boolean",
+          "description": "The targeted issues resolved, or the targeted dimension's score rose."
+        },
+        "worsened": { "type": "boolean" },
+        "resolved_issue_ids": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/uuid" }
+        },
+        "unresolved_issue_ids": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/uuid" }
+        }
+      }
+    },
+    "protections": {
+      "type": "array",
+      "description": "Applicable fail-closed protections and their outcome. A protection whose evidence is absent is reported, never assumed to pass.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["protection", "passed", "applicable"],
+        "properties": {
+          "protection": {
+            "type": "string",
+            "enum": [
+              "output_language",
+              "contract",
+              "continuity",
+              "knowledge",
+              "genre",
+              "voice",
+              "register",
+              "prose",
+              "structure",
+              "westernization",
+              "translation_like",
+              "no_new_blocking_major"
+            ]
+          },
+          "applicable": { "type": "boolean" },
+          "passed": { "type": "boolean" },
+          "detail": { "type": "string" },
+          "issue_kinds": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "new_issue_kinds": {
+      "type": "array",
+      "description": "Issue kinds present at blocking/major on the revised version that the parent did not carry.",
+      "items": { "type": "string" }
+    },
+    "failures": {
+      "type": "array",
+      "description": "Every reason the patch did not pass. Empty exactly when `passed` is true.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "targeted_not_improved",
+          "targeted_worsened",
+          "gated_dimension_missing",
+          "dimension_dropped",
+          "protected_dimension_regressed",
+          "new_blocking_or_major_issue",
+          "protection_failed"
+        ]
+      }
+    },
+    "passed": { "type": "boolean" }
+  },
+  "$defs": {
+    "delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "before", "after", "delta"],
+      "properties": {
+        "dimension": { "$ref": "common.schema.json#/$defs/qualityDimension" },
+        "before": { "type": "number" },
+        "after": { "type": "number" },
+        "delta": { "type": "number" }
+      }
+    }
+  }
+}

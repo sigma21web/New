@@ -25,6 +25,7 @@ export * as ProductionPolicySchema from './production-policy.js';
 export * as PromiseSchema from './promise.js';
 export * as PropositionSchema from './proposition.js';
 export * as RegisterProfileSchema from './register-profile.js';
+export * as RegressionReportSchema from './regression-report.js';
 export * as RelationshipStateSchema from './relationship-state.js';
 export * as SceneDraftSchema from './scene-draft.js';
 export * as ScenePlanSchema from './scene-plan.js';

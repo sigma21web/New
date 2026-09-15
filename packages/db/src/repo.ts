@@ -315,6 +315,21 @@ export async function approveManuscriptVersion(
     .catch(rethrowCanon);
 }
 
+/**
+ * Mark a losing candidate terminal after N-candidate selection (B-6-4). Only `status` moves: the text,
+ * content hash, parent link and history stay untouched, so the loser remains immutable and auditable.
+ * `working → rejected` is the transition the manuscript guard already authorizes (ADR-0037).
+ */
+export async function setManuscriptVersionStatus(
+  db: Queryable,
+  versionId: string,
+  status: 'rejected',
+): Promise<void> {
+  await db
+    .query('UPDATE manuscript_versions SET status = $2 WHERE id = $1', [versionId, status])
+    .catch(rethrowCanon);
+}
+
 export async function quarantineVersion(
   db: Queryable,
   versionId: string,

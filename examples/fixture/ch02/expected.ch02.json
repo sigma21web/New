@@ -1,0 +1,18 @@
+{
+  "assembled_code_points": 5411,
+  "assembled_paragraphs": 57,
+  "words": 981,
+  "scene_words": [
+    370,
+    611
+  ],
+  "ending_hook": "Unless the third chamber had never been holding water at all.",
+  "summary_l1": "Mapo Gate 3, the next morning. Do-yoon arrives early, is taken on by Park Mu-jin at eight percent, and asks which corridor he uses. In the gate he talks Mu-jin out of the left corridor by naming an unsurveyed third chamber holding water; minutes later that ceiling comes down where they would have been. Mu-jin raises his share to eighteen percent and asks where he got the third chamber. At the counting window nine of eleven cores read two grades above a D-gate envelope and the gate is flagged.",
+  "delta_items": 6,
+  "item_counts": {
+    "event": 2,
+    "fact": 2,
+    "relationship_state": 1,
+    "promise_event": 1
+  }
+}

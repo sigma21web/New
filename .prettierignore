@@ -11,3 +11,4 @@ node_modules/
 .hoplite/
 README.md
 AGENTS.md
+packages/eval/fixtures/

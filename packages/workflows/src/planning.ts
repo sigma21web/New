@@ -562,6 +562,7 @@ export function compileFor(
     | 'editor_full'
     | 'judge_rubric_prose'
     | 'judge_rubric_structure'
+    | 'judge_rubric_genre'
     | 'summarizer_min'
     | 'writer_full',
   budget = 6000,

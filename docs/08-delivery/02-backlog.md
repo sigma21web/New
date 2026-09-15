@@ -95,6 +95,10 @@ Items marked **[CP7]** were moved out of the first proof of the core loop (API, 
 
 ## Checkpoint 6 — Quality and long-form validation (additions)
 
+Status for these four items is recorded in `09-progress.md` (ADR-0043), including where delivery is
+narrower than the wording below (B-6-1 covers two chapters, not three; B-6-3 grows the corpus but does not
+run the judge calibration, which is B-4-5).
+
 | ID | P | Item | Refs | Acceptance | Est |
 | --- | --- | --- | --- | --- | --- |
 | B-6-1 | P0 | Multi-chapter continuity test on the fixture (ch.1 → ch.2 → … remembers committed state, tail and hook) | brief §10 | pack contains k−1 summary/tail/hook/deltas; ch.2 draft cites ch.1 state | 4d |

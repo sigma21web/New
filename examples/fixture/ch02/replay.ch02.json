@@ -1,0 +1,1144 @@
+{
+ "activity:scene_plan:2": {
+  "json": {
+   "scenes": [
+    {
+     "scene_no": 1,
+     "objective": "5:52 a.m. at Gate 3: Do-yoon is early, is taken on at eight percent, and plants the corridor question.",
+     "pov": {
+      "character_id": "0191b2a0-0000-7000-8000-0000000c0001",
+      "person": "third_limited"
+     },
+     "participants": [
+      "0191b2a0-0000-7000-8000-0000000c0001",
+      "0191b2a0-0000-7000-8000-0000000c0003"
+     ],
+     "location_id": "0191b2a0-0000-7000-8000-000000010006",
+     "beats": [
+      {
+       "type": "action",
+       "description": "The gate above the loading yard; the wrong kind of cold.",
+       "tags": [
+        "tension"
+       ]
+      },
+      {
+       "type": "dialogue",
+       "description": "Mu-jin arrives at 5:58; eight percent; say yes.",
+       "tags": [
+        "information"
+       ]
+      },
+      {
+       "type": "dialogue",
+       "description": "'Which corridor do you take?' — left, always left.",
+       "tags": [
+        "tension"
+       ]
+      }
+     ],
+     "length_target": {
+      "unit": "words",
+      "value": 380
+     },
+     "speaker_pairs": [
+      {
+       "speaker_id": "0191b2a0-0000-7000-8000-0000000c0001",
+       "addressee_id": "0191b2a0-0000-7000-8000-0000000c0003",
+       "register": {
+        "formality": 3,
+        "deference": 3,
+        "familiarity": 0,
+        "directness": 2,
+        "contractions": "neutral",
+        "address_terms": [
+         "Mister Park",
+         "sir"
+        ]
+       }
+      },
+      {
+       "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003",
+       "addressee_id": "0191b2a0-0000-7000-8000-0000000c0001",
+       "register": {
+        "formality": 1,
+        "deference": 0,
+        "familiarity": 0,
+        "directness": 4,
+        "contractions": "free",
+        "address_terms": [
+         "kid"
+        ]
+       }
+      }
+     ],
+     "opening_beat_type": "continue_cliffhanger"
+    },
+    {
+     "scene_no": 2,
+     "objective": "The corridor decision pays off: the left corridor collapses, Mu-jin raises the share, and the cores come out two grades high.",
+     "pov": {
+      "character_id": "0191b2a0-0000-7000-8000-0000000c0001",
+      "person": "third_limited"
+     },
+     "participants": [
+      "0191b2a0-0000-7000-8000-0000000c0001",
+      "0191b2a0-0000-7000-8000-0000000c0003"
+     ],
+     "location_id": "0191b2a0-0000-7000-8000-000000010006",
+     "beats": [
+      {
+       "type": "dialogue",
+       "description": "'Give me a reason. Not a feeling.' Three chambers.",
+       "tags": [
+        "tension"
+       ]
+      },
+      {
+       "type": "action",
+       "description": "The left corridor comes down behind them.",
+       "tags": [
+        "satisfaction"
+       ]
+      },
+      {
+       "type": "revelation",
+       "description": "Nine of eleven cores are two grades above envelope.",
+       "tags": [
+        "tension"
+       ]
+      }
+     ],
+     "length_target": {
+      "unit": "words",
+      "value": 560
+     },
+     "speaker_pairs": [
+      {
+       "speaker_id": "0191b2a0-0000-7000-8000-0000000c0001",
+       "addressee_id": "0191b2a0-0000-7000-8000-0000000c0003",
+       "register": {
+        "formality": 3,
+        "deference": 3,
+        "familiarity": 0,
+        "directness": 2,
+        "contractions": "neutral",
+        "address_terms": [
+         "Mister Park",
+         "sir"
+        ]
+       }
+      },
+      {
+       "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003",
+       "addressee_id": "0191b2a0-0000-7000-8000-0000000c0001",
+       "register": {
+        "formality": 1,
+        "deference": 0,
+        "familiarity": 0,
+        "directness": 4,
+        "contractions": "free",
+        "address_terms": [
+         "kid"
+        ]
+       }
+      }
+     ],
+     "ending_beat_type": "reveal"
+    }
+   ]
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:scene_draft:2:1": {
+  "json": {
+   "scene_no": 1,
+   "language": "en",
+   "text": "5:52 a.m. Gate 3, Mapo.\n\nDo-yoon had been standing at the barrier for eleven minutes.\n\nThe gate hung two meters above the loading yard, a hole in the air the color of a bruise, and the cold coming off it was the wrong kind of cold — dry, static, like the inside of a server room. Six months from now every porter in the city would know that smell. This morning there were four people in the yard and none of them were looking at it.\n\nPark Mu-jin arrived at 5:58 with a paper cup in each hand.\n\n“You're early.” He said it like an accusation.\n\n“You said six.”\n\n“I say six to everybody. Nobody comes at six.” Mu-jin pushed one of the cups at him. It was terrible coffee. Do-yoon drank it. “You're the F-rank from the board. Kang.”\n\n“Kang Do-yoon.”\n\n“Mm.” Mu-jin looked him over the way a man looks over a secondhand ladder. “Eight percent. You carry what I tell you, you walk where I walk, and when I say run you are already running. Say yes.”\n\n“Yes.”\n\n“Good.” He drained his own cup, crushed it, and pocketed the crushed cup instead of dropping it, which was the first thing Do-yoon had ever liked about him. “D-grade. Spiders, mostly. Two chambers, one corridor between them. Forty minutes in, forty out, and if you throw up you do it outside the ring.”\n\n*Three chambers.*\n\nDo-yoon did not say it. The Association's survey had been filed nine days ago by a man who had counted two chambers because he had not walked to the end of the corridor. In four hours that clerical decision would put Mu-jin on a stretcher.\n\n“Mister Park,” he said. “Which corridor do you take?”\n\n“Left. Always left. Shorter.”\n\n“Is it shorter?”\n\nMu-jin stopped with his hand on the barrier gate.\n\n“It's shorter,” he said, slowly, “because the right one bends around the water.”\n\n“Then it isn't shorter. It's drier.”\n\nBehind them the yard lights cut out — 6:00 exactly, on a municipal timer that did not care what was standing in the air above the loading dock. In the sudden grey the gate was the brightest thing in Mapo.\n\n“Get your bag,” Mu-jin said.",
+   "paragraphs": [
+    {
+     "id": "p1",
+     "start": 0,
+     "end": 23,
+     "kind": "narration"
+    },
+    {
+     "id": "p2",
+     "start": 25,
+     "end": 85,
+     "kind": "narration"
+    },
+    {
+     "id": "p3",
+     "start": 87,
+     "end": 432,
+     "kind": "narration"
+    },
+    {
+     "id": "p4",
+     "start": 434,
+     "end": 492,
+     "kind": "narration"
+    },
+    {
+     "id": "p5",
+     "start": 494,
+     "end": 540,
+     "kind": "mixed"
+    },
+    {
+     "id": "p6",
+     "start": 542,
+     "end": 557,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p7",
+     "start": 559,
+     "end": 727,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p8",
+     "start": 729,
+     "end": 744,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p9",
+     "start": 746,
+     "end": 940,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p10",
+     "start": 942,
+     "end": 948,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p11",
+     "start": 950,
+     "end": 1252,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p12",
+     "start": 1254,
+     "end": 1271,
+     "kind": "monologue"
+    },
+    {
+     "id": "p13",
+     "start": 1273,
+     "end": 1512,
+     "kind": "narration"
+    },
+    {
+     "id": "p14",
+     "start": 1514,
+     "end": 1567,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p15",
+     "start": 1569,
+     "end": 1598,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p16",
+     "start": 1600,
+     "end": 1616,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p17",
+     "start": 1618,
+     "end": 1667,
+     "kind": "narration"
+    },
+    {
+     "id": "p18",
+     "start": 1669,
+     "end": 1749,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p19",
+     "start": 1751,
+     "end": 1787,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p20",
+     "start": 1789,
+     "end": 1993,
+     "kind": "narration"
+    },
+    {
+     "id": "p21",
+     "start": 1995,
+     "end": 2023,
+     "kind": "mixed"
+    }
+   ],
+   "speaker_annotations": [
+    {
+     "utterance_start": 494,
+     "utterance_end": 509,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 542,
+     "utterance_end": 557,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 559,
+     "utterance_end": 605,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 729,
+     "utterance_end": 744,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0001"
+    },
+    {
+     "utterance_start": 746,
+     "utterance_end": 751,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 942,
+     "utterance_end": 948,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0001"
+    },
+    {
+     "utterance_start": 950,
+     "utterance_end": 957,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 1514,
+     "utterance_end": 1528,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0001"
+    },
+    {
+     "utterance_start": 1569,
+     "utterance_end": 1598,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 1600,
+     "utterance_end": 1616,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0001"
+    },
+    {
+     "utterance_start": 1669,
+     "utterance_end": 1684,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 1751,
+     "utterance_end": 1787,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0001"
+    },
+    {
+     "utterance_start": 1995,
+     "utterance_end": 2010,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    }
+   ],
+   "claims": [
+    {
+     "statement": "Do-yoon and Park Mu-jin meet at Mapo Gate 3 before 6 a.m.",
+     "paragraph_id": "p4",
+     "entity_ids": [
+      "0191b2a0-0000-7000-8000-0000000c0001",
+      "0191b2a0-0000-7000-8000-0000000c0003"
+     ],
+     "frame": "canonical"
+    },
+    {
+     "statement": "Mu-jin takes Do-yoon on at eight percent for the Mapo Gate 3 run.",
+     "paragraph_id": "p9",
+     "entity_ids": [
+      "0191b2a0-0000-7000-8000-0000000c0001",
+      "0191b2a0-0000-7000-8000-0000000c0003"
+     ],
+     "frame": "canonical"
+    }
+   ]
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:scene_draft:2:2": {
+  "json": {
+   "scene_no": 2,
+   "language": "en",
+   "text": "The first chamber took nineteen minutes and cost them nothing.\n\nDo-yoon carried sixty kilos of rope, spare cores and water, three steps behind Mu-jin's right heel — where a porter was supposed to walk, and also where he could see the older man's whole back. Two hunters worked the front. The spiders came off the ceiling in ones and twos and died in ones and twos.\n\nAt the mouth of the corridor Mu-jin turned left.\n\n“Mister Park.”\n\n“What.”\n\n“The right one.”\n\n“The right one is eleven minutes longer.”\n\n“Yes,” Do-yoon said.\n\nMu-jin turned around fully, which he had not done once inside the gate.\n\n“Give me a reason. Not a feeling. A reason.”\n\nDo-yoon had prepared four. Three of them were lies, and the lies were better, and he heard himself use the fourth.\n\n“The survey counted two chambers. There are three. The third sits above the left corridor and it has been holding water for nine days.” He shifted the bag. “If anything comes down through that ceiling, it comes down on the left. On the right we'd have the bend between us and it.”\n\nThe nearer hunter laughed once, at the ceiling.\n\nMu-jin did not laugh. He looked down the left corridor for four full seconds, and Do-yoon watched a man do arithmetic he had no data for and arrive, by whatever route veterans arrive, at the answer.\n\n“Right corridor.”\n\n“Boss—”\n\n“Right corridor. Eleven minutes won't kill anybody.” He was already walking. “Kang. If you're wrong, you carry for free.”\n\nThey were nine meters in when the sound started behind them: the wet, patient grinding of a ceiling that had been holding a chamber's worth of water for nine days and had finished thinking about it.\n\nNobody ran. It was Mu-jin who got a fist into the nearer hunter's collar and hauled him backward around the bend.\n\n“Water,” he said. “You can't cut water.”\n\nThe left corridor emptied itself into the first chamber for a long time. Do-yoon counted it against his own pulse — eleven seconds of falling masonry, then the slower, uglier sound of a room filling. Grit came around the bend in a warm gust and settled on all four of them.\n\n“That was where we were going,” the nearer hunter said, to nobody.\n\n“That was where we were going,” Mu-jin agreed. He did not look at Do-yoon. He took out a cigarette he was not allowed to light inside a gate, held it, and put it back. “Kang. You carry for eighteen percent.”\n\n“Mister Park—”\n\n“Where did you get the third chamber?”\n\n“A porter told me. One who isn't working anymore.”\n\nMu-jin looked at him for a long moment, then nodded once at an answer he had decided not to open.\n\nThey walked out of Mapo Gate 3 at 7:06 with four people, eleven cores, and an old man's left leg still attached to the rest of him.\n\nThe stones went into the counting window at 7:40. The reader chirped. Then it chirped differently.\n\n“These are B-grade,” the clerk said.\n\n“It's a D-gate,” said the hunter who had laughed at the ceiling.\n\n“I know what it is.” She turned one of the cores over as if the underside would argue with her. “Eleven cores, nine of them two grades above envelope. I have to flag the gate.”\n\nDo-yoon kept his hands on the bag strap.\n\nMapo Gate 3 had been a D-gate the first time too. He had carried its cores to this window, in this line, and been paid eight percent of nothing much.\n\nNothing about this morning should have changed the stones.\n\nUnless the third chamber had never been holding water at all.",
+   "paragraphs": [
+    {
+     "id": "p1",
+     "start": 0,
+     "end": 62,
+     "kind": "narration"
+    },
+    {
+     "id": "p2",
+     "start": 64,
+     "end": 364,
+     "kind": "narration"
+    },
+    {
+     "id": "p3",
+     "start": 366,
+     "end": 414,
+     "kind": "narration"
+    },
+    {
+     "id": "p4",
+     "start": 416,
+     "end": 430,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p5",
+     "start": 432,
+     "end": 439,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p6",
+     "start": 441,
+     "end": 457,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p7",
+     "start": 459,
+     "end": 500,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p8",
+     "start": 502,
+     "end": 522,
+     "kind": "mixed"
+    },
+    {
+     "id": "p9",
+     "start": 524,
+     "end": 595,
+     "kind": "narration"
+    },
+    {
+     "id": "p10",
+     "start": 597,
+     "end": 641,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p11",
+     "start": 643,
+     "end": 757,
+     "kind": "narration"
+    },
+    {
+     "id": "p12",
+     "start": 759,
+     "end": 1039,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p13",
+     "start": 1041,
+     "end": 1088,
+     "kind": "narration"
+    },
+    {
+     "id": "p14",
+     "start": 1090,
+     "end": 1288,
+     "kind": "narration"
+    },
+    {
+     "id": "p15",
+     "start": 1290,
+     "end": 1307,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p16",
+     "start": 1309,
+     "end": 1316,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p17",
+     "start": 1318,
+     "end": 1439,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p18",
+     "start": 1441,
+     "end": 1639,
+     "kind": "narration"
+    },
+    {
+     "id": "p19",
+     "start": 1641,
+     "end": 1754,
+     "kind": "narration"
+    },
+    {
+     "id": "p20",
+     "start": 1756,
+     "end": 1796,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p21",
+     "start": 1798,
+     "end": 2071,
+     "kind": "narration"
+    },
+    {
+     "id": "p22",
+     "start": 2073,
+     "end": 2139,
+     "kind": "mixed"
+    },
+    {
+     "id": "p23",
+     "start": 2141,
+     "end": 2348,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p24",
+     "start": 2350,
+     "end": 2364,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p25",
+     "start": 2366,
+     "end": 2404,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p26",
+     "start": 2406,
+     "end": 2456,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p27",
+     "start": 2458,
+     "end": 2555,
+     "kind": "narration"
+    },
+    {
+     "id": "p28",
+     "start": 2557,
+     "end": 2688,
+     "kind": "narration"
+    },
+    {
+     "id": "p29",
+     "start": 2690,
+     "end": 2788,
+     "kind": "narration"
+    },
+    {
+     "id": "p30",
+     "start": 2790,
+     "end": 2826,
+     "kind": "mixed"
+    },
+    {
+     "id": "p31",
+     "start": 2828,
+     "end": 2892,
+     "kind": "mixed"
+    },
+    {
+     "id": "p32",
+     "start": 2894,
+     "end": 3070,
+     "kind": "dialogue"
+    },
+    {
+     "id": "p33",
+     "start": 3072,
+     "end": 3112,
+     "kind": "narration"
+    },
+    {
+     "id": "p34",
+     "start": 3114,
+     "end": 3263,
+     "kind": "narration"
+    },
+    {
+     "id": "p35",
+     "start": 3265,
+     "end": 3323,
+     "kind": "narration"
+    },
+    {
+     "id": "p36",
+     "start": 3325,
+     "end": 3386,
+     "kind": "narration"
+    }
+   ],
+   "speaker_annotations": [
+    {
+     "utterance_start": 416,
+     "utterance_end": 430,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0001"
+    },
+    {
+     "utterance_start": 432,
+     "utterance_end": 439,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 441,
+     "utterance_end": 457,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0001"
+    },
+    {
+     "utterance_start": 459,
+     "utterance_end": 500,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 502,
+     "utterance_end": 508,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0001"
+    },
+    {
+     "utterance_start": 597,
+     "utterance_end": 641,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 1290,
+     "utterance_end": 1307,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 1318,
+     "utterance_end": 1370,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 1756,
+     "utterance_end": 1764,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    },
+    {
+     "utterance_start": 2894,
+     "utterance_end": 2914,
+     "speaker_id": "0191b2a0-0000-7000-8000-0000000c0003"
+    }
+   ],
+   "claims": [
+    {
+     "statement": "Do-yoon persuades Mu-jin to take the right corridor.",
+     "paragraph_id": "p15",
+     "entity_ids": [
+      "0191b2a0-0000-7000-8000-0000000c0001",
+      "0191b2a0-0000-7000-8000-0000000c0003"
+     ],
+     "frame": "canonical"
+    },
+    {
+     "statement": "The left corridor ceiling collapses after they pass the bend.",
+     "paragraph_id": "p18",
+     "entity_ids": [
+      "0191b2a0-0000-7000-8000-0000000c0001",
+      "0191b2a0-0000-7000-8000-0000000c0003"
+     ],
+     "frame": "canonical"
+    },
+    {
+     "statement": "Mu-jin raises Do-yoon's porter share to eighteen percent.",
+     "paragraph_id": "p23",
+     "entity_ids": [
+      "0191b2a0-0000-7000-8000-0000000c0001",
+      "0191b2a0-0000-7000-8000-0000000c0003"
+     ],
+     "frame": "canonical"
+    }
+   ]
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:contract_check:2:r0": {
+  "json": {
+   "criteria": [
+    {
+     "criterion_id": "AC-LANG",
+     "passed": true,
+     "evidence_paragraph_ids": [
+      "p1"
+     ],
+     "note": "English throughout."
+    },
+    {
+     "criterion_id": "AC-MH-1",
+     "passed": true,
+     "evidence_paragraph_ids": [
+      "p4"
+     ],
+     "note": "They meet and enter Gate 3."
+    }
+   ]
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:continuity:2:r0": {
+  "json": {
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:knowledge_leak:2:r0": {
+  "json": {
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:prose_judge:2:r0": {
+  "json": {
+   "dimension_scores": {
+    "idiomatic_english": 5,
+    "readability": 5,
+    "register_fidelity": 5,
+    "translation_markers": 5
+   },
+   "judge_score": 88,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:structure_judge:2:r0": {
+  "json": {
+   "dimension_scores": {
+    "hook_timing": 5,
+    "dialogue_forwardness": 5,
+    "local_payoff": 5,
+    "ending_pull": 5,
+    "exposition_control": 4
+   },
+   "judge_score": 90,
+   "hook_sentence_index": 1,
+   "local_payoff_present": true,
+   "ending_type_detected": "reveal",
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:extract:2": {
+  "json": {
+   "project_id": "{{project}}",
+   "chapter_id": "{{chapter.2}}",
+   "manuscript_version_id": "{{version.2.approved}}",
+   "base_canon_version": "{{int:canon_version}}",
+   "stage": "extracted_a",
+   "items": [
+    {
+     "local_id": "ev-gate-run",
+     "type": "event",
+     "op": "assert",
+     "frame": "canonical",
+     "confidence": 1,
+     "importance": "core",
+     "story_clock": {
+      "chapter_no": 2,
+      "ordinal": 2,
+      "precision": "exact",
+      "calendar": "relative_days",
+      "world_date": "D+1"
+     },
+     "payload": {
+      "type": "other",
+      "summary": "Do-yoon and Park Mu-jin enter Mapo Gate 3 at 6 a.m. as hunter and porter.",
+      "location_id": "0191b2a0-0000-7000-8000-000000010006",
+      "participants": [
+       {
+        "entity_id": "0191b2a0-0000-7000-8000-0000000c0001",
+        "role": "agent"
+       },
+       {
+        "entity_id": "0191b2a0-0000-7000-8000-0000000c0003",
+        "role": "agent"
+       }
+      ],
+      "importance": "core"
+     },
+     "evidence": [
+      {
+       "manuscript_version_id": "{{version.2.approved}}",
+       "chapter_no": 2,
+       "paragraph_id": "p4",
+       "start": 434,
+       "end": 492,
+       "quote": "Park Mu-jin arrived at 5:58 with a paper cup in each hand."
+      }
+     ]
+    },
+    {
+     "local_id": "ev-corridor",
+     "type": "event",
+     "op": "assert",
+     "frame": "canonical",
+     "confidence": 1,
+     "importance": "core",
+     "story_clock": {
+      "chapter_no": 2,
+      "ordinal": 20,
+      "precision": "exact",
+      "calendar": "relative_days",
+      "world_date": "D+1"
+     },
+     "payload": {
+      "type": "other",
+      "summary": "Mu-jin takes the right corridor on Do-yoon's word; the left corridor ceiling then collapses.",
+      "location_id": "0191b2a0-0000-7000-8000-000000010006",
+      "participants": [
+       {
+        "entity_id": "0191b2a0-0000-7000-8000-0000000c0003",
+        "role": "agent"
+       },
+       {
+        "entity_id": "0191b2a0-0000-7000-8000-0000000c0001",
+        "role": "agent"
+       }
+      ],
+      "importance": "core"
+     },
+     "evidence": [
+      {
+       "manuscript_version_id": "{{version.2.approved}}",
+       "chapter_no": 2,
+       "paragraph_id": "p38",
+       "start": 3343,
+       "end": 3395,
+       "quote": "“Right corridor. Eleven minutes won't kill anybody.”"
+      }
+     ]
+    },
+    {
+     "local_id": "f-share",
+     "type": "fact",
+     "op": "assert",
+     "frame": "canonical",
+     "confidence": 1,
+     "importance": "core",
+     "story_clock": {
+      "chapter_no": 2,
+      "ordinal": 30,
+      "precision": "exact",
+      "calendar": "relative_days",
+      "world_date": "D+1"
+     },
+     "payload": {
+      "entity_id": "0191b2a0-0000-7000-8000-0000000c0001",
+      "attribute": "employment.porter_share",
+      "value": "18%",
+      "value_text": "Eighteen percent of the stones (raised after the Mapo run)",
+      "valid_from": {
+       "chapter_no": 2,
+       "ordinal": 30,
+       "precision": "exact",
+       "calendar": "relative_days",
+       "world_date": "D+1"
+      },
+      "valid_to": null
+     },
+     "evidence": [
+      {
+       "manuscript_version_id": "{{version.2.approved}}",
+       "chapter_no": 2,
+       "paragraph_id": "p44",
+       "start": 4334,
+       "end": 4373,
+       "quote": "“Kang. You carry for eighteen percent.”"
+      }
+     ]
+    },
+    {
+     "local_id": "f-cores",
+     "type": "fact",
+     "op": "assert",
+     "frame": "canonical",
+     "confidence": 1,
+     "importance": "core",
+     "story_clock": {
+      "chapter_no": 2,
+      "ordinal": 40,
+      "precision": "exact",
+      "calendar": "relative_days",
+      "world_date": "D+1"
+     },
+     "payload": {
+      "entity_id": "0191b2a0-0000-7000-8000-000000010006",
+      "attribute": "gate.core_grade_anomaly",
+      "value": "B",
+      "value_text": "Nine of eleven cores two grades above a D-gate envelope; gate flagged",
+      "valid_from": {
+       "chapter_no": 2,
+       "ordinal": 40,
+       "precision": "exact",
+       "calendar": "relative_days",
+       "world_date": "D+1"
+      },
+      "valid_to": null
+     },
+     "evidence": [
+      {
+       "manuscript_version_id": "{{version.2.approved}}",
+       "chapter_no": 2,
+       "paragraph_id": "p53",
+       "start": 5015,
+       "end": 5095,
+       "quote": "“Eleven cores, nine of them two grades above envelope. I have to flag the gate.”"
+      }
+     ]
+    },
+    {
+     "local_id": "rel-trust",
+     "type": "relationship_state",
+     "op": "supersede",
+     "frame": "canonical",
+     "confidence": 1,
+     "importance": "core",
+     "story_clock": {
+      "chapter_no": 2,
+      "ordinal": 30,
+      "precision": "exact",
+      "calendar": "relative_days",
+      "world_date": "D+1"
+     },
+     "supersedes_ref": "{{canon.r-md}}",
+     "payload": {
+      "from_entity_id": "0191b2a0-0000-7000-8000-0000000c0003",
+      "to_entity_id": "0191b2a0-0000-7000-8000-0000000c0001",
+      "type": "superior",
+      "axes": {
+       "trust": 3,
+       "affection": 1,
+       "respect": 2,
+       "hostility": 0,
+       "dependency": 1
+      },
+      "power_dynamic": "from_dominant",
+      "register": {
+       "formality": 1,
+       "deference": 0,
+       "familiarity": 1,
+       "directness": 4,
+       "contractions": "free",
+       "address_terms": [
+        "Kang",
+        "kid"
+       ]
+      },
+      "note": "Takes the kid's warnings seriously now; share raised to eighteen percent.",
+      "valid_from": {
+       "chapter_no": 2,
+       "ordinal": 30,
+       "precision": "exact",
+       "calendar": "relative_days",
+       "world_date": "D+1"
+      },
+      "valid_to": null
+     },
+     "evidence": [
+      {
+       "manuscript_version_id": "{{version.2.approved}}",
+       "chapter_no": 2,
+       "paragraph_id": "p44",
+       "start": 4334,
+       "end": 4373,
+       "quote": "“Kang. You carry for eighteen percent.”"
+      }
+     ]
+    },
+    {
+     "local_id": "pe-gate-run",
+     "type": "promise_event",
+     "op": "pay",
+     "frame": "canonical",
+     "confidence": 1,
+     "importance": "core",
+     "story_clock": {
+      "chapter_no": 2,
+      "ordinal": 30,
+      "precision": "exact",
+      "calendar": "relative_days",
+      "world_date": "D+1"
+     },
+     "payload": {
+      "promise_id": "0191b2a0-0000-7000-8000-0000000d0011",
+      "kind": "paid",
+      "note": "The run happens, the corridor is avoided, and Mu-jin walks out unhurt."
+     },
+     "evidence": [
+      {
+       "manuscript_version_id": "{{version.2.approved}}",
+       "chapter_no": 2,
+       "paragraph_id": "p49",
+       "start": 4582,
+       "end": 4713,
+       "quote": "They walked out of Mapo Gate 3 at 7:06 with four people, eleven cores, and an old man's left leg still attached to the rest of him."
+      }
+     ]
+    }
+   ],
+   "unresolved_questions": [],
+   "hypothesis_results": [
+    {
+     "hypothesis_ref": "MH-1",
+     "result": "realized",
+     "evidence": [
+      {
+       "manuscript_version_id": "{{version.2.approved}}",
+       "chapter_no": 2,
+       "paragraph_id": "p4",
+       "start": 434,
+       "end": 492,
+       "quote": "Park Mu-jin arrived at 5:58 with a paper cup in each hand."
+      }
+     ]
+    },
+    {
+     "hypothesis_ref": "MH-2",
+     "result": "realized",
+     "evidence": [
+      {
+       "manuscript_version_id": "{{version.2.approved}}",
+       "chapter_no": 2,
+       "paragraph_id": "p38",
+       "start": 3343,
+       "end": 3395,
+       "quote": "“Right corridor. Eleven minutes won't kill anybody.”"
+      }
+     ]
+    }
+   ],
+   "summary_l1": "Mapo Gate 3, the next morning. Do-yoon arrives early, is taken on by Park Mu-jin at eight percent, and asks which corridor he uses. In the gate he talks Mu-jin out of the left corridor by naming an unsurveyed third chamber holding water; minutes later that ceiling comes down where they would have been. Mu-jin raises his share to eighteen percent and asks where he got the third chamber. At the counting window nine of eleven cores read two grades above a D-gate envelope and the gate is flagged.",
+   "ending_hook": "Unless the third chamber had never been holding water at all."
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:summarize:2": {
+  "json": {
+   "summary_l1": "Mapo Gate 3, the next morning. Do-yoon arrives early, is taken on by Park Mu-jin at eight percent, and asks which corridor he uses. In the gate he talks Mu-jin out of the left corridor by naming an unsurveyed third chamber holding water; minutes later that ceiling comes down where they would have been. Mu-jin raises his share to eighteen percent and asks where he got the third chamber. At the counting window nine of eleven cores read two grades above a D-gate envelope and the gate is flagged.",
+   "ending_hook": "Unless the third chamber had never been holding water at all.",
+   "state_changes": [
+    "Kang Do-yoon: employment.porter_share = 18%",
+    "Mapo Gate 3: flagged for core-grade anomaly"
+   ],
+   "knowledge_changes": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:genre_judge:2:r0": {
+  "json": {
+   "dimension_scores": {
+      "reader_fantasy": 5,
+      "device_correctness": 4,
+      "vocabulary_register": 4,
+      "taboo_restraint": 5
+   },
+   "judge_score": 88,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ },
+ "activity:voice_judge:2:r0": {
+  "json": {
+   "dimension_scores": {
+      "distinguishability": 4,
+      "verbal_habits": 4,
+      "register_naturalness": 5,
+      "register_consistency": 5
+   },
+   "judge_score": 86,
+   "drift_flags": [],
+   "issues": []
+  },
+  "modelId": "replay-model",
+  "usage": {
+   "input": 1000,
+   "output": 500,
+   "cached": 0
+  }
+ }
+}
